@@ -373,6 +373,103 @@ function initLang() {
   });
 }
 
+// Área en el idioma activo: m² siempre; en inglés añade equivalente en sq ft.
+function areaLabel(m2) {
+  const v = parseFloat(m2);
+  if (ghLang() === 'en' && !isNaN(v)) {
+    return `${m2} m² · ${Math.round(v * 10.7639).toLocaleString('en-US')} sq ft`;
+  }
+  return `${m2} m²`;
+}
+
+/* -------------------------------------------------------------------------- */
+/* SCROLL PROGRESS                                                            */
+/* -------------------------------------------------------------------------- */
+function initScrollProgress() {
+  const bar = document.getElementById('scroll-progress');
+  if (!bar) return;
+  const update = () => {
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+    bar.style.width = Math.min(100, Math.max(0, pct)) + '%';
+  };
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  update();
+}
+
+/* -------------------------------------------------------------------------- */
+/* CONTADORES ANIMADOS (estadísticas del lugar)                               */
+/* -------------------------------------------------------------------------- */
+function initCounters() {
+  const els = document.querySelectorAll('[data-count-to]');
+  if (!els.length) return;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const run = (el) => {
+    const to = parseFloat(el.getAttribute('data-count-to'));
+    const prefix = el.getAttribute('data-count-prefix') || '';
+    const suffix = el.getAttribute('data-count-suffix') || '';
+    const sep = el.getAttribute('data-count-sep') || '';
+    const fmt = (n) => {
+      let s = Math.round(n).toString();
+      if (sep) s = s.replace(/\B(?=(\d{3})+(?!\d))/g, sep);
+      return prefix + s + suffix;
+    };
+    if (reduce) { el.textContent = fmt(to); return; }
+    const dur = 1400, t0 = performance.now();
+    const tick = (now) => {
+      const p = Math.min(1, (now - t0) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = fmt(to * eased);
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  if (!('IntersectionObserver' in window)) { els.forEach(run); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { run(e.target); io.unobserve(e.target); } });
+  }, { threshold: 0.4 });
+  els.forEach(el => io.observe(el));
+}
+
+/* -------------------------------------------------------------------------- */
+/* MODAL: navegación prev/next + teclado + deep-linking                       */
+/* -------------------------------------------------------------------------- */
+function villaIndex(id) { return VILLAS.findIndex(v => v.id === id); }
+
+function navigateVilla(dir) {
+  if (!currentVillaId) return;
+  const i = villaIndex(currentVillaId);
+  if (i < 0) return;
+  const next = VILLAS[(i + dir + VILLAS.length) % VILLAS.length];
+  openModalWithTransition(next.id);
+}
+
+function initModalNav() {
+  const prev = document.getElementById('modal-prev');
+  const next = document.getElementById('modal-next');
+  if (prev) prev.addEventListener('click', () => navigateVilla(-1));
+  if (next) next.addEventListener('click', () => navigateVilla(1));
+
+  document.addEventListener('keydown', (e) => {
+    const dialog = document.getElementById('villa-overlay');
+    if (!dialog || !dialog.open) return;
+    if (e.key === 'ArrowRight') { e.preventDefault(); navigateVilla(1); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); navigateVilla(-1); }
+  });
+
+  // Deep-link al cargar: #villa-<id>
+  const openFromHash = () => {
+    const m = (location.hash || '').match(/^#villa-([a-z]+)$/);
+    if (m && VILLAS.some(v => v.id === m[1])) {
+      setTimeout(() => openModalWithTransition(m[1]), 350);
+    }
+  };
+  openFromHash();
+}
+
 /* -------------------------------------------------------------------------- */
 /* ANALYTICS — wrapper seguro para GA4                                        */
 /* Reemplazar G-XXXXXXXXXX en index.html con el Measurement ID real de GA4    */
@@ -427,6 +524,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initCTATracking();
   initExitIntent();
   initMobileCTA();
+  initScrollProgress();
+  initCounters();
+  initModalNav();
   trackEvent('page_view', { page_title: document.title });
 });
 
@@ -507,6 +607,7 @@ function renderGrid() {
         <span class="eyebrow">${v.casa} · ${vfield(v, 'concepto')}</span>
         <h3 class="villa-card-title">${v.nombre}</h3>
         <p class="villa-card-specs">${v.area} m² · ${v.alcobas} ${t('word_beds')}</p>
+        ${disponible ? `<span class="villa-card-cta">${ghLang() === 'en' ? 'View details →' : 'Ver detalles →'}</span>` : ''}
       </div>
     </article>
   `;
@@ -527,6 +628,9 @@ function openModalWithTransition(id) {
   currentVillaId = id;
   const villa = VILLAS.find(v => v.id === id);
   if (!villa) return;
+
+  // Deep-link compartible: actualiza el hash sin saltar el scroll
+  try { history.replaceState(null, '', '#villa-' + id); } catch (e) {}
 
   trackEvent('villa_modal_open', { villa_name: villa.nombre, villa_id: id });
 
@@ -566,7 +670,7 @@ function openModalWithTransition(id) {
   `;
 
   document.getElementById('modal-specs').innerHTML = `
-    <div class="spec-item"><span class="spec-label">${t('spec_area')}</span><span class="spec-val">${villa.area} m²</span></div>
+    <div class="spec-item"><span class="spec-label">${t('spec_area')}</span><span class="spec-val">${areaLabel(villa.area)}</span></div>
     <div class="spec-item"><span class="spec-label">${t('spec_levels')}</span><span class="spec-val">${villa.niveles}</span></div>
     <div class="spec-item"><span class="spec-label">${t('spec_beds')}</span><span class="spec-val">${villa.alcobas}</span></div>
     <div class="spec-item"><span class="spec-label">${t('spec_outdoor')}</span><span class="spec-val">${vfield(villa, 'extra') || 'Patio/Terraza'}</span></div>
@@ -581,16 +685,24 @@ function openModalWithTransition(id) {
   ctaBtn.setAttribute('target', '_blank');
   ctaBtn.onclick = () => trackEvent('whatsapp_click', { cta_location: 'modal', villa_name: villa.nombre });
 
+  // Navegación entre villas con el modal ya abierto: el contenido ya se actualizó
+  // arriba. No reabrir el dialog (showModal lanzaría InvalidStateError) ni animar.
+  if (dialog.open) {
+    const g = document.getElementById('overlay-gallery');
+    if (g) g.scrollTop = 0;
+    return;
+  }
+
   if (!document.startViewTransition) {
     dialog.showModal();
     document.body.classList.add('overflow-hidden');
     return;
   }
 
-  sourceImg.style.viewTransitionName = 'active-villa-image';
+  if (sourceImg) sourceImg.style.viewTransitionName = 'active-villa-image';
 
   document.startViewTransition(() => {
-    sourceImg.style.viewTransitionName = '';
+    if (sourceImg) sourceImg.style.viewTransitionName = '';
     dialog.showModal();
     document.body.classList.add('overflow-hidden');
   });
@@ -606,6 +718,9 @@ document.getElementById('villa-overlay').addEventListener('cancel', (e) => {
 function closeModal() {
   const dialog = document.getElementById('villa-overlay');
   if (!dialog.open) return;
+
+  // Limpia el deep-link al cerrar
+  try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
 
   const villaIdOnClose = currentVillaId;
 

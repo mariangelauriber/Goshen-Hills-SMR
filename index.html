@@ -192,6 +192,9 @@
 
 <body class="smooth-scroll">
 
+  <!-- Indicador de progreso de lectura -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
   <!-- 1. NAVBAR MINIMALISTA -->
   <header class="navbar">
     <div class="container nav-container">
@@ -258,11 +261,11 @@
             </p>
             <div class="stats-grid mt-4">
               <div class="stat-item text-center">
-                <span class="stat-number text-cedar d-block" style="font-size: 2rem; font-family: 'Cormorant Garamond', serif;">62.900 m²</span>
+                <span class="stat-number text-cedar d-block" style="font-size: 2rem; font-family: 'Cormorant Garamond', serif;" data-count-to="62900" data-count-sep="." data-count-suffix=" m²">62.900 m²</span>
                 <span class="stat-label" style="font-size: 0.85rem;" data-i18n="stat_reserva">Reserva de la Montaña</span>
               </div>
               <div class="stat-item text-center">
-                <span class="stat-number text-cedar d-block" style="font-size: 2rem; font-family: 'Cormorant Garamond', serif;">+45 m</span>
+                <span class="stat-number text-cedar d-block" style="font-size: 2rem; font-family: 'Cormorant Garamond', serif;" data-count-to="45" data-count-prefix="+" data-count-suffix=" m">+45 m</span>
                 <span class="stat-label" style="font-size: 0.85rem;" data-i18n="stat_sea">sobre el nivel del mar</span>
               </div>
               <div class="stat-item text-center">
@@ -617,6 +620,8 @@
     <div class="overlay-window split-layout">
       
       <button class="btn-close" id="btn-close" aria-label="Cerrar ficha">✕</button>
+      <button class="modal-nav modal-nav-prev" id="modal-prev" type="button" aria-label="Villa anterior / Previous villa">‹</button>
+      <button class="modal-nav modal-nav-next" id="modal-next" type="button" aria-label="Villa siguiente / Next villa">›</button>
 
       <div class="overlay-gallery" id="overlay-gallery">
         <!-- Imágenes inyectadas por JS -->

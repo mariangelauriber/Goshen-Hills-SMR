@@ -161,6 +161,19 @@ section {
 
 .w-full { width: 100%; }
 
+/* Scroll progress indicator */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--cedar-bronze), var(--sierra-sage));
+  z-index: 200;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
 /* Navbar */
 .navbar {
   position: fixed;
@@ -827,6 +840,61 @@ section {
 .btn-close:hover {
   background: var(--text-dark);
   color: var(--white);
+}
+
+/* Modal prev/next villa navigation */
+.modal-nav {
+  position: fixed;
+  bottom: 1.5rem;
+  z-index: 100;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--text-dark);
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(5px);
+  transition: var(--transition);
+}
+.modal-nav:hover {
+  background: var(--text-dark);
+  color: var(--white);
+}
+.modal-nav-prev { left: 1.5rem; }
+.modal-nav-next { left: 5.25rem; }
+@media (max-width: 900px) {
+  .modal-nav { width: 42px; height: 42px; font-size: 1.45rem; bottom: 1rem; }
+  .modal-nav-prev { left: 1rem; }
+  .modal-nav-next { left: 4rem; }
+}
+
+/* Villa card "view details" cue */
+.villa-card-cta {
+  display: inline-block;
+  margin-top: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cedar-bronze);
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+}
+.villa-card:not(.reservada-card):hover .villa-card-cta,
+.villa-card:not(.reservada-card):focus-visible .villa-card-cta {
+  opacity: 1;
+  transform: translateX(0);
+}
+@media (hover: none) {
+  .villa-card-cta { opacity: 1; transform: none; }
 }
 
 .modal-tagline {
