@@ -1,0 +1,20 @@
+# Scaffolding de agentes / herramientas (no es el sitio)
+.claude/
+.agents/
+.gemini/
+skills-lock.json
+motion-audits/
+PRODUCT.md
+_validate.py
+
+# Dependencias / build
+node_modules/
+
+# Logs y temporales
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini

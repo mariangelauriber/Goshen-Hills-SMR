@@ -1,0 +1,21 @@
+# Binarios: sin conversión de fin de línea (evita corrupción)
+*.pdf   binary
+*.webp  binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
+*.mp4   binary
+*.webm  binary
+*.svg   -text
+
+# Código del proyecto: normalizar a LF
+*.html  text eol=lf
+*.css   text eol=lf
+*.js    text eol=lf
+*.json  text eol=lf
+*.xml   text eol=lf
+*.txt   text eol=lf
+*.md    text eol=lf
