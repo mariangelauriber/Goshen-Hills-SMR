@@ -95,6 +95,285 @@ const VILLAS = [
 ];
 
 /* -------------------------------------------------------------------------- */
+/* INTERNATIONALIZATION (ES / EN) — autodetección + toggle manual              */
+/* -------------------------------------------------------------------------- */
+// Traducciones EN de cada villa (ES vive en el array VILLAS de arriba)
+const VILLA_EN = {
+  luna:      { concepto: 'Contemplation', tagline: "The collection's iconic piece. The villa that gave rise to Goshen.", descripcion: 'The Goshen Hills logo was born from the night view from its terrace: the crescent moon reflected over the Caribbean horizon. It sits at the eastern edge of the collection, where the architecture frames both the sunset over the sea and the full moon each month.', para_quienes: 'For those who value ritual over urgency. Ideal for those who find their true essence in introspection and the silence of the night.', extra: 'Terrace 31.42 m²' },
+  brisa:     { concepto: 'Movement', tagline: "The hillside's cross-breeze captured in Goshen's most admirable villa.", descripcion: 'Designed around an architectural geometry that captures and channels the Caribbean breeze, this villa lets you forgo active climate control most of the year thanks to its natural cross-ventilation.', para_quienes: 'For those who flow with their surroundings and value the constant renewal of fresh air in their spaces.', extra: 'Terrace 36.03 m²' },
+  aurora:    { concepto: 'Rebirth', tagline: 'A privileged relationship with the sunrise over the Caribbean.', descripcion: 'The only villa in the collection where the sunrise enters directly into the social space. Twenty-three minutes of golden morning light over the living-dining area every day. Its 38.33 m² terrace is the largest of the rear row.', para_quienes: 'For those who wake before the sun — who treasure the morning ritual: the aroma of coffee, the first glimmer of clarity, and absolute peace before the world stirs.', extra: 'Terrace 38.33 m²' },
+  celeste:   { concepto: 'Amplitude', tagline: 'The Caribbean sky as a silent protagonist.', descripcion: 'The most sky-open perspective in the collection. A 16.42 m² bedroom hall and a primary bath with privileged views. The midday zenith light falls over the social space unobstructed.', para_quienes: 'For those who require the freedom of a high ceiling and the purity of the firmament — who find more meaning in reading the sky than the horizon.', extra: 'Terrace 31.52 m²' },
+  horizonte: { concepto: 'Expansion', tagline: "The Caribbean's infinite horizon, like framed art.", descripcion: 'The largest of the rear row. Its 53.03 m² living room and 21.08 m² bedroom hall are conceived as spaces of welcome. The main window operates as a horizontal painting of the Caribbean Sea.', para_quienes: 'For those who find in distance the clarity their thoughts require — who live with their gaze set on the vastness of the horizon.', extra: 'Terrace 29.73 m²' },
+  serena:    { concepto: 'Repose', tagline: 'The calm of the Caribbean held within an elevated residence.', descripcion: 'The villa closest to the social area. Starting point of the rear collection: where the hillside begins to ascend and silence announces itself. Its typology prioritizes controlled architectural shade and the breathing of the social space.', para_quienes: 'For those who have moved past the need for external validation and recognize they have arrived at their place — who understand serenity is not a goal but their very essence.', extra: 'Terrace 31.78 m²' },
+  coral:     { concepto: 'Vitality', tagline: 'The Caribbean marine ecosystem as an aesthetic reference.', descripcion: 'Close of the front row. Chromatic vitality inspired by the underwater biodiversity of the Colombian Caribbean. Its 38.23 m² interior patio is the second largest in the row.', para_quienes: 'For those not content to merely observe the sea, but who yearn for a deep, active connection with its ecosystem — who prize vitality over repose.', extra: 'Patio 38.23 m²' },
+  palma:     { concepto: 'Tropicality', tagline: "The tropics' palms woven into everyday life.", descripcion: 'Immediate tropical vegetation. The proximity of the palms wraps the social space in natural shade during the central hours of the day and brings an aromatic trace of sap and marine iodine.', para_quienes: 'For those who seek the essence of an authentic tropics, not a decorative one — who value shade as an architectural element.', extra: 'Patio 27.01 m²' },
+  ambar:     { concepto: 'Plenitude', tagline: 'The sunset residence. The finest evening Golden Hour of the collection.', descripcion: 'Its name was born from the color the sun leaves over its terrace each evening at 17:42. The geometry of the front façade and its orientation are calibrated to capture the deepest amber of the day over the horizon.', para_quienes: 'For those who find in the sunset a vital culmination and not simply an end — who live the day with their gaze on the evening horizon.', extra: 'Patio 23.97 m²' },
+  marina:    { concepto: 'Immersion', tagline: 'The sea as the closest protagonist.', descripcion: 'Acoustic proximity to the sound of the waves. Its front typology with descending floors brings the social space to the highest point of sensory contact with the Caribbean Sea.', para_quienes: 'Ideal for those who want the sound of the sea to be their first thought upon waking, with no architectural filter between rest and the waves.', extra: 'Patio 29.04 m²' },
+  sierra:    { concepto: 'Rootedness', tagline: 'The dialogue between the Sierra Nevada and the Caribbean.', descripcion: 'The largest villa of the collection, beside the social area. Its 74.98 m² private patio is the biggest and operates as an organic extension of the living space. The only villa where the majesty of the Sierra Nevada and the sea coexist in a single visual plane.', para_quienes: 'For those who prioritize an organic connection with the natural surroundings — the choice of those who need to feel the landscape before the spectacle.', extra: 'Patio 74.98 m²' }
+};
+
+// Diccionario de la interfaz / copy. Las claves se referencian con data-i18n en el HTML.
+const I18N = {
+  es: {
+    nav_cta: 'Conversación Privada',
+    hero_eyebrow_top: '9 DE 11 VILLAS DISPONIBLES · PRECIO FOUNDERS — ANTES DEL AJUSTE DE OBRA',
+    hero_coleccion: 'COLECCIÓN PRIVADA · ONCE VILLAS',
+    hero_title: 'Donde el cielo abraza el mar.',
+    hero_subtitle: 'Vía al Rodadero · Santa Marta · Caribe colombiano',
+    hero_cta1: 'Iniciar conversación privada',
+    hero_cta2: 'Conocer la colección ↓',
+    vision_eyebrow: 'I · APERTURA',
+    vision_title: 'Goshen Hills no fue concebido para competir con el mercado.<br><span class="text-cedar font-italic">Fue concebido para distinguirse de él.</span>',
+    vision_p1: 'El Caribe colombiano se ha llenado de torres que crecen en altura, condominios que crecen en número, ofertas que crecen en urgencia.',
+    vision_p2: 'Goshen Hills nace de una decisión opuesta: once villas privadas dispuestas con respeto al terreno, no contra él.',
+    vision_p3: 'En la Reserva de la Montaña, sobre Vía al Rodadero, la arquitectura no impone. Revela luz, brisa y paisaje. Cada villa fue diseñada para preservar lo que el lugar ya ofrece: el horizonte abierto del mar Caribe y la presencia silenciosa de la Sierra Nevada de Santa Marta.',
+    vision_p4: 'Aquí, se conserva un horizonte que no se repite.',
+    vision_quote: '"El lujo que no se exhibe, se respira."',
+    lugar_eyebrow: 'II · EL LUGAR',
+    lugar_title: 'Santa Marta redefine el Caribe.',
+    lugar_sub: 'Aquí el Caribe se respira con aire de montaña.',
+    lugar_p1: 'Goshen Hills se ubica en la Reserva de la Montaña, sobre Vía al Rodadero, Santa Marta. Una ladera elevada en el flanco occidental de la Sierra Nevada — la única cordillera del mundo que nace en la playa y alcanza los 5.700 metros sobre el nivel del mar, declarada Reserva de la Biósfera por la UNESCO.',
+    lugar_p2: 'Por la ventana, el horizonte abierto del mar Caribe, en su versión más cálida y silenciosa. A la espalda, una de las geografías más densas del planeta. A diez minutos, las playas del Rodadero. A veinte, el Aeropuerto Internacional Simón Bolívar. A cuarenta, el Parque Nacional Natural Tayrona, uno de los ecosistemas costeros mejor preservados del continente.',
+    stat_reserva: 'Reserva de la Montaña',
+    stat_sea: 'sobre el nivel del mar',
+    stat_min: 'min al Rodadero, aeropuerto y Tayrona',
+    lugar_map_label: 'Ubicación exacta · Vía al Rodadero, Santa Marta',
+    exp_eyebrow: 'III · LA EXPERIENCIA',
+    exp_title: 'Interiorismo al servicio del horizonte.',
+    exp_p1: 'Las villas de Goshen Hills operan como lienzos en blanco. La arquitectura desaparece para que la luz natural, la brisa cruzada y el sonido del mar asuman el protagonismo. Grandes ventanales de piso a techo que diluyen la frontera entre el interior y el vasto mar Caribe.',
+    amen_1: 'Piscina privada con vista panorámica al Caribe',
+    amen_2: 'Terraza o patio privado de 23 a 74 m²',
+    amen_3: 'Ventilación cruzada natural · climatización pasiva todo el año',
+    amen_4: '3 alcobas en suite con acabados de primera línea',
+    amen_5: 'Ventanales de piso a techo en zona social',
+    amen_6: 'Arquitectura mediterránea contemporánea adaptada al trópico',
+    piscina_caption: 'Piscina privada. El Caribe como fondo.',
+    typo_rear: 'Tipología Posterior · Casas 01–06',
+    typo_front: 'Tipología Frontal · Casas 07–11',
+    col_eyebrow: 'IV · LA COLECCIÓN',
+    col_title: 'Once villas. Once formas de habitar el Caribe.',
+    col_sub: 'En cada villa, la luz, la brisa y el horizonte convergen para crear una identidad arquitectónica única y excepcional.',
+    col_hint: 'Toque cada villa para abrir su mundo.',
+    gar_eyebrow: 'V · GARANTÍAS DE LA COLECCIÓN',
+    gar_title: 'Un proyecto con nombre, matrícula y dirección real.',
+    gar_sub: 'Goshen Hills no es una promesa de plano. Es una colección con certeza técnica, legal y sensorial.',
+    gar1_title: 'Arquitectura certificada',
+    gar1_body: 'Raúl Caballería<br>Mat. A144552015-414917<br>Arquitectura mediterránea contemporánea adaptada al trópico colombiano.',
+    gar2_title: 'Desarrollado por',
+    gar2_body: 'AQUALINDA S.A.S.<br>Santa Marta, Colombia<br>Recursos bajo mecanismo de fiducia regulada.',
+    gar3_title: 'Venta directa',
+    gar3_body: 'Sin portales de terceros.<br>Sin comisiones de intermediario.<br>Gestión directa con el equipo del proyecto.',
+    gar4_title: 'Ubicación irrepetible',
+    gar4_body: 'Reserva de la Biósfera UNESCO.<br>Sierra Nevada de Santa Marta.<br>62.900 m² de ladera privada en el Caribe colombiano.',
+    faq_eyebrow: 'PREGUNTAS FRECUENTES',
+    faq_title: 'Lo que los compradores de Goshen Hills preguntan primero.',
+    faq_q1: '1. ¿Cuándo estará disponible para habitar?',
+    faq_a1: 'El cronograma de entrega varía por villa según el avance de obra y la fase de compra. La conversación privada entrega la proyección actualizada de cada unidad. Las villas en Precio Founders están en proceso activo de desarrollo con entrega escalonada.',
+    faq_q2: '2. ¿Los recursos del proyecto están protegidos?',
+    faq_a2: 'Sí. Los recursos de la colección se gestionan bajo mecanismo de fiducia regulada, garantizando protección al comprador durante todo el proceso de desarrollo. Los detalles del fideicomiso y la documentación legal del proyecto se entregan en la conversación privada.',
+    faq_q3: '3. ¿Puedo acceder a crédito hipotecario?',
+    faq_a3: 'Sí. Las villas de Goshen Hills califican para crédito hipotecario a través de las principales entidades bancarias colombianas. Para compradores en el exterior existe la opción de adquisición en moneda extranjera con escrituración directa. El equipo orienta sobre ambas rutas en la conversación privada.',
+    faq_q4: '4. ¿Puedo arrendar la villa cuando no la habito?',
+    faq_a4: 'Goshen Hills es una colección residencial privada, no un esquema de renta vacacional. El propietario tiene plena libertad de arrendar su villa de manera privada y selectiva. El proyecto no gestiona arriendos ni ofrece retornos de inversión prometidos — la valorización es la del Caribe colombiano.',
+    faq_q5: '5. ¿Cuál es la diferencia entre las villas posteriores y las frontales?',
+    faq_a5: 'Las posteriores aprovechan la pendiente ascendente del lote con plantas P00, P+01 y P+02 (suben hacia la luz). Las frontales aprovechan la pendiente descendente con plantas P00, P-01 y P-02 (descienden hacia patios privados más amplios, entre 23 y 74 m²).',
+    faq_q6: '6. ¿Quién diseñó el proyecto?',
+    faq_a6: 'Raúl Caballería, arquitecto colombiano con matrícula profesional A144552015-414917. Especializado en arquitectura mediterránea contemporánea adaptada al trópico y en implantación en ladera. Su enfoque: la arquitectura como marco, no como protagonista.',
+    faq_q7: '7. ¿Hay villas con identidad sensorial particular?',
+    faq_a7: 'Tres villas tienen una huella única: Villa Luna (Casa 01) dio origen al logo de la colección por su vista nocturna; Villa Aurora (Casa 03) recibe el amanecer caribeño directamente en el espacio social; Villa Ámbar (Casa 09) ofrece la mejor Golden Hour vespertina — su nombre nació del color que el sol deja sobre su terraza cada tarde a las 17:42.',
+    faq_q8: '8. ¿Cómo se inicia la conversación?',
+    faq_a8: 'Por WhatsApp al +57 300 400 0707 o correo hola@goshenhills.com.co. La conversación entrega disponibilidad real del momento, cronograma de obra y orientación sobre la villa que mejor refleja su perfil. Sin compromiso, sin urgencia fabricada.',
+    cierre_eyebrow: '9 DE 11 VILLAS DISPONIBLES',
+    cierre_title: 'La conversación comienza antes que la visita.',
+    cierre_text: 'Goshen Hills no se descubre con prisa. Se reconoce con discernimiento. La colección no se ofrece a todo el mercado — se ofrece a quienes saben que el Caribe colombiano puede vivirse con otra cadencia.',
+    cierre_quote: '"Once villas. Una ladera. Un horizonte irrepetible."',
+    cierre_cta: 'Iniciar la conversación →',
+    foot_eyebrow: 'VI · CONVERSACIÓN',
+    foot_title: 'La conversación privada.',
+    foot_sub: 'El paso natural hacia la elección de una villa.',
+    foot_p1: 'Goshen Hills no se vende abiertamente. Se gestiona en conversación. La elección de una villa no comienza con una venta — comienza con una lectura: quién habitará la villa, cómo desea vivir el Caribe, qué atmósfera corresponde mejor a su modo de ser.',
+    foot_p2: 'Si la colección le resuena, escríbanos por WhatsApp o complete sus detalles en el formulario. Le devolveremos la conversación con la disponibilidad real del momento y la villa que mejor refleja su perfil familiar.',
+    form_name: 'NOMBRE COMPLETO',
+    form_name_ph: 'Nombre y apellido',
+    form_wa: 'WHATSAPP (CON CÓDIGO DE PAÍS)',
+    form_email: 'CORREO ELECTRÓNICO (opcional)',
+    form_villa: 'VILLA DE INTERÉS',
+    form_villa_default: 'Seleccione una opción',
+    form_villa_undecided: 'Aún no lo he decidido',
+    form_check1: 'HE LEÍDO Y ACEPTO LA POLÍTICA DE PRIVACIDAD.',
+    form_check2: 'MIS DATOS SOLO SE USARÁN PARA DEVOLVER LA CONVERSACIÓN.',
+    form_submit: 'SOLICITAR CONVERSACIÓN PRIVADA',
+    trust_1: '♥ Fiducia regulada',
+    trust_2: '🔒 Datos cifrados',
+    trust_3: '✓ Sin marketing',
+    foot_discover: 'Descubrir',
+    foot_l_vision: 'La Visión', foot_l_lugar: 'El Lugar', foot_l_coleccion: 'Colección de Villas', foot_l_garantias: 'Garantías', foot_l_faq: 'Preguntas Frecuentes',
+    foot_contact: 'Contacto', foot_project: 'Proyecto', foot_arch: 'Arquitecto: Raúl Caballería',
+    foot_garantias_link: 'Garantías del proyecto',
+    foot_rights: '© 2026 Goshen Hills · AQUALINDA S.A.S. · Todos los derechos reservados.',
+    legal_terms: 'Términos y Condiciones', legal_privacy: 'Política de Privacidad',
+    exit_headline: '"¿Le generó curiosidad alguna villa?"',
+    exit_sub: 'La conversación es sin compromiso y completamente privada.',
+    exit_cta: 'Preguntar en privado →',
+    mobile_cta: 'Conversación privada →',
+    // dinámicos (cards / modal)
+    badge_available: 'Disponible', badge_reserved: 'Reservada',
+    spec_area: 'Área Total', spec_levels: 'Niveles', spec_beds: 'Alcobas', spec_outdoor: 'Espacio Exterior',
+    word_beds: 'Alcobas', resident_profile: 'Perfil de habitante', modal_cta: 'Solicitar Dossier Privado'
+  },
+  en: {
+    nav_cta: 'Private Conversation',
+    hero_eyebrow_top: '9 OF 11 VILLAS AVAILABLE · FOUNDERS PRICING — BEFORE THE CONSTRUCTION ADJUSTMENT',
+    hero_coleccion: 'PRIVATE COLLECTION · ELEVEN VILLAS',
+    hero_title: 'Where the sky embraces the sea.',
+    hero_subtitle: 'Vía al Rodadero · Santa Marta · Colombian Caribbean',
+    hero_cta1: 'Start a private conversation',
+    hero_cta2: 'Discover the collection ↓',
+    vision_eyebrow: 'I · OPENING',
+    vision_title: 'Goshen Hills was not conceived to compete with the market.<br><span class="text-cedar font-italic">It was conceived to stand apart from it.</span>',
+    vision_p1: 'The Colombian Caribbean has filled with towers growing taller, condominiums growing in number, offers growing in urgency.',
+    vision_p2: 'Goshen Hills is born of the opposite decision: eleven private villas laid out with respect for the land, not against it.',
+    vision_p3: 'In the Reserva de la Montaña, on Vía al Rodadero, the architecture does not impose. It reveals light, breeze and landscape. Each villa was designed to preserve what the place already offers: the open horizon of the Caribbean Sea and the silent presence of the Sierra Nevada de Santa Marta.',
+    vision_p4: 'Here, a horizon that never repeats is preserved.',
+    vision_quote: '"Luxury that is not displayed is breathed."',
+    lugar_eyebrow: 'II · THE PLACE',
+    lugar_title: 'Santa Marta redefines the Caribbean.',
+    lugar_sub: 'Here the Caribbean is breathed with mountain air.',
+    lugar_p1: 'Goshen Hills sits in the Reserva de la Montaña, on Vía al Rodadero, Santa Marta — an elevated hillside on the western flank of the Sierra Nevada, the only mountain range in the world that rises from the beach to 5,700 meters above sea level, declared a UNESCO Biosphere Reserve.',
+    lugar_p2: 'Through the window, the open horizon of the Caribbean Sea in its warmest, quietest form. Behind, one of the densest geographies on the planet. Ten minutes to the beaches of El Rodadero. Twenty to Simón Bolívar International Airport. Forty to Tayrona National Natural Park, one of the best-preserved coastal ecosystems on the continent.',
+    stat_reserva: 'Mountain Reserve',
+    stat_sea: 'above sea level',
+    stat_min: 'min to Rodadero, airport and Tayrona',
+    lugar_map_label: 'Exact location · Vía al Rodadero, Santa Marta',
+    exp_eyebrow: 'III · THE EXPERIENCE',
+    exp_title: 'Interiors in service of the horizon.',
+    exp_p1: 'The villas of Goshen Hills act as blank canvases. The architecture steps back so that natural light, cross-breeze and the sound of the sea take the lead. Floor-to-ceiling windows dissolve the boundary between the interior and the vast Caribbean Sea.',
+    amen_1: 'Private pool with panoramic Caribbean views',
+    amen_2: 'Private terrace or patio from 23 to 74 m²',
+    amen_3: 'Natural cross-ventilation · passive climate control year-round',
+    amen_4: '3 en-suite bedrooms with premium finishes',
+    amen_5: 'Floor-to-ceiling windows in the social area',
+    amen_6: 'Contemporary Mediterranean architecture adapted to the tropics',
+    piscina_caption: 'Private pool. The Caribbean as backdrop.',
+    typo_rear: 'Rear Typology · Houses 01–06',
+    typo_front: 'Front Typology · Houses 07–11',
+    col_eyebrow: 'IV · THE COLLECTION',
+    col_title: 'Eleven villas. Eleven ways to inhabit the Caribbean.',
+    col_sub: 'In each villa, light, breeze and horizon converge to create a unique, exceptional architectural identity.',
+    col_hint: 'Tap each villa to open its world.',
+    gar_eyebrow: 'V · COLLECTION ASSURANCES',
+    gar_title: 'A project with a name, a license and a real address.',
+    gar_sub: 'Goshen Hills is not a blueprint promise. It is a collection with technical, legal and sensory certainty.',
+    gar1_title: 'Certified architecture',
+    gar1_body: 'Raúl Caballería<br>License A144552015-414917<br>Contemporary Mediterranean architecture adapted to the Colombian tropics.',
+    gar2_title: 'Developed by',
+    gar2_body: 'AQUALINDA S.A.S.<br>Santa Marta, Colombia<br>Funds under a regulated trust mechanism.',
+    gar3_title: 'Direct sale',
+    gar3_body: 'No third-party portals.<br>No broker commissions.<br>Dealing directly with the project team.',
+    gar4_title: 'Unrepeatable location',
+    gar4_body: 'UNESCO Biosphere Reserve.<br>Sierra Nevada de Santa Marta.<br>62,900 m² of private hillside on the Colombian Caribbean.',
+    faq_eyebrow: 'FREQUENTLY ASKED QUESTIONS',
+    faq_title: 'What Goshen Hills buyers ask first.',
+    faq_q1: '1. When will it be ready to live in?',
+    faq_a1: 'The delivery timeline varies by villa according to construction progress and purchase phase. The private conversation provides the updated projection for each unit. The Founders Pricing villas are in active development with staggered delivery.',
+    faq_q2: '2. Are the project funds protected?',
+    faq_a2: 'Yes. The collection funds are managed under a regulated trust mechanism, guaranteeing buyer protection throughout the development process. The details of the trust and the project legal documentation are shared in the private conversation.',
+    faq_q3: '3. Can I access a mortgage?',
+    faq_a3: 'Yes. Goshen Hills villas qualify for a mortgage through the main Colombian banks. For buyers abroad there is the option to purchase in foreign currency with direct title transfer. The team guides you on both routes in the private conversation.',
+    faq_q4: '4. Can I rent out the villa when I am not living in it?',
+    faq_a4: 'Goshen Hills is a private residential collection, not a vacation-rental scheme. The owner is entirely free to rent their villa privately and selectively. The project does not manage rentals nor promise investment returns — appreciation is that of the Colombian Caribbean.',
+    faq_q5: '5. What is the difference between the rear and front villas?',
+    faq_a5: 'The rear villas use the lot\'s upward slope with floors P00, P+01 and P+02 (rising toward the light). The front villas use the downward slope with floors P00, P-01 and P-02 (descending toward larger private patios, between 23 and 74 m²).',
+    faq_q6: '6. Who designed the project?',
+    faq_a6: 'Raúl Caballería, a Colombian architect with professional license A144552015-414917. Specialized in contemporary Mediterranean architecture adapted to the tropics and in hillside implantation. His approach: architecture as a frame, not as the protagonist.',
+    faq_q7: '7. Are there villas with a particular sensory identity?',
+    faq_a7: 'Three villas have a unique signature: Villa Luna (House 01) gave rise to the collection\'s logo through its night view; Villa Aurora (House 03) receives the Caribbean sunrise directly in the social space; Villa Ámbar (House 09) offers the finest evening Golden Hour — its name was born from the color the sun leaves over its terrace each evening at 17:42.',
+    faq_q8: '8. How does the conversation begin?',
+    faq_a8: 'By WhatsApp at +57 300 400 0707 or email hola@goshenhills.com.co. The conversation provides real-time availability, the construction timeline and guidance on the villa that best reflects your profile. No obligation, no manufactured urgency.',
+    cierre_eyebrow: '9 OF 11 VILLAS AVAILABLE',
+    cierre_title: 'The conversation begins before the visit.',
+    cierre_text: 'Goshen Hills is not discovered in haste. It is recognized through discernment. The collection is not offered to the whole market — it is offered to those who know the Colombian Caribbean can be lived at a different cadence.',
+    cierre_quote: '"Eleven villas. One hillside. An unrepeatable horizon."',
+    cierre_cta: 'Begin the conversation →',
+    foot_eyebrow: 'VI · CONVERSATION',
+    foot_title: 'The private conversation.',
+    foot_sub: 'The natural step toward choosing a villa.',
+    foot_p1: 'Goshen Hills is not sold openly. It is handled in conversation. Choosing a villa does not begin with a sale — it begins with a reading: who will inhabit the villa, how they wish to live the Caribbean, which atmosphere best matches their way of being.',
+    foot_p2: 'If the collection resonates with you, write to us on WhatsApp or complete your details in the form. We will return the conversation with real-time availability and the villa that best reflects your family profile.',
+    form_name: 'FULL NAME',
+    form_name_ph: 'First and last name',
+    form_wa: 'WHATSAPP (WITH COUNTRY CODE)',
+    form_email: 'EMAIL (optional)',
+    form_villa: 'VILLA OF INTEREST',
+    form_villa_default: 'Select an option',
+    form_villa_undecided: "I haven't decided yet",
+    form_check1: 'I HAVE READ AND ACCEPT THE PRIVACY POLICY.',
+    form_check2: 'MY DATA WILL ONLY BE USED TO RETURN THE CONVERSATION.',
+    form_submit: 'REQUEST PRIVATE CONVERSATION',
+    trust_1: '♥ Regulated trust',
+    trust_2: '🔒 Encrypted data',
+    trust_3: '✓ No marketing',
+    foot_discover: 'Discover',
+    foot_l_vision: 'The Vision', foot_l_lugar: 'The Place', foot_l_coleccion: 'Villa Collection', foot_l_garantias: 'Assurances', foot_l_faq: 'FAQ',
+    foot_contact: 'Contact', foot_project: 'Project', foot_arch: 'Architect: Raúl Caballería',
+    foot_garantias_link: 'Project assurances',
+    foot_rights: '© 2026 Goshen Hills · AQUALINDA S.A.S. · All rights reserved.',
+    legal_terms: 'Terms & Conditions', legal_privacy: 'Privacy Policy',
+    exit_headline: '"Did any villa spark your curiosity?"',
+    exit_sub: 'The conversation is no-obligation and completely private.',
+    exit_cta: 'Ask privately →',
+    mobile_cta: 'Private conversation →',
+    badge_available: 'Available', badge_reserved: 'Reserved',
+    spec_area: 'Total Area', spec_levels: 'Levels', spec_beds: 'Bedrooms', spec_outdoor: 'Outdoor Space',
+    word_beds: 'Bedrooms', resident_profile: 'Resident Profile', modal_cta: 'Request Private Dossier'
+  }
+};
+
+function ghLang() { return document.documentElement.lang === 'en' ? 'en' : 'es'; }
+function t(key) { const l = ghLang(); return (I18N[l] && I18N[l][key] != null) ? I18N[l][key] : (I18N.es[key] != null ? I18N.es[key] : key); }
+function vfield(v, f) { const l = ghLang(); if (l === 'en' && VILLA_EN[v.id] && VILLA_EN[v.id][f] != null) return VILLA_EN[v.id][f]; return v[f]; }
+
+function applyLang(lang, isInitial) {
+  lang = (lang === 'en') ? 'en' : 'es';
+  document.documentElement.lang = (lang === 'en') ? 'en' : 'es-CO';
+  try { localStorage.setItem('gh_lang', lang); } catch (e) {}
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const k = el.getAttribute('data-i18n'); if (I18N[lang][k] != null) el.textContent = I18N[lang][k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const k = el.getAttribute('data-i18n-html'); if (I18N[lang][k] != null) el.innerHTML = I18N[lang][k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const k = el.getAttribute('data-i18n-ph'); if (I18N[lang][k] != null) el.setAttribute('placeholder', I18N[lang][k]);
+  });
+
+  const tg = document.getElementById('lang-toggle');
+  if (tg) { tg.textContent = (lang === 'en') ? 'ES' : 'EN'; tg.setAttribute('aria-label', lang === 'en' ? 'Cambiar a español' : 'Switch to English'); }
+
+  // Re-render the villa grid so cards pick up the language.
+  if (typeof renderGrid === 'function') {
+    renderGrid();
+    if (!isInitial) {
+      document.querySelectorAll('#villas-grid .reveal').forEach(el => el.classList.add('visible'));
+    }
+  }
+}
+
+function initLang() {
+  let lang;
+  try { lang = localStorage.getItem('gh_lang'); } catch (e) {}
+  if (!lang) { lang = (navigator.language || 'es').toLowerCase().indexOf('en') === 0 ? 'en' : 'es'; }
+  applyLang(lang, true);
+  const tg = document.getElementById('lang-toggle');
+  if (tg) tg.addEventListener('click', () => {
+    const next = (ghLang() === 'en') ? 'es' : 'en';
+    applyLang(next, false);
+    trackEvent('language_switch', { lang: next });
+  });
+}
+
+/* -------------------------------------------------------------------------- */
 /* ANALYTICS — wrapper seguro para GA4                                        */
 /* Reemplazar G-XXXXXXXXXX en index.html con el Measurement ID real de GA4    */
 /* -------------------------------------------------------------------------- */
@@ -139,7 +418,7 @@ document.addEventListener('error', (e) => {
 }, true);
 
 document.addEventListener('DOMContentLoaded', () => {
-  renderGrid();
+  initLang();      // detecta idioma + traduce DOM + renderiza el grid
   initReveal();
   initFAQ();
   initForm();
@@ -214,7 +493,7 @@ function renderGrid() {
   grid.innerHTML = VILLAS.map((v, index) => {
     const disponible = v.disponible !== false;
     const badgeClass = disponible ? 'disponible' : 'reservada';
-    const badgeText = disponible ? 'Disponible' : 'Reservada';
+    const badgeText = disponible ? t('badge_available') : t('badge_reserved');
     const cardClass = disponible ? '' : ' reservada-card';
     const clickable = disponible ? `tabindex="0" role="button"` : `tabindex="-1" aria-disabled="true"`;
     const staggerDelay = staggerDelays[index % 3];
@@ -225,9 +504,9 @@ function renderGrid() {
       </div>
       <div class="villa-card-info">
         <span class="villa-badge ${badgeClass}">${badgeText}</span>
-        <span class="eyebrow">${v.casa} · ${v.concepto}</span>
+        <span class="eyebrow">${v.casa} · ${vfield(v, 'concepto')}</span>
         <h3 class="villa-card-title">${v.nombre}</h3>
-        <p class="villa-card-specs">${v.area} m² · ${v.alcobas} Alcobas</p>
+        <p class="villa-card-specs">${v.area} m² · ${v.alcobas} ${t('word_beds')}</p>
       </div>
     </article>
   `;
@@ -274,27 +553,29 @@ function openModalWithTransition(id) {
   const sourceImg = document.getElementById(`img-${id}`);
   const dialog = document.getElementById('villa-overlay');
 
-  document.getElementById('modal-eyebrow').textContent = `${villa.casa} · ${villa.concepto}`;
+  document.getElementById('modal-eyebrow').textContent = `${villa.casa} · ${vfield(villa, 'concepto')}`;
   document.getElementById('modal-title').textContent = villa.nombre;
-  document.getElementById('modal-tagline').textContent = villa.tagline;
+  document.getElementById('modal-tagline').textContent = vfield(villa, 'tagline');
 
   document.getElementById('modal-desc').innerHTML = `
-    <div class="desc-text">${villa.descripcion}</div>
+    <div class="desc-text">${vfield(villa, 'descripcion')}</div>
     <div class="para-quienes">
-      <strong class="text-cedar font-italic" style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;">Perfil de habitante</strong>
-      <p class="text-midnight-60">${villa.para_quienes}</p>
+      <strong class="text-cedar font-italic" style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;">${t('resident_profile')}</strong>
+      <p class="text-midnight-60">${vfield(villa, 'para_quienes')}</p>
     </div>
   `;
 
   document.getElementById('modal-specs').innerHTML = `
-    <div class="spec-item"><span class="spec-label">Área Total</span><span class="spec-val">${villa.area} m²</span></div>
-    <div class="spec-item"><span class="spec-label">Niveles</span><span class="spec-val">${villa.niveles}</span></div>
-    <div class="spec-item"><span class="spec-label">Alcobas</span><span class="spec-val">${villa.alcobas}</span></div>
-    <div class="spec-item"><span class="spec-label">Espacio Exterior</span><span class="spec-val">${villa.extra || 'Patio/Terraza'}</span></div>
+    <div class="spec-item"><span class="spec-label">${t('spec_area')}</span><span class="spec-val">${villa.area} m²</span></div>
+    <div class="spec-item"><span class="spec-label">${t('spec_levels')}</span><span class="spec-val">${villa.niveles}</span></div>
+    <div class="spec-item"><span class="spec-label">${t('spec_beds')}</span><span class="spec-val">${villa.alcobas}</span></div>
+    <div class="spec-item"><span class="spec-label">${t('spec_outdoor')}</span><span class="spec-val">${vfield(villa, 'extra') || 'Patio/Terraza'}</span></div>
   `;
 
   const ctaBtn = document.getElementById('modal-cta-btn');
-  const villaMsg = `Hola, estuve revisando la ${villa.nombre} en la web de Goshen Hills. Me gustaría recibir el dossier privado y conocer la disponibilidad actual.`;
+  const villaMsg = ghLang() === 'en'
+    ? `Hello, I was looking at ${villa.nombre} on the Goshen Hills website. I'd like to receive the private dossier and learn the current availability.`
+    : `Hola, estuve revisando la ${villa.nombre} en la web de Goshen Hills. Me gustaría recibir el dossier privado y conocer la disponibilidad actual.`;
   ctaBtn.href = `https://wa.me/573004000707?text=${encodeURIComponent(villaMsg)}`;
   ctaBtn.setAttribute('rel', 'noopener noreferrer');
   ctaBtn.setAttribute('target', '_blank');
@@ -373,34 +654,43 @@ function initForm() {
     const btn = form.querySelector('.form-btn');
     const msg = document.getElementById('form-msg');
 
+    const en = ghLang() === 'en';
+
     if (!nombre || !wa || !villa) {
-      msg.textContent = 'Por favor complete todos los campos antes de continuar.';
+      msg.textContent = en ? 'Please complete all fields before continuing.' : 'Por favor complete todos los campos antes de continuar.';
       return;
     }
     if (!privacidad || !datos) {
-      msg.textContent = 'Por favor acepte ambas condiciones para continuar.';
+      msg.textContent = en ? 'Please accept both conditions to continue.' : 'Por favor acepte ambas condiciones para continuar.';
       return;
     }
 
-    btn.textContent = 'Procesando...';
+    btn.textContent = en ? 'Processing...' : 'Procesando...';
     btn.disabled = true;
     msg.textContent = '';
 
     trackEvent('form_submit', { villa_interest: villa });
     sessionStorage.setItem('gh_converted', '1');
 
-    const villaTexto = villa === 'Sin decidir aún' ? 'conocer la colección Goshen Hills' : `la ${villa}`;
-    const emailTexto = email ? ` Mi correo: ${email}.` : '';
-    const texto = `Hola, soy ${nombre} (WA: ${wa}).${emailTexto} Acabo de solicitar información sobre ${villaTexto} desde la web. Quedo atento a su respuesta.`;
+    let texto;
+    if (en) {
+      const villaTxt = villa === 'Sin decidir aún' ? 'the Goshen Hills collection' : villa;
+      const emailTxt = email ? ` My email: ${email}.` : '';
+      texto = `Hello, I'm ${nombre} (WA: ${wa}).${emailTxt} I've just requested information about ${villaTxt} from the website. I look forward to your reply.`;
+    } else {
+      const villaTxt = villa === 'Sin decidir aún' ? 'conocer la colección Goshen Hills' : `la ${villa}`;
+      const emailTxt = email ? ` Mi correo: ${email}.` : '';
+      texto = `Hola, soy ${nombre} (WA: ${wa}).${emailTxt} Acabo de solicitar información sobre ${villaTxt} desde la web. Quedo atento a su respuesta.`;
+    }
     const waUrl = `https://wa.me/573004000707?text=${encodeURIComponent(texto)}`;
 
     setTimeout(() => {
-      msg.textContent = `Gracias, ${nombre}. Le abriremos WhatsApp para continuar la conversación.`;
+      msg.textContent = en ? `Thank you, ${nombre}. We'll open WhatsApp to continue the conversation.` : `Gracias, ${nombre}. Le abriremos WhatsApp para continuar la conversación.`;
       setTimeout(() => {
         window.open(waUrl, '_blank', 'noopener,noreferrer');
         form.reset();
         btn.disabled = false;
-        btn.textContent = 'SOLICITAR CONVERSACIÓN PRIVADA';
+        btn.textContent = t('form_submit');
         msg.textContent = '';
       }, 1400);
     }, 700);

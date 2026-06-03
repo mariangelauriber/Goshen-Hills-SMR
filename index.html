@@ -196,7 +196,10 @@
   <header class="navbar">
     <div class="container nav-container">
       <a href="#" class="logo" aria-label="Goshen Hills">GOSHEN HILLS</a>
-      <a href="#contacto" class="btn-nav">Conversación Privada</a>
+      <div class="nav-actions">
+        <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch to English">EN</button>
+        <a href="#contacto" class="btn-nav" data-i18n="nav_cta">Conversación Privada</a>
+      </div>
     </div>
   </header>
 
@@ -204,14 +207,14 @@
     <!-- 2. HERO SECTION -->
     <section class="hero" id="hero">
       <div class="hero-bg" style="background-image: url('./assets/images/pool-night.webp');"></div>
-      <div class="hero-top-eyebrow reveal">9 DE 11 VILLAS DISPONIBLES · PRECIO FOUNDERS — ANTES DEL AJUSTE DE OBRA</div>
+      <div class="hero-top-eyebrow reveal" data-i18n="hero_eyebrow_top">9 DE 11 VILLAS DISPONIBLES · PRECIO FOUNDERS — ANTES DEL AJUSTE DE OBRA</div>
       <div class="hero-content">
-        <span class="eyebrow reveal text-moonlight hero-coleccion-eyebrow">COLECCIÓN PRIVADA · ONCE VILLAS</span>
-        <h1 class="hero-title reveal delay-1">Donde el cielo abraza el mar.</h1>
-        <p class="hero-subtitle reveal delay-2">Vía al Rodadero · Santa Marta · Caribe colombiano</p>
+        <span class="eyebrow reveal text-moonlight hero-coleccion-eyebrow" data-i18n="hero_coleccion">COLECCIÓN PRIVADA · ONCE VILLAS</span>
+        <h1 class="hero-title reveal delay-1" data-i18n="hero_title">Donde el cielo abraza el mar.</h1>
+        <p class="hero-subtitle reveal delay-2" data-i18n="hero_subtitle">Vía al Rodadero · Santa Marta · Caribe colombiano</p>
         <div class="hero-actions reveal delay-3">
-          <a href="https://wa.me/573004000707?text=Hola%2C%20me%20interesa%20conocer%20Goshen%20Hills." target="_blank" rel="noopener noreferrer" class="btn-primary cta-whatsapp" data-cta="hero">Iniciar conversación privada</a>
-          <a href="#vision" class="btn-secondary font-italic">Conocer la colección ↓</a>
+          <a href="https://wa.me/573004000707?text=Hola%2C%20me%20interesa%20conocer%20Goshen%20Hills." target="_blank" rel="noopener noreferrer" class="btn-primary cta-whatsapp" data-cta="hero" data-i18n="hero_cta1">Iniciar conversación privada</a>
+          <a href="#vision" class="btn-secondary font-italic" data-i18n="hero_cta2">Conocer la colección ↓</a>
         </div>
       </div>
     </section>
@@ -219,22 +222,22 @@
     <!-- 3. THE VISION -->
     <section class="vision" id="vision">
       <div class="container vision-container text-center">
-        <span class="eyebrow reveal text-cedar">I · APERTURA</span>
-        <h2 class="vision-title reveal delay-1" style="max-width: 900px; margin: 0 auto 2rem;">Goshen Hills no fue concebido para competir con el mercado.<br><span class="text-cedar font-italic">Fue concebido para distinguirse de él.</span></h2>
-        
+        <span class="eyebrow reveal text-cedar" data-i18n="vision_eyebrow">I · APERTURA</span>
+        <h2 class="vision-title reveal delay-1" style="max-width: 900px; margin: 0 auto 2rem;" data-i18n-html="vision_title">Goshen Hills no fue concebido para competir con el mercado.<br><span class="text-cedar font-italic">Fue concebido para distinguirse de él.</span></h2>
+
         <div class="vision-text-grid reveal delay-2">
           <div class="vision-col">
-            <p>El Caribe colombiano se ha llenado de torres que crecen en altura, condominios que crecen en número, ofertas que crecen en urgencia.</p>
-            <p style="margin-top: 1.5rem;">Goshen Hills nace de una decisión opuesta: once villas privadas dispuestas con respeto al terreno, no contra él.</p>
+            <p data-i18n="vision_p1">El Caribe colombiano se ha llenado de torres que crecen en altura, condominios que crecen en número, ofertas que crecen en urgencia.</p>
+            <p style="margin-top: 1.5rem;" data-i18n="vision_p2">Goshen Hills nace de una decisión opuesta: once villas privadas dispuestas con respeto al terreno, no contra él.</p>
           </div>
           <div class="vision-col">
-            <p>En la Reserva de la Montaña, sobre Vía al Rodadero, la arquitectura no impone. Revela luz, brisa y paisaje. Cada villa fue diseñada para preservar lo que el lugar ya ofrece: el horizonte abierto del mar Caribe y la presencia silenciosa de la Sierra Nevada de Santa Marta.</p>
-            <p style="margin-top: 1.5rem; font-style: italic; color: var(--cedar-bronze);">Aquí, se conserva un horizonte que no se repite.</p>
+            <p data-i18n="vision_p3">En la Reserva de la Montaña, sobre Vía al Rodadero, la arquitectura no impone. Revela luz, brisa y paisaje. Cada villa fue diseñada para preservar lo que el lugar ya ofrece: el horizonte abierto del mar Caribe y la presencia silenciosa de la Sierra Nevada de Santa Marta.</p>
+            <p style="margin-top: 1.5rem; font-style: italic; color: var(--cedar-bronze);" data-i18n="vision_p4">Aquí, se conserva un horizonte que no se repite.</p>
           </div>
         </div>
 
         <div class="vision-quote reveal delay-3" style="margin-top: 4rem;">
-          <h3 class="font-italic text-cedar" style="font-size: clamp(24px, 4vw, 36px);">"El lujo que no se exhibe, se respira."</h3>
+          <h3 class="font-italic text-cedar" style="font-size: clamp(24px, 4vw, 36px);" data-i18n="vision_quote">"El lujo que no se exhibe, se respira."</h3>
         </div>
       </div>
     </section>
@@ -244,27 +247,27 @@
       <div class="container">
         <div class="grid-2-cols">
           <div class="lugar-content reveal">
-            <span class="eyebrow text-cedar">II · EL LUGAR</span>
-            <h2>Santa Marta redefine el Caribe.</h2>
-            <h3 class="font-italic text-cedar mb-4">Aquí el Caribe se respira con aire de montaña.</h3>
-            <p>
+            <span class="eyebrow text-cedar" data-i18n="lugar_eyebrow">II · EL LUGAR</span>
+            <h2 data-i18n="lugar_title">Santa Marta redefine el Caribe.</h2>
+            <h3 class="font-italic text-cedar mb-4" data-i18n="lugar_sub">Aquí el Caribe se respira con aire de montaña.</h3>
+            <p data-i18n="lugar_p1">
               Goshen Hills se ubica en la Reserva de la Montaña, sobre Vía al Rodadero, Santa Marta. Una ladera elevada en el flanco occidental de la Sierra Nevada — la única cordillera del mundo que nace en la playa y alcanza los 5.700 metros sobre el nivel del mar, declarada Reserva de la Biósfera por la UNESCO.
             </p>
-            <p class="mt-2">
+            <p class="mt-2" data-i18n="lugar_p2">
               Por la ventana, el horizonte abierto del mar Caribe, en su versión más cálida y silenciosa. A la espalda, una de las geografías más densas del planeta. A diez minutos, las playas del Rodadero. A veinte, el Aeropuerto Internacional Simón Bolívar. A cuarenta, el Parque Nacional Natural Tayrona, uno de los ecosistemas costeros mejor preservados del continente.
             </p>
             <div class="stats-grid mt-4">
               <div class="stat-item text-center">
                 <span class="stat-number text-cedar d-block" style="font-size: 2rem; font-family: 'Cormorant Garamond', serif;">62.900 m²</span>
-                <span class="stat-label" style="font-size: 0.85rem;">Reserva de la Montaña</span>
+                <span class="stat-label" style="font-size: 0.85rem;" data-i18n="stat_reserva">Reserva de la Montaña</span>
               </div>
               <div class="stat-item text-center">
                 <span class="stat-number text-cedar d-block" style="font-size: 2rem; font-family: 'Cormorant Garamond', serif;">+45 m</span>
-                <span class="stat-label" style="font-size: 0.85rem;">sobre el nivel del mar</span>
+                <span class="stat-label" style="font-size: 0.85rem;" data-i18n="stat_sea">sobre el nivel del mar</span>
               </div>
               <div class="stat-item text-center">
                 <span class="stat-number text-cedar d-block" style="font-size: 2rem; font-family: 'Cormorant Garamond', serif;">10 / 20 / 40</span>
-                <span class="stat-label" style="font-size: 0.85rem;">min al Rodadero, aeropuerto y Tayrona</span>
+                <span class="stat-label" style="font-size: 0.85rem;" data-i18n="stat_min">min al Rodadero, aeropuerto y Tayrona</span>
               </div>
             </div>
           </div>
@@ -275,7 +278,7 @@
         </div>
         <!-- Mapa de ubicación -->
         <div class="lugar-map reveal" style="margin-top: 4rem;">
-          <p class="eyebrow text-cedar" style="margin-bottom: 1.5rem;">Ubicación exacta · Vía al Rodadero, Santa Marta</p>
+          <p class="eyebrow text-cedar" style="margin-bottom: 1.5rem;" data-i18n="lugar_map_label">Ubicación exacta · Vía al Rodadero, Santa Marta</p>
           <iframe
             src="https://maps.google.com/maps?q=11.2167,-74.2072&z=15&output=embed"
             width="100%" height="400" frameborder="0" style="border:0; display:block; border-radius:2px;"
@@ -295,20 +298,20 @@
               class="img-fluid drop-shadow" loading="lazy">
           </div>
           <div class="experiencia-content reveal delay-1">
-            <span class="eyebrow text-cedar">III · LA EXPERIENCIA</span>
-            <h2>Interiorismo al servicio del horizonte.</h2>
-            <p>
+            <span class="eyebrow text-cedar" data-i18n="exp_eyebrow">III · LA EXPERIENCIA</span>
+            <h2 data-i18n="exp_title">Interiorismo al servicio del horizonte.</h2>
+            <p data-i18n="exp_p1">
               Las villas de Goshen Hills operan como lienzos en blanco. La arquitectura desaparece para que la luz
               natural, la brisa cruzada y el sonido del mar asuman el protagonismo.
               Grandes ventanales de piso a techo que diluyen la frontera entre el interior y el vasto mar Caribe.
             </p>
             <ul class="amenities-list mt-4">
-              <li>Piscina privada con vista panorámica al Caribe</li>
-              <li>Terraza o patio privado de 23 a 74 m²</li>
-              <li>Ventilación cruzada natural · climatización pasiva todo el año</li>
-              <li>3 alcobas en suite con acabados de primera línea</li>
-              <li>Ventanales de piso a techo en zona social</li>
-              <li>Arquitectura mediterránea contemporánea adaptada al trópico</li>
+              <li data-i18n="amen_1">Piscina privada con vista panorámica al Caribe</li>
+              <li data-i18n="amen_2">Terraza o patio privado de 23 a 74 m²</li>
+              <li data-i18n="amen_3">Ventilación cruzada natural · climatización pasiva todo el año</li>
+              <li data-i18n="amen_4">3 alcobas en suite con acabados de primera línea</li>
+              <li data-i18n="amen_5">Ventanales de piso a techo en zona social</li>
+              <li data-i18n="amen_6">Arquitectura mediterránea contemporánea adaptada al trópico</li>
             </ul>
           </div>
         </div>
@@ -316,7 +319,7 @@
         <div class="piscina-row reveal">
           <img src="./assets/images/piscina.webp" alt="Piscina privada Goshen Hills con vista al mar Caribe"
             class="piscina-img" loading="lazy">
-          <p class="piscina-caption text-center font-italic text-cedar">Piscina privada. El Caribe como fondo.</p>
+          <p class="piscina-caption text-center font-italic text-cedar" data-i18n="piscina_caption">Piscina privada. El Caribe como fondo.</p>
         </div>
         <!-- Tipologías -->
         <div class="tipologias-row reveal">
@@ -324,12 +327,12 @@
             <div>
               <img src="./assets/images/typology-rear.webp" alt="Tipología posterior Goshen Hills — Casas 01 a 06"
                 class="img-fluid drop-shadow" loading="lazy">
-              <p class="text-center mt-2 text-midnight-60" style="font-size: 0.85rem; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.1em;">Tipología Posterior · Casas 01–06</p>
+              <p class="text-center mt-2 text-midnight-60" style="font-size: 0.85rem; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.1em;" data-i18n="typo_rear">Tipología Posterior · Casas 01–06</p>
             </div>
             <div>
               <img src="./assets/images/typology-front.webp" alt="Tipología frontal Goshen Hills — Casas 07 a 11"
                 class="img-fluid drop-shadow" loading="lazy">
-              <p class="text-center mt-2 text-midnight-60" style="font-size: 0.85rem; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.1em;">Tipología Frontal · Casas 07–11</p>
+              <p class="text-center mt-2 text-midnight-60" style="font-size: 0.85rem; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.1em;" data-i18n="typo_front">Tipología Frontal · Casas 07–11</p>
             </div>
           </div>
         </div>
@@ -340,10 +343,10 @@
     <section class="coleccion bg-light" id="coleccion">
       <div class="container">
         <div class="coleccion-header reveal text-center">
-          <span class="eyebrow text-cedar">IV · LA COLECCIÓN</span>
-          <h2 class="coleccion-title">Once villas. Once formas de habitar el Caribe.</h2>
-          <p class="mt-2 text-midnight" style="font-size: 1.1rem;">En cada villa, la luz, la brisa y el horizonte convergen para crear una identidad arquitectónica única y excepcional.</p>
-          <p class="mt-2 text-midnight-60 font-italic" style="font-size: 0.9rem;">Toque cada villa para abrir su mundo.</p>
+          <span class="eyebrow text-cedar" data-i18n="col_eyebrow">IV · LA COLECCIÓN</span>
+          <h2 class="coleccion-title" data-i18n="col_title">Once villas. Once formas de habitar el Caribe.</h2>
+          <p class="mt-2 text-midnight" style="font-size: 1.1rem;" data-i18n="col_sub">En cada villa, la luz, la brisa y el horizonte convergen para crear una identidad arquitectónica única y excepcional.</p>
+          <p class="mt-2 text-midnight-60 font-italic" style="font-size: 0.9rem;" data-i18n="col_hint">Toque cada villa para abrir su mundo.</p>
         </div>
 
         <!-- Contenedor dinámico -->
@@ -357,30 +360,30 @@
     <section class="garantias bg-moonlight" id="garantias">
       <div class="container">
         <div class="garantias-header text-center reveal">
-          <span class="eyebrow text-cedar">V · GARANTÍAS DE LA COLECCIÓN</span>
-          <h2 class="text-midnight">Un proyecto con nombre, matrícula y dirección real.</h2>
-          <p class="text-midnight-60" style="margin: 0 auto; max-width: 55ch;">Goshen Hills no es una promesa de plano. Es una colección con certeza técnica, legal y sensorial.</p>
+          <span class="eyebrow text-cedar" data-i18n="gar_eyebrow">V · GARANTÍAS DE LA COLECCIÓN</span>
+          <h2 class="text-midnight" data-i18n="gar_title">Un proyecto con nombre, matrícula y dirección real.</h2>
+          <p class="text-midnight-60" style="margin: 0 auto; max-width: 55ch;" data-i18n="gar_sub">Goshen Hills no es una promesa de plano. Es una colección con certeza técnica, legal y sensorial.</p>
         </div>
         <div class="garantias-grid reveal delay-1">
           <div class="garantia-item">
             <div class="garantia-icon">◉</div>
-            <h4 class="garantia-title">Arquitectura certificada</h4>
-            <p>Raúl Caballería<br>Mat. A144552015-414917<br>Arquitectura mediterránea contemporánea adaptada al trópico colombiano.</p>
+            <h4 class="garantia-title" data-i18n="gar1_title">Arquitectura certificada</h4>
+            <p data-i18n-html="gar1_body">Raúl Caballería<br>Mat. A144552015-414917<br>Arquitectura mediterránea contemporánea adaptada al trópico colombiano.</p>
           </div>
           <div class="garantia-item">
             <div class="garantia-icon">◉</div>
-            <h4 class="garantia-title">Desarrollado por</h4>
-            <p>AQUALINDA S.A.S.<br>Santa Marta, Colombia<br>Recursos bajo mecanismo de fiducia regulada.</p>
+            <h4 class="garantia-title" data-i18n="gar2_title">Desarrollado por</h4>
+            <p data-i18n-html="gar2_body">AQUALINDA S.A.S.<br>Santa Marta, Colombia<br>Recursos bajo mecanismo de fiducia regulada.</p>
           </div>
           <div class="garantia-item">
             <div class="garantia-icon">◉</div>
-            <h4 class="garantia-title">Venta directa</h4>
-            <p>Sin portales de terceros.<br>Sin comisiones de intermediario.<br>Gestión directa con el equipo del proyecto.</p>
+            <h4 class="garantia-title" data-i18n="gar3_title">Venta directa</h4>
+            <p data-i18n-html="gar3_body">Sin portales de terceros.<br>Sin comisiones de intermediario.<br>Gestión directa con el equipo del proyecto.</p>
           </div>
           <div class="garantia-item">
             <div class="garantia-icon">◉</div>
-            <h4 class="garantia-title">Ubicación irrepetible</h4>
-            <p>Reserva de la Biósfera UNESCO.<br>Sierra Nevada de Santa Marta.<br>62.900 m² de ladera privada en el Caribe colombiano.</p>
+            <h4 class="garantia-title" data-i18n="gar4_title">Ubicación irrepetible</h4>
+            <p data-i18n-html="gar4_body">Reserva de la Biósfera UNESCO.<br>Sierra Nevada de Santa Marta.<br>62.900 m² de ladera privada en el Caribe colombiano.</p>
           </div>
         </div>
         <!-- Accesos fotográficos -->
@@ -397,49 +400,49 @@
     <section class="faq" id="faq">
       <div class="container faq-container">
         <div class="faq-header text-center reveal">
-          <span class="eyebrow text-cedar">PREGUNTAS FRECUENTES</span>
-          <h2>Lo que los compradores de Goshen Hills preguntan primero.</h2>
+          <span class="eyebrow text-cedar" data-i18n="faq_eyebrow">PREGUNTAS FRECUENTES</span>
+          <h2 data-i18n="faq_title">Lo que los compradores de Goshen Hills preguntan primero.</h2>
         </div>
         <div class="faq-list reveal delay-1 mt-4">
 
           <div class="faq-item">
-            <div class="faq-question"><h4>1. ¿Cuándo estará disponible para habitar?</h4><span class="faq-icon">+</span></div>
-            <div class="faq-answer"><p>El cronograma de entrega varía por villa según el avance de obra y la fase de compra. La conversación privada entrega la proyección actualizada de cada unidad. Las villas en Precio Founders están en proceso activo de desarrollo con entrega escalonada.</p></div>
+            <div class="faq-question"><h4 data-i18n="faq_q1">1. ¿Cuándo estará disponible para habitar?</h4><span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p data-i18n="faq_a1">El cronograma de entrega varía por villa según el avance de obra y la fase de compra. La conversación privada entrega la proyección actualizada de cada unidad. Las villas en Precio Founders están en proceso activo de desarrollo con entrega escalonada.</p></div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-question"><h4>2. ¿Los recursos del proyecto están protegidos?</h4><span class="faq-icon">+</span></div>
-            <div class="faq-answer"><p>Sí. Los recursos de la colección se gestionan bajo mecanismo de fiducia regulada, garantizando protección al comprador durante todo el proceso de desarrollo. Los detalles del fideicomiso y la documentación legal del proyecto se entregan en la conversación privada.</p></div>
+            <div class="faq-question"><h4 data-i18n="faq_q2">2. ¿Los recursos del proyecto están protegidos?</h4><span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p data-i18n="faq_a2">Sí. Los recursos de la colección se gestionan bajo mecanismo de fiducia regulada, garantizando protección al comprador durante todo el proceso de desarrollo. Los detalles del fideicomiso y la documentación legal del proyecto se entregan en la conversación privada.</p></div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-question"><h4>3. ¿Puedo acceder a crédito hipotecario?</h4><span class="faq-icon">+</span></div>
-            <div class="faq-answer"><p>Sí. Las villas de Goshen Hills califican para crédito hipotecario a través de las principales entidades bancarias colombianas. Para compradores en el exterior existe la opción de adquisición en moneda extranjera con escrituración directa. El equipo orienta sobre ambas rutas en la conversación privada.</p></div>
+            <div class="faq-question"><h4 data-i18n="faq_q3">3. ¿Puedo acceder a crédito hipotecario?</h4><span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p data-i18n="faq_a3">Sí. Las villas de Goshen Hills califican para crédito hipotecario a través de las principales entidades bancarias colombianas. Para compradores en el exterior existe la opción de adquisición en moneda extranjera con escrituración directa. El equipo orienta sobre ambas rutas en la conversación privada.</p></div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-question"><h4>4. ¿Puedo arrendar la villa cuando no la habito?</h4><span class="faq-icon">+</span></div>
-            <div class="faq-answer"><p>Goshen Hills es una colección residencial privada, no un esquema de renta vacacional. El propietario tiene plena libertad de arrendar su villa de manera privada y selectiva. El proyecto no gestiona arriendos ni ofrece retornos de inversión prometidos — la valorización es la del Caribe colombiano.</p></div>
+            <div class="faq-question"><h4 data-i18n="faq_q4">4. ¿Puedo arrendar la villa cuando no la habito?</h4><span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p data-i18n="faq_a4">Goshen Hills es una colección residencial privada, no un esquema de renta vacacional. El propietario tiene plena libertad de arrendar su villa de manera privada y selectiva. El proyecto no gestiona arriendos ni ofrece retornos de inversión prometidos — la valorización es la del Caribe colombiano.</p></div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-question"><h4>5. ¿Cuál es la diferencia entre las villas posteriores y las frontales?</h4><span class="faq-icon">+</span></div>
-            <div class="faq-answer"><p>Las posteriores aprovechan la pendiente ascendente del lote con plantas P00, P+01 y P+02 (suben hacia la luz). Las frontales aprovechan la pendiente descendente con plantas P00, P-01 y P-02 (descienden hacia patios privados más amplios, entre 23 y 74 m²).</p></div>
+            <div class="faq-question"><h4 data-i18n="faq_q5">5. ¿Cuál es la diferencia entre las villas posteriores y las frontales?</h4><span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p data-i18n="faq_a5">Las posteriores aprovechan la pendiente ascendente del lote con plantas P00, P+01 y P+02 (suben hacia la luz). Las frontales aprovechan la pendiente descendente con plantas P00, P-01 y P-02 (descienden hacia patios privados más amplios, entre 23 y 74 m²).</p></div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-question"><h4>6. ¿Quién diseñó el proyecto?</h4><span class="faq-icon">+</span></div>
-            <div class="faq-answer"><p>Raúl Caballería, arquitecto colombiano con matrícula profesional A144552015-414917. Especializado en arquitectura mediterránea contemporánea adaptada al trópico y en implantación en ladera. Su enfoque: la arquitectura como marco, no como protagonista.</p></div>
+            <div class="faq-question"><h4 data-i18n="faq_q6">6. ¿Quién diseñó el proyecto?</h4><span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p data-i18n="faq_a6">Raúl Caballería, arquitecto colombiano con matrícula profesional A144552015-414917. Especializado en arquitectura mediterránea contemporánea adaptada al trópico y en implantación en ladera. Su enfoque: la arquitectura como marco, no como protagonista.</p></div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-question"><h4>7. ¿Hay villas con identidad sensorial particular?</h4><span class="faq-icon">+</span></div>
-            <div class="faq-answer"><p>Tres villas tienen una huella única: Villa Luna (Casa 01) dio origen al logo de la colección por su vista nocturna; Villa Aurora (Casa 03) recibe el amanecer caribeño directamente en el espacio social; Villa Ámbar (Casa 09) ofrece la mejor Golden Hour vespertina — su nombre nació del color que el sol deja sobre su terraza cada tarde a las 17:42.</p></div>
+            <div class="faq-question"><h4 data-i18n="faq_q7">7. ¿Hay villas con identidad sensorial particular?</h4><span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p data-i18n="faq_a7">Tres villas tienen una huella única: Villa Luna (Casa 01) dio origen al logo de la colección por su vista nocturna; Villa Aurora (Casa 03) recibe el amanecer caribeño directamente en el espacio social; Villa Ámbar (Casa 09) ofrece la mejor Golden Hour vespertina — su nombre nació del color que el sol deja sobre su terraza cada tarde a las 17:42.</p></div>
           </div>
 
           <div class="faq-item">
-            <div class="faq-question"><h4>8. ¿Cómo se inicia la conversación?</h4><span class="faq-icon">+</span></div>
-            <div class="faq-answer"><p>Por WhatsApp al +57 300 400 0707 o correo hola@goshenhills.com.co. La conversación entrega disponibilidad real del momento, cronograma de obra y orientación sobre la villa que mejor refleja su perfil. Sin compromiso, sin urgencia fabricada.</p></div>
+            <div class="faq-question"><h4 data-i18n="faq_q8">8. ¿Cómo se inicia la conversación?</h4><span class="faq-icon">+</span></div>
+            <div class="faq-answer"><p data-i18n="faq_a8">Por WhatsApp al +57 300 400 0707 o correo hola@goshenhills.com.co. La conversación entrega disponibilidad real del momento, cronograma de obra y orientación sobre la villa que mejor refleja su perfil. Sin compromiso, sin urgencia fabricada.</p></div>
           </div>
 
         </div>
@@ -449,11 +452,11 @@
     <!-- 9. CIERRE MINIMALISTA -->
     <section class="cierre text-center" style="padding: 8rem 0; background-color: var(--moonlight);">
       <div class="container reveal" style="max-width: 800px;">
-        <p class="eyebrow text-cedar" style="margin-bottom: 2rem;">9 DE 11 VILLAS DISPONIBLES</p>
-        <h2 class="cierre-title text-midnight" style="margin-bottom: 2rem;">La conversación comienza antes que la visita.</h2>
-        <p class="cierre-text text-midnight-60" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 3rem;">Goshen Hills no se descubre con prisa. Se reconoce con discernimiento. La colección no se ofrece a todo el mercado — se ofrece a quienes saben que el Caribe colombiano puede vivirse con otra cadencia.</p>
-        <h3 class="cierre-quote font-italic text-cedar" style="font-size: clamp(24px, 3vw, 36px); margin-bottom: 3rem;">"Once villas. Una ladera. Un horizonte irrepetible."</h3>
-        <a href="https://wa.me/573004000707" target="_blank" rel="noopener noreferrer" class="btn-primary cta-whatsapp" data-cta="cierre" style="padding: 1rem 3rem; font-size: 1.2rem;">Iniciar la conversación →</a>
+        <p class="eyebrow text-cedar" style="margin-bottom: 2rem;" data-i18n="cierre_eyebrow">9 DE 11 VILLAS DISPONIBLES</p>
+        <h2 class="cierre-title text-midnight" style="margin-bottom: 2rem;" data-i18n="cierre_title">La conversación comienza antes que la visita.</h2>
+        <p class="cierre-text text-midnight-60" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 3rem;" data-i18n="cierre_text">Goshen Hills no se descubre con prisa. Se reconoce con discernimiento. La colección no se ofrece a todo el mercado — se ofrece a quienes saben que el Caribe colombiano puede vivirse con otra cadencia.</p>
+        <h3 class="cierre-quote font-italic text-cedar" style="font-size: clamp(24px, 3vw, 36px); margin-bottom: 3rem;" data-i18n="cierre_quote">"Once villas. Una ladera. Un horizonte irrepetible."</h3>
+        <a href="https://wa.me/573004000707" target="_blank" rel="noopener noreferrer" class="btn-primary cta-whatsapp" data-cta="cierre" style="padding: 1rem 3rem; font-size: 1.2rem;" data-i18n="cierre_cta">Iniciar la conversación →</a>
       </div>
     </section>
 
@@ -465,30 +468,30 @@
     <div class="footer-lead-section bg-midnight">
       <div class="container footer-container">
         <div class="footer-copy reveal">
-          <span class="eyebrow text-cedar">VI · CONVERSACIÓN</span>
-          <h2 class="text-moonlight">La conversación privada.</h2>
-          <h3 class="font-italic text-cedar mb-4">El paso natural hacia la elección de una villa.</h3>
-          <p class="text-moonlight" style="opacity: 0.8; margin-bottom: 1rem;">Goshen Hills no se vende abiertamente. Se gestiona en conversación. La elección de una villa no comienza con una venta — comienza con una lectura: quién habitará la villa, cómo desea vivir el Caribe, qué atmósfera corresponde mejor a su modo de ser.</p>
-          <p class="text-moonlight" style="opacity: 0.8;">Si la colección le resuena, escríbanos por WhatsApp o complete sus detalles en el formulario. Le devolveremos la conversación con la disponibilidad real del momento y la villa que mejor refleja su perfil familiar.</p>
+          <span class="eyebrow text-cedar" data-i18n="foot_eyebrow">VI · CONVERSACIÓN</span>
+          <h2 class="text-moonlight" data-i18n="foot_title">La conversación privada.</h2>
+          <h3 class="font-italic text-cedar mb-4" data-i18n="foot_sub">El paso natural hacia la elección de una villa.</h3>
+          <p class="text-moonlight" style="opacity: 0.8; margin-bottom: 1rem;" data-i18n="foot_p1">Goshen Hills no se vende abiertamente. Se gestiona en conversación. La elección de una villa no comienza con una venta — comienza con una lectura: quién habitará la villa, cómo desea vivir el Caribe, qué atmósfera corresponde mejor a su modo de ser.</p>
+          <p class="text-moonlight" style="opacity: 0.8;" data-i18n="foot_p2">Si la colección le resuena, escríbanos por WhatsApp o complete sus detalles en el formulario. Le devolveremos la conversación con la disponibilidad real del momento y la villa que mejor refleja su perfil familiar.</p>
         </div>
         <div class="footer-form-wrapper reveal delay-1">
           <form id="lead-form" class="contact-form" novalidate>
             <div class="form-group">
-              <label class="form-label" for="nombre">NOMBRE COMPLETO</label>
-              <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Nombre y apellido" required>
+              <label class="form-label" for="nombre" data-i18n="form_name">NOMBRE COMPLETO</label>
+              <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Nombre y apellido" data-i18n-ph="form_name_ph" required>
             </div>
             <div class="form-group">
-              <label class="form-label" for="whatsapp">WHATSAPP (CON CÓDIGO DE PAÍS)</label>
+              <label class="form-label" for="whatsapp" data-i18n="form_wa">WHATSAPP (CON CÓDIGO DE PAÍS)</label>
               <input type="tel" id="whatsapp" name="whatsapp" class="form-input" placeholder="+57 300 000 0000" required>
             </div>
             <div class="form-group">
-              <label class="form-label" for="email">CORREO ELECTRÓNICO <span style="opacity:0.5; font-size:0.9em;">(opcional)</span></label>
+              <label class="form-label" for="email" data-i18n="form_email">CORREO ELECTRÓNICO (opcional)</label>
               <input type="email" id="email" name="email" class="form-input" placeholder="correo@ejemplo.com">
             </div>
             <div class="form-group">
-              <label class="form-label" for="villa-interes">VILLA DE INTERÉS</label>
+              <label class="form-label" for="villa-interes" data-i18n="form_villa">VILLA DE INTERÉS</label>
               <select id="villa-interes" name="villa" class="form-input form-select" required>
-                <option value="" disabled selected>Seleccione una opción</option>
+                <option value="" disabled selected data-i18n="form_villa_default">Seleccione una opción</option>
                 <option value="Villa Brisa">Villa Brisa · Casa 02 · 220 m²</option>
                 <option value="Villa Aurora">Villa Aurora · Casa 03 · 220 m²</option>
                 <option value="Villa Celeste">Villa Celeste · Casa 04 · 223 m²</option>
@@ -498,25 +501,25 @@
                 <option value="Villa Palma">Villa Palma · Casa 08 · 244 m²</option>
                 <option value="Villa Marina">Villa Marina · Casa 10 · 240 m²</option>
                 <option value="Villa Sierra">Villa Sierra · Casa 11 · 290 m²</option>
-                <option value="Sin decidir aún">Aún no lo he decidido</option>
+                <option value="Sin decidir aún" data-i18n="form_villa_undecided">Aún no lo he decidido</option>
               </select>
             </div>
             <div class="form-checks">
               <label class="form-check">
                 <input type="checkbox" id="check-privacidad" required>
-                <span>HE LEÍDO Y ACEPTO LA POLÍTICA DE PRIVACIDAD.</span>
+                <span data-i18n="form_check1">HE LEÍDO Y ACEPTO LA POLÍTICA DE PRIVACIDAD.</span>
               </label>
               <label class="form-check">
                 <input type="checkbox" id="check-datos" required>
-                <span>MIS DATOS SOLO SE USARÁN PARA DEVOLVER LA CONVERSACIÓN.</span>
+                <span data-i18n="form_check2">MIS DATOS SOLO SE USARÁN PARA DEVOLVER LA CONVERSACIÓN.</span>
               </label>
             </div>
-            <button type="submit" class="btn-primary form-btn w-full" style="background-color: var(--cedar-bronze); border-color: var(--cedar-bronze); margin-top: 1.5rem; padding: 1.1rem;">SOLICITAR CONVERSACIÓN PRIVADA</button>
+            <button type="submit" class="btn-primary form-btn w-full" style="background-color: var(--cedar-bronze); border-color: var(--cedar-bronze); margin-top: 1.5rem; padding: 1.1rem;" data-i18n="form_submit">SOLICITAR CONVERSACIÓN PRIVADA</button>
             <p id="form-msg" class="form-msg"></p>
             <div class="trust-badges">
-              <span>&#9825; Fiducia regulada</span>
-              <span>&#128274; Datos cifrados</span>
-              <span>&#10003; Sin marketing</span>
+              <span data-i18n="trust_1">&#9825; Fiducia regulada</span>
+              <span data-i18n="trust_2">&#128274; Datos cifrados</span>
+              <span data-i18n="trust_3">&#10003; Sin marketing</span>
             </div>
           </form>
         </div>
@@ -529,7 +532,7 @@
         <!-- Col 1: Brand -->
         <div class="footer-col brand-col">
           <a href="#" class="logo footer-logo">GOSHEN HILLS</a>
-          <p class="footer-tagline">”El lujo que no se exhibe, se respira.”</p>
+          <p class=”footer-tagline” data-i18n=”vision_quote”>”El lujo que no se exhibe, se respira.”</p>
           <div class="social-icons" style="margin-top: 2rem;">
             <a href="#" aria-label="Instagram Goshen Hills" class="social-icon" title="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -555,19 +558,19 @@
 
         <!-- Col 2: Navigation -->
         <div class="footer-col">
-          <h4 class="footer-heading">Descubrir</h4>
+          <h4 class="footer-heading" data-i18n="foot_discover">Descubrir</h4>
           <ul class="footer-links">
-            <li><a href="#vision">La Visión</a></li>
-            <li><a href="#lugar">El Lugar</a></li>
-            <li><a href="#coleccion">Colección de Villas</a></li>
-            <li><a href="#garantias">Garantías</a></li>
-            <li><a href="#faq">Preguntas Frecuentes</a></li>
+            <li><a href="#vision" data-i18n="foot_l_vision">La Visión</a></li>
+            <li><a href="#lugar" data-i18n="foot_l_lugar">El Lugar</a></li>
+            <li><a href="#coleccion" data-i18n="foot_l_coleccion">Colección de Villas</a></li>
+            <li><a href="#garantias" data-i18n="foot_l_garantias">Garantías</a></li>
+            <li><a href="#faq" data-i18n="foot_l_faq">Preguntas Frecuentes</a></li>
           </ul>
         </div>
 
         <!-- Col 3: Contact -->
         <div class="footer-col">
-          <h4 class="footer-heading">Contacto</h4>
+          <h4 class="footer-heading" data-i18n="foot_contact">Contacto</h4>
           <ul class="footer-links">
             <li><a href="mailto:hola@goshenhills.com.co">hola@goshenhills.com.co</a></li>
             <li><a href="https://wa.me/573004000707" target="_blank" rel="noopener noreferrer">WhatsApp: +57 300 400 0707</a></li>
@@ -577,12 +580,12 @@
 
         <!-- Col 4: Créditos -->
         <div class="footer-col">
-          <h4 class="footer-heading">Proyecto</h4>
+          <h4 class="footer-heading" data-i18n="foot_project">Proyecto</h4>
           <ul class="footer-links">
             <li>AQUALINDA S.A.S.</li>
-            <li>Arquitecto: Raúl Caballería</li>
+            <li data-i18n="foot_arch">Arquitecto: Raúl Caballería</li>
             <li>Mat. A144552015-414917</li>
-            <li style="margin-top: 1rem;"><a href="#garantias">Garantías del proyecto</a></li>
+            <li style="margin-top: 1rem;"><a href="#garantias" data-i18n="foot_garantias_link">Garantías del proyecto</a></li>
           </ul>
         </div>
       </div>
@@ -591,10 +594,10 @@
     <!-- Bottom Footer: Legal -->
     <div class="footer-bottom">
       <div class="container footer-bottom-flex">
-        <p>© 2026 Goshen Hills · AQUALINDA S.A.S. · Todos los derechos reservados.</p>
+        <p data-i18n="foot_rights">© 2026 Goshen Hills · AQUALINDA S.A.S. · Todos los derechos reservados.</p>
         <div class="legal-links">
-          <a href="#">Términos y Condiciones</a>
-          <a href="#">Política de Privacidad</a>
+          <a href="#" data-i18n="legal_terms">Términos y Condiciones</a>
+          <a href="#" data-i18n="legal_privacy">Política de Privacidad</a>
         </div>
       </div>
     </div>
@@ -633,7 +636,7 @@
           </div>
           
           <div class="overlay-sticky-cta">
-            <a href="#" id="modal-cta-btn" class="btn-primary w-full">Solicitar Dossier Privado</a>
+            <a href="#" id="modal-cta-btn" class="btn-primary w-full" data-i18n="modal_cta">Solicitar Dossier Privado</a>
           </div>
         </div>
       </div>
@@ -644,11 +647,11 @@
   <div id="exit-intent" class="exit-intent-bar" hidden aria-live="polite">
     <div class="exit-intent-inner container">
       <div class="exit-intent-text-block">
-        <p class="exit-intent-headline">"¿Le generó curiosidad alguna villa?"</p>
-        <p class="exit-intent-sub">La conversación es sin compromiso y completamente privada.</p>
+        <p class="exit-intent-headline" data-i18n="exit_headline">"¿Le generó curiosidad alguna villa?"</p>
+        <p class="exit-intent-sub" data-i18n="exit_sub">La conversación es sin compromiso y completamente privada.</p>
       </div>
       <div class="exit-intent-actions">
-        <a href="https://wa.me/573004000707?text=Hola,%20estuve%20viendo%20Goshen%20Hills%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="btn-primary cta-whatsapp" data-cta="exit-intent" style="white-space: nowrap;">Preguntar en privado →</a>
+        <a href="https://wa.me/573004000707?text=Hola,%20estuve%20viendo%20Goshen%20Hills%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" class="btn-primary cta-whatsapp" data-cta="exit-intent" style="white-space: nowrap;" data-i18n="exit_cta">Preguntar en privado →</a>
         <button class="exit-intent-close" aria-label="Cerrar">✕</button>
       </div>
     </div>
@@ -656,7 +659,7 @@
 
   <!-- Mobile Sticky CTA -->
   <div id="mobile-cta-bar" class="mobile-cta-bar" hidden>
-    <a href="https://wa.me/573004000707?text=Hola%2C%20me%20interesa%20conocer%20Goshen%20Hills." target="_blank" rel="noopener noreferrer" class="mobile-cta-link cta-whatsapp" data-cta="mobile-sticky">
+    <a href="https://wa.me/573004000707?text=Hola%2C%20me%20interesa%20conocer%20Goshen%20Hills." target="_blank" rel="noopener noreferrer" class="mobile-cta-link cta-whatsapp" data-cta="mobile-sticky" data-i18n="mobile_cta">
       Conversación privada →
     </a>
   </div>
