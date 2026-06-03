@@ -222,25 +222,77 @@
       </div>
     </section>
 
-    <!-- 3. THE VISION -->
-    <section class="vision" id="vision">
-      <div class="container vision-container text-center">
-        <span class="eyebrow reveal text-cedar" data-i18n="vision_eyebrow">I · APERTURA</span>
-        <h2 class="vision-title reveal delay-1" style="max-width: 900px; margin: 0 auto 2rem;" data-i18n-html="vision_title">Goshen Hills no fue concebido para competir con el mercado.<br><span class="text-cedar font-italic">Fue concebido para distinguirse de él.</span></h2>
+    <!-- 3. CREDIBILIDAD / MOMENTUM DEL MERCADO -->
+    <section class="credibility bg-dark text-white" id="mercado">
+      <div class="container text-center credibility-inner reveal">
+        <span class="eyebrow text-cedar" data-i18n="cred_eyebrow">EL MOMENTO DE SANTA MARTA</span>
+        <h2 class="credibility-headline" data-i18n-html="cred_headline">El mercado inmobiliario más dinámico del Caribe colombiano — en el radar de <em class="text-cedar font-italic">Forbes</em> entre los cinco mejores destinos del mundo frente al mar.</h2>
+      </div>
+    </section>
 
-        <div class="vision-text-grid reveal delay-2">
-          <div class="vision-col">
-            <p data-i18n="vision_p1">El Caribe colombiano se ha llenado de torres que crecen en altura, condominios que crecen en número, ofertas que crecen en urgencia.</p>
-            <p style="margin-top: 1.5rem;" data-i18n="vision_p2">Goshen Hills nace de una decisión opuesta: once villas privadas dispuestas con respeto al terreno, no contra él.</p>
-          </div>
-          <div class="vision-col">
-            <p data-i18n="vision_p3">En la Reserva de la Montaña, sobre Vía al Rodadero, la arquitectura no impone. Revela luz, brisa y paisaje. Cada villa fue diseñada para preservar lo que el lugar ya ofrece: el horizonte abierto del mar Caribe y la presencia silenciosa de la Sierra Nevada de Santa Marta.</p>
-            <p style="margin-top: 1.5rem; font-style: italic; color: var(--cedar-bronze);" data-i18n="vision_p4">Aquí, se conserva un horizonte que no se repite.</p>
-          </div>
+    <!-- 6. COLECCIÓN DE VILLAS -->
+    <section class="coleccion bg-light" id="coleccion">
+      <div class="container">
+        <div class="coleccion-header reveal text-center">
+          <span class="eyebrow text-cedar" data-i18n="col_eyebrow">I · LA COLECCIÓN</span>
+          <h2 class="coleccion-title" data-i18n="col_title">Once villas. Once formas de habitar el Caribe.</h2>
+          <p class="mt-2 text-midnight" style="font-size: 1.1rem;" data-i18n="col_sub">En cada villa, la luz, la brisa y el horizonte convergen para crear una identidad arquitectónica única y excepcional.</p>
+          <p class="mt-2 text-midnight-60 font-italic" style="font-size: 0.9rem;" data-i18n="col_hint">Toque cada villa para abrir su mundo.</p>
         </div>
 
-        <div class="vision-quote reveal delay-3" style="margin-top: 4rem;">
-          <h3 class="font-italic text-cedar" style="font-size: clamp(24px, 4vw, 36px);" data-i18n="vision_quote">"El lujo que no se exhibe, se respira."</h3>
+        <!-- Contenedor dinámico -->
+        <div class="villas-grid" id="villas-grid">
+          <!-- Renderizado por app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. LA EXPERIENCIA (Interiorismo) -->
+    <section class="experiencia" id="experiencia">
+      <div class="container">
+        <div class="grid-2-cols reverse-mobile">
+          <div class="experiencia-visual reveal">
+            <img src="./assets/images/salaInteriorVista.jpg" alt="Sala con vista al Caribe, Goshen Hills"
+              class="img-fluid drop-shadow" loading="lazy">
+          </div>
+          <div class="experiencia-content reveal delay-1">
+            <span class="eyebrow text-cedar" data-i18n="exp_eyebrow">II · LA EXPERIENCIA</span>
+            <h2 data-i18n="exp_title">Interiorismo al servicio del horizonte.</h2>
+            <p data-i18n="exp_p1">
+              Las villas de Goshen Hills operan como lienzos en blanco. La arquitectura desaparece para que la luz
+              natural, la brisa cruzada y el sonido del mar asuman el protagonismo.
+              Grandes ventanales de piso a techo que diluyen la frontera entre el interior y el vasto mar Caribe.
+            </p>
+            <ul class="amenities-list mt-4">
+              <li data-i18n="amen_1">Piscina privada con vista panorámica al Caribe</li>
+              <li data-i18n="amen_2">Terraza o patio privado de 23 a 74 m²</li>
+              <li data-i18n="amen_3">Ventilación cruzada natural · climatización pasiva todo el año</li>
+              <li data-i18n="amen_4">3 alcobas en suite con acabados de primera línea</li>
+              <li data-i18n="amen_5">Ventanales de piso a techo en zona social</li>
+              <li data-i18n="amen_6">Arquitectura mediterránea contemporánea adaptada al trópico</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Piscina: imagen full-width -->
+        <div class="piscina-row reveal">
+          <img src="./assets/images/piscina.webp" alt="Piscina privada Goshen Hills con vista al mar Caribe"
+            class="piscina-img" loading="lazy">
+          <p class="piscina-caption text-center font-italic text-cedar" data-i18n="piscina_caption">Piscina privada. El Caribe como fondo.</p>
+        </div>
+        <!-- Tipologías -->
+        <div class="tipologias-row reveal">
+          <div class="grid-2-cols" style="gap: 2rem;">
+            <div>
+              <img src="./assets/images/typology-rear.webp" alt="Tipología posterior Goshen Hills — Casas 01 a 06"
+                class="img-fluid drop-shadow" loading="lazy">
+              <p class="text-center mt-2 text-midnight-60" style="font-size: 0.85rem; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.1em;" data-i18n="typo_rear">Tipología Posterior · Casas 01–06</p>
+            </div>
+            <div>
+              <img src="./assets/images/typology-front.webp" alt="Tipología frontal Goshen Hills — Casas 07 a 11"
+                class="img-fluid drop-shadow" loading="lazy">
+              <p class="text-center mt-2 text-midnight-60" style="font-size: 0.85rem; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.1em;" data-i18n="typo_front">Tipología Frontal · Casas 07–11</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -250,7 +302,7 @@
       <div class="container">
         <div class="grid-2-cols">
           <div class="lugar-content reveal">
-            <span class="eyebrow text-cedar" data-i18n="lugar_eyebrow">II · EL LUGAR</span>
+            <span class="eyebrow text-cedar" data-i18n="lugar_eyebrow">III · EL LUGAR</span>
             <h2 data-i18n="lugar_title">Santa Marta redefine el Caribe.</h2>
             <h3 class="font-italic text-cedar mb-4" data-i18n="lugar_sub">Aquí el Caribe se respira con aire de montaña.</h3>
             <p data-i18n="lugar_p1">
@@ -292,78 +344,11 @@
       </div>
     </section>
 
-    <!-- 5. LA EXPERIENCIA (Interiorismo) -->
-    <section class="experiencia" id="experiencia">
-      <div class="container">
-        <div class="grid-2-cols reverse-mobile">
-          <div class="experiencia-visual reveal">
-            <img src="./assets/images/salaInteriorVista.jpg" alt="Sala con vista al Caribe, Goshen Hills"
-              class="img-fluid drop-shadow" loading="lazy">
-          </div>
-          <div class="experiencia-content reveal delay-1">
-            <span class="eyebrow text-cedar" data-i18n="exp_eyebrow">III · LA EXPERIENCIA</span>
-            <h2 data-i18n="exp_title">Interiorismo al servicio del horizonte.</h2>
-            <p data-i18n="exp_p1">
-              Las villas de Goshen Hills operan como lienzos en blanco. La arquitectura desaparece para que la luz
-              natural, la brisa cruzada y el sonido del mar asuman el protagonismo.
-              Grandes ventanales de piso a techo que diluyen la frontera entre el interior y el vasto mar Caribe.
-            </p>
-            <ul class="amenities-list mt-4">
-              <li data-i18n="amen_1">Piscina privada con vista panorámica al Caribe</li>
-              <li data-i18n="amen_2">Terraza o patio privado de 23 a 74 m²</li>
-              <li data-i18n="amen_3">Ventilación cruzada natural · climatización pasiva todo el año</li>
-              <li data-i18n="amen_4">3 alcobas en suite con acabados de primera línea</li>
-              <li data-i18n="amen_5">Ventanales de piso a techo en zona social</li>
-              <li data-i18n="amen_6">Arquitectura mediterránea contemporánea adaptada al trópico</li>
-            </ul>
-          </div>
-        </div>
-        <!-- Piscina: imagen full-width -->
-        <div class="piscina-row reveal">
-          <img src="./assets/images/piscina.webp" alt="Piscina privada Goshen Hills con vista al mar Caribe"
-            class="piscina-img" loading="lazy">
-          <p class="piscina-caption text-center font-italic text-cedar" data-i18n="piscina_caption">Piscina privada. El Caribe como fondo.</p>
-        </div>
-        <!-- Tipologías -->
-        <div class="tipologias-row reveal">
-          <div class="grid-2-cols" style="gap: 2rem;">
-            <div>
-              <img src="./assets/images/typology-rear.webp" alt="Tipología posterior Goshen Hills — Casas 01 a 06"
-                class="img-fluid drop-shadow" loading="lazy">
-              <p class="text-center mt-2 text-midnight-60" style="font-size: 0.85rem; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.1em;" data-i18n="typo_rear">Tipología Posterior · Casas 01–06</p>
-            </div>
-            <div>
-              <img src="./assets/images/typology-front.webp" alt="Tipología frontal Goshen Hills — Casas 07 a 11"
-                class="img-fluid drop-shadow" loading="lazy">
-              <p class="text-center mt-2 text-midnight-60" style="font-size: 0.85rem; font-family: 'Inter', sans-serif; text-transform: uppercase; letter-spacing: 0.1em;" data-i18n="typo_front">Tipología Frontal · Casas 07–11</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. COLECCIÓN DE VILLAS -->
-    <section class="coleccion bg-light" id="coleccion">
-      <div class="container">
-        <div class="coleccion-header reveal text-center">
-          <span class="eyebrow text-cedar" data-i18n="col_eyebrow">IV · LA COLECCIÓN</span>
-          <h2 class="coleccion-title" data-i18n="col_title">Once villas. Once formas de habitar el Caribe.</h2>
-          <p class="mt-2 text-midnight" style="font-size: 1.1rem;" data-i18n="col_sub">En cada villa, la luz, la brisa y el horizonte convergen para crear una identidad arquitectónica única y excepcional.</p>
-          <p class="mt-2 text-midnight-60 font-italic" style="font-size: 0.9rem;" data-i18n="col_hint">Toque cada villa para abrir su mundo.</p>
-        </div>
-
-        <!-- Contenedor dinámico -->
-        <div class="villas-grid" id="villas-grid">
-          <!-- Renderizado por app.js -->
-        </div>
-      </div>
-    </section>
-
     <!-- 7. GARANTÍAS / CONFIANZA -->
     <section class="garantias bg-moonlight" id="garantias">
       <div class="container">
         <div class="garantias-header text-center reveal">
-          <span class="eyebrow text-cedar" data-i18n="gar_eyebrow">V · GARANTÍAS DE LA COLECCIÓN</span>
+          <span class="eyebrow text-cedar" data-i18n="gar_eyebrow">IV · GARANTÍAS DE LA COLECCIÓN</span>
           <h2 class="text-midnight" data-i18n="gar_title">Un proyecto con nombre, matrícula y dirección real.</h2>
           <p class="text-midnight-60" style="margin: 0 auto; max-width: 55ch;" data-i18n="gar_sub">Goshen Hills no es una promesa de plano. Es una colección con certeza técnica, legal y sensorial.</p>
         </div>
@@ -395,6 +380,29 @@
             <img src="./assets/images/access-01.webp" alt="Acceso Goshen Hills — Vía al Rodadero" class="img-fluid drop-shadow" loading="lazy">
             <img src="./assets/images/access-02.webp" alt="Entorno Goshen Hills — Reserva de la Montaña" class="img-fluid drop-shadow" loading="lazy">
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. THE VISION -->
+    <section class="vision" id="vision">
+      <div class="container vision-container text-center">
+        <span class="eyebrow reveal text-cedar" data-i18n="vision_eyebrow">V · MANIFIESTO</span>
+        <h2 class="vision-title reveal delay-1" style="max-width: 900px; margin: 0 auto 2rem;" data-i18n-html="vision_title">Goshen Hills no fue concebido para competir con el mercado.<br><span class="text-cedar font-italic">Fue concebido para distinguirse de él.</span></h2>
+
+        <div class="vision-text-grid reveal delay-2">
+          <div class="vision-col">
+            <p data-i18n="vision_p1">El Caribe colombiano se ha llenado de torres que crecen en altura, condominios que crecen en número, ofertas que crecen en urgencia.</p>
+            <p style="margin-top: 1.5rem;" data-i18n="vision_p2">Goshen Hills nace de una decisión opuesta: once villas privadas dispuestas con respeto al terreno, no contra él.</p>
+          </div>
+          <div class="vision-col">
+            <p data-i18n="vision_p3">En la Reserva de la Montaña, sobre Vía al Rodadero, la arquitectura no impone. Revela luz, brisa y paisaje. Cada villa fue diseñada para preservar lo que el lugar ya ofrece: el horizonte abierto del mar Caribe y la presencia silenciosa de la Sierra Nevada de Santa Marta.</p>
+            <p style="margin-top: 1.5rem; font-style: italic; color: var(--cedar-bronze);" data-i18n="vision_p4">Aquí, se conserva un horizonte que no se repite.</p>
+          </div>
+        </div>
+
+        <div class="vision-quote reveal delay-3" style="margin-top: 4rem;">
+          <h3 class="font-italic text-cedar" style="font-size: clamp(24px, 4vw, 36px);" data-i18n="vision_quote">"El lujo que no se exhibe, se respira."</h3>
         </div>
       </div>
     </section>
@@ -462,7 +470,6 @@
         <a href="https://wa.me/573004000707" target="_blank" rel="noopener noreferrer" class="btn-primary cta-whatsapp" data-cta="cierre" style="padding: 1rem 3rem; font-size: 1.2rem;" data-i18n="cierre_cta">Iniciar la conversación →</a>
       </div>
     </section>
-
   </main>
 
   <!-- 10. FOOTER Y CONVERSACIÓN -->
