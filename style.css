@@ -69,6 +69,14 @@ h1, h2, h3 { text-wrap: balance; }
 /* Typography Extras */
 .font-italic { font-style: italic; }
 .text-center { text-align: center; }
+/* Centered sections: paragraphs have max-width 65ch — center the box, not just the text */
+.text-center p,
+.coleccion-header p,
+.faq-header p,
+.garantias-header p {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .eyebrow {
   font-family: 'Inter', sans-serif;
@@ -275,7 +283,7 @@ section {
 
 .villas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
   gap: 3rem 2rem;
 }
 
@@ -857,9 +865,21 @@ section {
 .delay-2 { transition-delay: 0.4s; }
 .delay-3 { transition-delay: 0.6s; }
 
-/* Hero: Jakub's materializing entrance — opacity + translateY + blur */
-.hero-content .reveal {
-  filter: blur(6px);
+/* Hero: pure-CSS materializing entrance — runs on load, NO JavaScript/IO dependency.
+   The LCP hero must never stay hidden if the observer fails. Clean opacity + slide,
+   no blur (blur-on-text ghosts badly over the zooming background). */
+.hero-content .reveal,
+.hero-top-eyebrow.reveal {
+  opacity: 0;
+  filter: none;
+  animation: heroReveal 0.9s var(--ease-out) forwards;
+}
+.hero-content .reveal.delay-1 { animation-delay: 0.15s; }
+.hero-content .reveal.delay-2 { animation-delay: 0.30s; }
+.hero-content .reveal.delay-3 { animation-delay: 0.45s; }
+@keyframes heroReveal {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* Image-specific reveals: opacity only (images don't float up) */
@@ -880,8 +900,12 @@ section {
     filter: none;
     transition: none;
   }
-  .hero-content .reveal {
+  .hero-content .reveal,
+  .hero-top-eyebrow.reveal {
     filter: none;
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
   .hero-bg {
     animation: none;

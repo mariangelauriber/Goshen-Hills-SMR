@@ -174,6 +174,14 @@ function initNavbarScroll() {
 /* 2. SCROLL REVEAL                                                           */
 /* -------------------------------------------------------------------------- */
 function initReveal() {
+  const els = document.querySelectorAll('.reveal, .reveal-img');
+
+  // No IO support → show everything immediately.
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(el => el.classList.add('visible'));
+    return;
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -183,7 +191,14 @@ function initReveal() {
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.reveal, .reveal-img').forEach(el => observer.observe(el));
+  els.forEach(el => observer.observe(el));
+
+  // Safety net: if the observer never fires (bfcache restore, some mobile/headless
+  // conditions), content must NOT stay invisible. Reveal all if nothing showed up.
+  setTimeout(() => {
+    const anyVisible = Array.prototype.some.call(els, el => el.classList.contains('visible'));
+    if (!anyVisible) els.forEach(el => el.classList.add('visible'));
+  }, 1600);
 }
 
 /* -------------------------------------------------------------------------- */
