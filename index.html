@@ -46,7 +46,7 @@
     rel="stylesheet">
 
   <link rel="preload" as="image" href="./assets/images/pool-night.webp" fetchpriority="high">
-  <link rel="stylesheet" href="./style.css?v=20260603c">
+  <link rel="stylesheet" href="./style.css?v=20260603d">
 
   <!-- Google Analytics 4 — reemplazar G-XXXXXXXXXX con el Measurement ID real -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -238,11 +238,33 @@
           <h2 class="coleccion-title" data-i18n="col_title">Once villas. Once formas de habitar el Caribe.</h2>
           <p class="mt-2 text-midnight" style="font-size: 1.1rem;" data-i18n="col_sub">En cada villa, la luz, la brisa y el horizonte convergen para crear una identidad arquitectónica única y excepcional.</p>
           <p class="mt-2 text-midnight-60 font-italic" style="font-size: 0.9rem;" data-i18n="col_hint">Toque cada villa para abrir su mundo.</p>
+          <div class="availability-bar reveal" id="availability-bar" aria-live="polite"><!-- poblado por app.js --></div>
         </div>
 
         <!-- Contenedor dinámico -->
         <div class="villas-grid" id="villas-grid">
           <!-- Renderizado por app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- LIFESTYLE GALLERY (inmersión emocional) -->
+    <section class="lifestyle bg-dark" id="lifestyle">
+      <div class="container">
+        <div class="lifestyle-header text-center reveal">
+          <span class="eyebrow text-cedar" data-i18n="life_eyebrow">EL ESTILO DE VIDA</span>
+          <h2 class="text-white" data-i18n="life_title">Un día que no se repite.</h2>
+          <p class="text-white" style="opacity:0.72; margin: 0 auto;" data-i18n="life_sub">Amanecer sobre el Caribe, mediodía a la sombra de la palma, atardecer ámbar desde la piscina. Goshen Hills no se visita — se habita.</p>
+        </div>
+        <div class="lifestyle-grid reveal">
+          <figure class="ls-item ls-item--lg"><img src="./assets/images/pool-night.webp" alt="Piscina de borde infinito al atardecer en Goshen Hills, Santa Marta" loading="lazy"></figure>
+          <figure class="ls-item"><img src="./assets/images/salaInteriorVista.jpg" alt="Sala con ventanales de piso a techo y vista al mar Caribe, Goshen Hills" loading="lazy"></figure>
+          <figure class="ls-item"><img src="./assets/images/villa-sierra-render.webp" alt="Render arquitectónico de villa frente al Caribe, Goshen Hills" loading="lazy"></figure>
+          <figure class="ls-item"><img src="./assets/images/piscina.webp" alt="Piscina privada con vista panorámica al mar, Goshen Hills" loading="lazy"></figure>
+          <figure class="ls-item ls-item--wide"><img src="./assets/images/pool-day.webp" alt="Piscina de día con horizonte del Caribe en Goshen Hills" loading="lazy"></figure>
+        </div>
+        <div class="lifestyle-cta text-center reveal">
+          <a href="https://wa.me/573004000707?text=Hola%2C%20me%20gustar%C3%ADa%20vivir%20la%20experiencia%20Goshen%20Hills." target="_blank" rel="noopener noreferrer" class="btn-primary cta-whatsapp" data-cta="lifestyle" data-i18n="life_cta">Vivir Goshen Hills →</a>
         </div>
       </div>
     </section>
@@ -676,7 +698,7 @@
     </a>
   </div>
 
-  <script src="./app.js?v=20260603c"></script>
+  <script src="./app.js?v=20260603d"></script>
 </body>
 
 </html>

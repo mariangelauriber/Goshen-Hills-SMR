@@ -118,6 +118,11 @@ const I18N = {
     nav_cta: 'Conversación Privada',
     cred_eyebrow: 'EL MOMENTO DE SANTA MARTA',
     cred_headline: 'El mercado inmobiliario más dinámico del Caribe colombiano — en el radar de <em class="text-cedar font-italic">Forbes</em> entre los cinco mejores destinos del mundo frente al mar.',
+    life_eyebrow: 'EL ESTILO DE VIDA',
+    life_title: 'Un día que no se repite.',
+    life_sub: 'Amanecer sobre el Caribe, mediodía a la sombra de la palma, atardecer ámbar desde la piscina. Goshen Hills no se visita — se habita.',
+    life_cta: 'Vivir Goshen Hills →',
+    avail_label: 'VILLAS DISPONIBLES',
     hero_eyebrow_top: '9 DE 11 VILLAS DISPONIBLES · PRECIO FOUNDERS — ANTES DEL AJUSTE DE OBRA',
     hero_coleccion: 'COLECCIÓN PRIVADA · ONCE VILLAS',
     hero_title: 'Donde el cielo abraza el mar.',
@@ -227,6 +232,11 @@ const I18N = {
     nav_cta: 'Private Conversation',
     cred_eyebrow: "SANTA MARTA'S MOMENT",
     cred_headline: 'The most dynamic real-estate market in the Colombian Caribbean — on <em class="text-cedar font-italic">Forbes\'</em> radar among the world\'s five best beachfront destinations.',
+    life_eyebrow: 'THE LIFESTYLE',
+    life_title: 'A day that never repeats.',
+    life_sub: 'Sunrise over the Caribbean, midday in the shade of the palms, an amber sunset from the pool. Goshen Hills is not visited — it is lived.',
+    life_cta: 'Live Goshen Hills →',
+    avail_label: 'VILLAS AVAILABLE',
     hero_eyebrow_top: '9 OF 11 VILLAS AVAILABLE · FOUNDERS PRICING — BEFORE THE CONSTRUCTION ADJUSTMENT',
     hero_coleccion: 'PRIVATE COLLECTION · ELEVEN VILLAS',
     hero_title: 'Where the sky embraces the sea.',
@@ -337,6 +347,19 @@ function ghLang() { return document.documentElement.lang === 'en' ? 'en' : 'es';
 function t(key) { const l = ghLang(); return (I18N[l] && I18N[l][key] != null) ? I18N[l][key] : (I18N.es[key] != null ? I18N.es[key] : key); }
 function vfield(v, f) { const l = ghLang(); if (l === 'en' && VILLA_EN[v.id] && VILLA_EN[v.id][f] != null) return VILLA_EN[v.id][f]; return v[f]; }
 
+// Escasez en vivo: cuenta disponibles desde los datos (loss-aversion / urgencia)
+function renderAvailability() {
+  const el = document.getElementById('availability-bar');
+  if (!el) return;
+  const total = VILLAS.length;
+  const avail = VILLAS.filter(v => v.disponible !== false).length;
+  const pct = Math.round((avail / total) * 100);
+  el.innerHTML =
+    '<div class="avail-num"><strong>' + avail + '</strong> <span>/ ' + total + '</span></div>' +
+    '<div class="avail-info"><span class="avail-label">' + t('avail_label') + '</span>' +
+    '<div class="avail-track"><div class="avail-fill" style="width:' + pct + '%"></div></div></div>';
+}
+
 function applyLang(lang, isInitial) {
   lang = (lang === 'en') ? 'en' : 'es';
   document.documentElement.lang = (lang === 'en') ? 'en' : 'es-CO';
@@ -362,6 +385,7 @@ function applyLang(lang, isInitial) {
       document.querySelectorAll('#villas-grid .reveal').forEach(el => el.classList.add('visible'));
     }
   }
+  renderAvailability();
 }
 
 function initLang() {
