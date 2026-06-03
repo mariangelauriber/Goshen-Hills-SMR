@@ -123,21 +123,31 @@ const I18N = {
     life_sub: 'Amanecer sobre el Caribe, mediodía a la sombra de la palma, atardecer ámbar desde la piscina. Goshen Hills no se visita — se habita.',
     life_cta: 'Vivir Goshen Hills →',
     avail_label: 'VILLAS DISPONIBLES',
+    col_masterplan_cap: 'Plano de implantación · once villas en dos hileras sobre la ladera',
+    group_posterior_title: 'Tipología Posterior',
+    group_posterior_sub: 'Ascienden por la ladera hacia la luz y el cielo. Terrazas orientadas al horizonte.',
+    group_frontal_title: 'Tipología Frontal',
+    group_frontal_sub: 'Descienden hacia el mar y los patios privados más amplios de la colección.',
+    lugar_address: 'Vía al Rodadero · Reserva de la Montaña, Santa Marta, Magdalena',
+    lugar_maps_link: 'Ver en Google Maps ↗',
+    lugar_request: 'Solicitar ubicación exacta',
+    lugar_distances: '10 min al Rodadero · 20 min al Aeropuerto Internacional · 40 min al Parque Nacional Tayrona',
+    foot_l_experiencia: 'La Experiencia',
     hero_eyebrow_top: '9 DE 11 VILLAS DISPONIBLES · PRECIO FOUNDERS — ANTES DEL AJUSTE DE OBRA',
     hero_coleccion: 'COLECCIÓN PRIVADA · ONCE VILLAS',
     hero_title: 'Donde el cielo abraza el mar.',
     hero_subtitle: 'Vía al Rodadero · Santa Marta · Caribe colombiano',
     hero_cta1: 'Iniciar conversación privada',
     hero_cta2: 'Conocer la colección ↓',
-    vision_eyebrow: 'V · MANIFIESTO',
+    vision_eyebrow: 'MANIFIESTO',
     vision_title: 'Goshen Hills no fue concebido para competir con el mercado.<br><span class="text-cedar font-italic">Fue concebido para distinguirse de él.</span>',
     vision_p1: 'El Caribe colombiano se ha llenado de torres que crecen en altura, condominios que crecen en número, ofertas que crecen en urgencia.',
     vision_p2: 'Goshen Hills nace de una decisión opuesta: once villas privadas dispuestas con respeto al terreno, no contra él.',
     vision_p3: 'En la Reserva de la Montaña, sobre Vía al Rodadero, la arquitectura no impone. Revela luz, brisa y paisaje. Cada villa fue diseñada para preservar lo que el lugar ya ofrece: el horizonte abierto del mar Caribe y la presencia silenciosa de la Sierra Nevada de Santa Marta.',
     vision_p4: 'Aquí, se conserva un horizonte que no se repite.',
     vision_quote: '"El lujo que no se exhibe, se respira."',
-    lugar_eyebrow: 'III · EL LUGAR',
-    lugar_title: 'Santa Marta redefine el Caribe.',
+    lugar_eyebrow: 'EL LUGAR',
+    lugar_title: 'Explora la zona.',
     lugar_sub: 'Aquí el Caribe se respira con aire de montaña.',
     lugar_p1: 'Goshen Hills se ubica en la Reserva de la Montaña, sobre Vía al Rodadero, Santa Marta. Una ladera elevada en el flanco occidental de la Sierra Nevada — la única cordillera del mundo que nace en la playa y alcanza los 5.700 metros sobre el nivel del mar, declarada Reserva de la Biósfera por la UNESCO.',
     lugar_p2: 'Por la ventana, el horizonte abierto del mar Caribe, en su versión más cálida y silenciosa. A la espalda, una de las geografías más densas del planeta. A diez minutos, las playas del Rodadero. A veinte, el Aeropuerto Internacional Simón Bolívar. A cuarenta, el Parque Nacional Natural Tayrona, uno de los ecosistemas costeros mejor preservados del continente.',
@@ -145,7 +155,7 @@ const I18N = {
     stat_sea: 'sobre el nivel del mar',
     stat_min: 'min al Rodadero, aeropuerto y Tayrona',
     lugar_map_label: 'Ubicación exacta · Vía al Rodadero, Santa Marta',
-    exp_eyebrow: 'II · LA EXPERIENCIA',
+    exp_eyebrow: 'LA EXPERIENCIA',
     exp_title: 'Interiorismo al servicio del horizonte.',
     exp_p1: 'Las villas de Goshen Hills operan como lienzos en blanco. La arquitectura desaparece para que la luz natural, la brisa cruzada y el sonido del mar asuman el protagonismo. Grandes ventanales de piso a techo que diluyen la frontera entre el interior y el vasto mar Caribe.',
     amen_1: 'Piscina privada con vista panorámica al Caribe',
@@ -157,7 +167,7 @@ const I18N = {
     piscina_caption: 'Piscina privada. El Caribe como fondo.',
     typo_rear: 'Tipología Posterior · Casas 01–06',
     typo_front: 'Tipología Frontal · Casas 07–11',
-    col_eyebrow: 'I · LA COLECCIÓN',
+    col_eyebrow: 'LA COLECCIÓN',
     col_title: 'Once villas. Once formas de habitar el Caribe.',
     col_sub: 'En cada villa, la luz, la brisa y el horizonte convergen para crear una identidad arquitectónica única y excepcional.',
     col_hint: 'Toque cada villa para abrir su mundo.',
@@ -195,7 +205,7 @@ const I18N = {
     cierre_text: 'Goshen Hills no se descubre con prisa. Se reconoce con discernimiento. La colección no se ofrece a todo el mercado — se ofrece a quienes saben que el Caribe colombiano puede vivirse con otra cadencia.',
     cierre_quote: '"Once villas. Una ladera. Un horizonte irrepetible."',
     cierre_cta: 'Iniciar la conversación →',
-    foot_eyebrow: 'VI · CONVERSACIÓN',
+    foot_eyebrow: 'CONVERSACIÓN',
     foot_title: 'La conversación privada.',
     foot_sub: 'El paso natural hacia la elección de una villa.',
     foot_p1: 'Goshen Hills no se vende abiertamente. Se gestiona en conversación. La elección de una villa no comienza con una venta — comienza con una lectura: quién habitará la villa, cómo desea vivir el Caribe, qué atmósfera corresponde mejor a su modo de ser.',
@@ -214,7 +224,7 @@ const I18N = {
     trust_2: '🔒 Datos cifrados',
     trust_3: '✓ Sin marketing',
     foot_discover: 'Descubrir',
-    foot_l_vision: 'La Visión', foot_l_lugar: 'El Lugar', foot_l_coleccion: 'Colección de Villas', foot_l_garantias: 'Garantías', foot_l_faq: 'Preguntas Frecuentes',
+    foot_l_vision: 'Manifiesto', foot_l_lugar: 'El Lugar', foot_l_coleccion: 'Colección de Villas', foot_l_garantias: 'Garantías', foot_l_faq: 'Preguntas Frecuentes',
     foot_contact: 'Contacto', foot_project: 'Proyecto', foot_arch: 'Arquitecto: Raúl Caballería',
     foot_garantias_link: 'Garantías del proyecto',
     foot_rights: '© 2026 Goshen Hills · AQUALINDA S.A.S. · Todos los derechos reservados.',
@@ -237,21 +247,31 @@ const I18N = {
     life_sub: 'Sunrise over the Caribbean, midday in the shade of the palms, an amber sunset from the pool. Goshen Hills is not visited — it is lived.',
     life_cta: 'Live Goshen Hills →',
     avail_label: 'VILLAS AVAILABLE',
+    col_masterplan_cap: 'Site plan · eleven villas in two rows along the hillside',
+    group_posterior_title: 'Rear Typology',
+    group_posterior_sub: 'They climb the hillside toward the light and the sky. Terraces facing the horizon.',
+    group_frontal_title: 'Front Typology',
+    group_frontal_sub: 'They descend toward the sea and the largest private patios of the collection.',
+    lugar_address: 'Vía al Rodadero · Reserva de la Montaña, Santa Marta, Magdalena, Colombia',
+    lugar_maps_link: 'View on Google Maps ↗',
+    lugar_request: 'Request exact location',
+    lugar_distances: '10 min to Rodadero · 20 min to the airport · 40 min to Tayrona National Park',
+    foot_l_experiencia: 'The Experience',
     hero_eyebrow_top: '9 OF 11 VILLAS AVAILABLE · FOUNDERS PRICING — BEFORE THE CONSTRUCTION ADJUSTMENT',
     hero_coleccion: 'PRIVATE COLLECTION · ELEVEN VILLAS',
     hero_title: 'Where the sky embraces the sea.',
     hero_subtitle: 'Vía al Rodadero · Santa Marta · Colombian Caribbean',
     hero_cta1: 'Start a private conversation',
     hero_cta2: 'Discover the collection ↓',
-    vision_eyebrow: 'V · MANIFESTO',
+    vision_eyebrow: 'MANIFESTO',
     vision_title: 'Goshen Hills was not conceived to compete with the market.<br><span class="text-cedar font-italic">It was conceived to stand apart from it.</span>',
     vision_p1: 'The Colombian Caribbean has filled with towers growing taller, condominiums growing in number, offers growing in urgency.',
     vision_p2: 'Goshen Hills is born of the opposite decision: eleven private villas laid out with respect for the land, not against it.',
     vision_p3: 'In the Reserva de la Montaña, on Vía al Rodadero, the architecture does not impose. It reveals light, breeze and landscape. Each villa was designed to preserve what the place already offers: the open horizon of the Caribbean Sea and the silent presence of the Sierra Nevada de Santa Marta.',
     vision_p4: 'Here, a horizon that never repeats is preserved.',
     vision_quote: '"Luxury that is not displayed is breathed."',
-    lugar_eyebrow: 'III · THE PLACE',
-    lugar_title: 'Santa Marta redefines the Caribbean.',
+    lugar_eyebrow: 'THE PLACE',
+    lugar_title: 'Explore the area.',
     lugar_sub: 'Here the Caribbean is breathed with mountain air.',
     lugar_p1: 'Goshen Hills sits in the Reserva de la Montaña, on Vía al Rodadero, Santa Marta — an elevated hillside on the western flank of the Sierra Nevada, the only mountain range in the world that rises from the beach to 5,700 meters above sea level, declared a UNESCO Biosphere Reserve.',
     lugar_p2: 'Through the window, the open horizon of the Caribbean Sea in its warmest, quietest form. Behind, one of the densest geographies on the planet. Ten minutes to the beaches of El Rodadero. Twenty to Simón Bolívar International Airport. Forty to Tayrona National Natural Park, one of the best-preserved coastal ecosystems on the continent.',
@@ -259,7 +279,7 @@ const I18N = {
     stat_sea: 'above sea level',
     stat_min: 'min to Rodadero, airport and Tayrona',
     lugar_map_label: 'Exact location · Vía al Rodadero, Santa Marta',
-    exp_eyebrow: 'II · THE EXPERIENCE',
+    exp_eyebrow: 'THE EXPERIENCE',
     exp_title: 'Interiors in service of the horizon.',
     exp_p1: 'The villas of Goshen Hills act as blank canvases. The architecture steps back so that natural light, cross-breeze and the sound of the sea take the lead. Floor-to-ceiling windows dissolve the boundary between the interior and the vast Caribbean Sea.',
     amen_1: 'Private pool with panoramic Caribbean views',
@@ -271,7 +291,7 @@ const I18N = {
     piscina_caption: 'Private pool. The Caribbean as backdrop.',
     typo_rear: 'Rear Typology · Houses 01–06',
     typo_front: 'Front Typology · Houses 07–11',
-    col_eyebrow: 'I · THE COLLECTION',
+    col_eyebrow: 'THE COLLECTION',
     col_title: 'Eleven villas. Eleven ways to inhabit the Caribbean.',
     col_sub: 'In each villa, light, breeze and horizon converge to create a unique, exceptional architectural identity.',
     col_hint: 'Tap each villa to open its world.',
@@ -309,7 +329,7 @@ const I18N = {
     cierre_text: 'Goshen Hills is not discovered in haste. It is recognized through discernment. The collection is not offered to the whole market — it is offered to those who know the Colombian Caribbean can be lived at a different cadence.',
     cierre_quote: '"Eleven villas. One hillside. An unrepeatable horizon."',
     cierre_cta: 'Begin the conversation →',
-    foot_eyebrow: 'VI · CONVERSATION',
+    foot_eyebrow: 'CONVERSATION',
     foot_title: 'The private conversation.',
     foot_sub: 'The natural step toward choosing a villa.',
     foot_p1: 'Goshen Hills is not sold openly. It is handled in conversation. Choosing a villa does not begin with a sale — it begins with a reading: who will inhabit the villa, how they wish to live the Caribbean, which atmosphere best matches their way of being.',
@@ -328,7 +348,7 @@ const I18N = {
     trust_2: '🔒 Encrypted data',
     trust_3: '✓ No marketing',
     foot_discover: 'Discover',
-    foot_l_vision: 'The Vision', foot_l_lugar: 'The Place', foot_l_coleccion: 'Villa Collection', foot_l_garantias: 'Assurances', foot_l_faq: 'FAQ',
+    foot_l_vision: 'Manifesto', foot_l_lugar: 'The Place', foot_l_coleccion: 'Villa Collection', foot_l_garantias: 'Assurances', foot_l_faq: 'FAQ',
     foot_contact: 'Contact', foot_project: 'Project', foot_arch: 'Architect: Raúl Caballería',
     foot_garantias_link: 'Project assurances',
     foot_rights: '© 2026 Goshen Hills · AQUALINDA S.A.S. · All rights reserved.',
@@ -382,7 +402,7 @@ function applyLang(lang, isInitial) {
   if (typeof renderGrid === 'function') {
     renderGrid();
     if (!isInitial) {
-      document.querySelectorAll('#villas-grid .reveal').forEach(el => el.classList.add('visible'));
+      document.querySelectorAll('.villas-grid .villa-card').forEach(el => el.classList.add('visible'));
     }
   }
   renderAvailability();
@@ -613,19 +633,15 @@ function initReveal() {
 /* -------------------------------------------------------------------------- */
 let currentVillaId = null;
 
-function renderGrid() {
-  const grid = document.getElementById('villas-grid');
-  if (!grid) return;
-
+function villaCardHtml(v, index) {
   const staggerDelays = [0, 0.12, 0.24];
-  grid.innerHTML = VILLAS.map((v, index) => {
-    const disponible = v.disponible !== false;
-    const badgeClass = disponible ? 'disponible' : 'reservada';
-    const badgeText = disponible ? t('badge_available') : t('badge_reserved');
-    const cardClass = disponible ? '' : ' reservada-card';
-    const clickable = disponible ? `tabindex="0" role="button"` : `tabindex="-1" aria-disabled="true"`;
-    const staggerDelay = staggerDelays[index % 3];
-    return `
+  const disponible = v.disponible !== false;
+  const badgeClass = disponible ? 'disponible' : 'reservada';
+  const badgeText = disponible ? t('badge_available') : t('badge_reserved');
+  const cardClass = disponible ? '' : ' reservada-card';
+  const clickable = disponible ? `tabindex="0" role="button"` : `tabindex="-1" aria-disabled="true"`;
+  const staggerDelay = staggerDelays[index % 3];
+  return `
     <article class="villa-card reveal${cardClass}" data-id="${v.id}" ${clickable} aria-label="Ver detalles de ${v.nombre}" style="transition-delay: ${staggerDelay}s">
       <div class="villa-card-image-wrapper">
         <img src="./assets/images/villa-${v.id}-render.webp" alt="${v.nombre} — render arquitectónico, Goshen Hills, Santa Marta" class="villa-card-img" id="img-${v.id}" loading="lazy">
@@ -637,9 +653,25 @@ function renderGrid() {
         <p class="villa-card-specs">${v.area} m² · ${v.alcobas} ${t('word_beds')}</p>
         ${disponible ? `<span class="villa-card-cta">${ghLang() === 'en' ? 'View details →' : 'Ver detalles →'}</span>` : ''}
       </div>
-    </article>
-  `;
-  }).join('');
+    </article>`;
+}
+
+function casaNum(v) { return parseInt((v.casa || '').replace(/\D/g, ''), 10) || 0; }
+
+function renderGrid() {
+  const post = document.getElementById('grid-posterior');
+  const front = document.getElementById('grid-frontal');
+  const flat = document.getElementById('villas-grid');
+
+  if (post && front) {
+    // Agrupado por tipología: Posterior (Casas 01–06) y Frontal (Casas 07–11)
+    post.innerHTML = VILLAS.filter(v => casaNum(v) <= 6).map(villaCardHtml).join('');
+    front.innerHTML = VILLAS.filter(v => casaNum(v) >= 7).map(villaCardHtml).join('');
+  } else if (flat) {
+    flat.innerHTML = VILLAS.map(villaCardHtml).join('');
+  } else {
+    return;
+  }
 
   document.querySelectorAll('.villa-card:not(.reservada-card)').forEach(card => {
     card.addEventListener('click', () => openModalWithTransition(card.dataset.id));
