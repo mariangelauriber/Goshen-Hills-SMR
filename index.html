@@ -46,7 +46,7 @@
     rel="stylesheet">
 
   <link rel="preload" as="image" href="./assets/images/pool-night.webp" fetchpriority="high">
-  <link rel="stylesheet" href="./style.css?v=20260603e">
+  <link rel="stylesheet" href="./style.css?v=20260603f">
 
   <!-- Google Analytics 4 — reemplazar G-XXXXXXXXXX con el Measurement ID real -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -97,6 +97,15 @@
         "telephone": "+573004000707",
         "email": "hola@goshenhills.com.co",
         "numberOfRooms": "3",
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Private pool", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Private terrace/patio", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Private garden", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Open kitchen", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "3 en-suite bedrooms", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Caribbean sea view", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Natural cross-ventilation", "value": true }
+        ],
         "floorSize": {
           "@type": "QuantitativeValue",
           "minValue": 211,
@@ -142,9 +151,9 @@
     <section class="hero" id="hero">
       <div class="hero-bg" style="background-image: url('./assets/images/pool-night.webp');"></div>
       <div class="hero-content">
-        <span class="eyebrow reveal text-moonlight hero-coleccion-eyebrow" data-i18n="hero_coleccion">COLECCIÓN PRIVADA · ONCE VILLAS</span>
-        <h1 class="hero-title reveal delay-1" data-i18n="hero_title">Donde el cielo abraza el mar.</h1>
-        <p class="hero-subtitle reveal delay-2" data-i18n="hero_subtitle">Vía al Rodadero · Santa Marta · Caribe colombiano</p>
+        <h1 class="hero-brand reveal" data-i18n="hero_brand">Goshen Hills</h1>
+        <p class="hero-tagline-it reveal delay-1" data-i18n="hero_title">Donde el cielo abraza el mar</p>
+        <span class="eyebrow reveal delay-2 hero-loc" data-i18n="hero_location">SANTA MARTA · COLOMBIA</span>
         <div class="hero-actions reveal delay-3">
           <a href="https://wa.me/573004000707?text=Hola%2C%20me%20interesa%20conocer%20Goshen%20Hills." target="_blank" rel="noopener noreferrer" class="btn-primary cta-whatsapp" data-cta="hero" data-i18n="hero_cta1">Iniciar conversación privada</a>
           <a href="#coleccion" class="btn-secondary font-italic" data-i18n="hero_cta2">Conocer la colección ↓</a>
@@ -223,13 +232,39 @@
           <figure class="ls-item ls-item--wide"><img src="./assets/images/pool-day.webp" alt="Piscina de día con horizonte del Caribe en Goshen Hills" loading="lazy"></figure>
         </div>
 
-        <ul class="amenities-list amenities-grid reveal">
-          <li data-i18n="amen_1">Piscina privada con vista panorámica al Caribe</li>
-          <li data-i18n="amen_2">Terraza o patio privado de 23 a 74 m²</li>
-          <li data-i18n="amen_3">Ventilación cruzada natural · climatización pasiva todo el año</li>
-          <li data-i18n="amen_4">3 alcobas en suite con acabados de primera línea</li>
-          <li data-i18n="amen_5">Ventanales de piso a techo en zona social</li>
-          <li data-i18n="amen_6">Arquitectura mediterránea contemporánea adaptada al trópico</li>
+        <ul class="amenities-icons reveal">
+          <li>
+            <svg class="amenity-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
+            <span class="amenity-label" data-i18n="amen_pool">Piscina privada</span>
+          </li>
+          <li>
+            <svg class="amenity-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2"/><path d="M5 11V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/><path d="M5 17v3M19 17v3"/></svg>
+            <span class="amenity-label" data-i18n="amen_terrace">Terraza / Patio</span>
+          </li>
+          <li>
+            <svg class="amenity-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 19h8a4 4 0 0 0 .8-7.9 5 5 0 1 0-9.6 0A4 4 0 0 0 8 19Z"/><path d="M12 19v3"/></svg>
+            <span class="amenity-label" data-i18n="amen_garden">Jardín privado</span>
+          </li>
+          <li>
+            <svg class="amenity-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2a2 2 0 0 0 2-2V2"/><path d="M5 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+            <span class="amenity-label" data-i18n="amen_kitchen">Cocina abierta</span>
+          </li>
+          <li>
+            <svg class="amenity-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>
+            <span class="amenity-label" data-i18n="amen_suites">3 Alcobas en suite</span>
+          </li>
+          <li>
+            <svg class="amenity-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v6"/><path d="m4.93 9.93 1.41 1.41"/><path d="m17.66 11.34 1.41-1.41"/><path d="M22 18H2"/><path d="m8 6 4-4 4 4"/><path d="M16 18a4 4 0 0 0-8 0"/><path d="M22 22H2"/></svg>
+            <span class="amenity-label" data-i18n="amen_view">Vista al mar Caribe</span>
+          </li>
+          <li>
+            <svg class="amenity-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"/><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"/><path d="M9.8 4.4A2 2 0 1 1 11 8H2"/></svg>
+            <span class="amenity-label" data-i18n="amen_breeze">Ventilación natural</span>
+          </li>
+          <li>
+            <svg class="amenity-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+            <span class="amenity-label" data-i18n="amen_arch">Arquitectura de autor</span>
+          </li>
         </ul>
 
         <div class="experiencia-cta text-center reveal">
@@ -262,37 +297,20 @@
       </div>
     </section>
 
-    <!-- 3. THE VISION -->
+    <!-- 3. MANIFIESTO (editorial, dos columnas) -->
     <section class="vision" id="vision">
-      <div class="container vision-container text-center">
-        <span class="eyebrow reveal text-cedar" data-i18n="vision_eyebrow">MANIFIESTO</span>
-        <h2 class="vision-title reveal delay-1" style="max-width: 900px; margin: 0 auto 2rem;" data-i18n-html="vision_title">Goshen Hills no fue concebido para competir con el mercado.<br><span class="text-cedar font-italic">Fue concebido para distinguirse de él.</span></h2>
-
-        <div class="vision-text-grid reveal delay-2">
-          <div class="vision-col">
-            <p data-i18n="vision_p1">El Caribe colombiano se ha llenado de torres que crecen en altura, condominios que crecen en número, ofertas que crecen en urgencia.</p>
-            <p style="margin-top: 1.5rem;" data-i18n="vision_p2">Goshen Hills nace de una decisión opuesta: once villas privadas dispuestas con respeto al terreno, no contra él.</p>
-          </div>
-          <div class="vision-col">
-            <p data-i18n="vision_p3">En la Reserva de la Montaña, sobre Vía al Rodadero, la arquitectura no impone. Revela luz, brisa y paisaje. Cada villa fue diseñada para preservar lo que el lugar ya ofrece: el horizonte abierto del mar Caribe y la presencia silenciosa de la Sierra Nevada de Santa Marta.</p>
-            <p style="margin-top: 1.5rem; font-style: italic; color: var(--cedar-bronze);" data-i18n="vision_p4">Aquí, se conserva un horizonte que no se repite.</p>
-          </div>
+      <div class="container vision-editorial">
+        <div class="vision-left reveal">
+          <span class="eyebrow text-cedar" data-i18n="vision_eyebrow">MANIFIESTO</span>
+          <h2 class="vision-headline" data-i18n-html="vision_title">Goshen Hills no fue concebido para competir con el mercado.<br><span class="text-cedar font-italic">Fue concebido para distinguirse de él.</span></h2>
         </div>
-
-        <div class="vision-quote reveal delay-3" style="margin-top: 4rem;">
-          <h3 class="font-italic text-cedar" style="font-size: clamp(24px, 4vw, 36px);" data-i18n="vision_quote">"El lujo que no se exhibe, se respira."</h3>
+        <div class="vision-right reveal delay-1">
+          <p data-i18n="vision_p1">El Caribe colombiano se ha llenado de torres que crecen en altura, condominios que crecen en número, ofertas que crecen en urgencia. Goshen Hills nace de una decisión opuesta: once villas privadas dispuestas con respeto al terreno, no contra él.</p>
+          <p data-i18n="vision_p3">En la Reserva de la Montaña, sobre Vía al Rodadero, la arquitectura no impone. Revela luz, brisa y paisaje. Cada villa fue diseñada para preservar lo que el lugar ya ofrece: el horizonte abierto del mar Caribe y la presencia silenciosa de la Sierra Nevada de Santa Marta.</p>
+          <p data-i18n="vision_p4">Aquí no se vende un metro cuadrado más. Se conserva un horizonte que no se repite.</p>
+          <div class="vision-divider"></div>
+          <p class="vision-quote-r font-italic text-cedar" data-i18n="vision_quote">"El lujo que no se exhibe, se respira."</p>
         </div>
-      </div>
-    </section>
-
-    <!-- 9. CIERRE MINIMALISTA -->
-    <section class="cierre text-center" style="padding: 8rem 0; background-color: var(--moonlight);">
-      <div class="container reveal" style="max-width: 800px;">
-        <p class="eyebrow text-cedar" style="margin-bottom: 2rem;" data-i18n="cierre_eyebrow">9 DE 11 VILLAS DISPONIBLES</p>
-        <h2 class="cierre-title text-midnight" style="margin-bottom: 2rem;" data-i18n="cierre_title">La conversación comienza antes que la visita.</h2>
-        <p class="cierre-text text-midnight-60" style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 3rem;" data-i18n="cierre_text">Goshen Hills no se descubre con prisa. Se reconoce con discernimiento. La colección no se ofrece a todo el mercado — se ofrece a quienes saben que el Caribe colombiano puede vivirse con otra cadencia.</p>
-        <h3 class="cierre-quote font-italic text-cedar" style="font-size: clamp(24px, 3vw, 36px); margin-bottom: 3rem;" data-i18n="cierre_quote">"Once villas. Una ladera. Un horizonte irrepetible."</h3>
-        <a href="https://wa.me/573004000707" target="_blank" rel="noopener noreferrer" class="btn-primary cta-whatsapp" data-cta="cierre" style="padding: 1rem 3rem; font-size: 1.2rem;" data-i18n="cierre_cta">Iniciar la conversación →</a>
       </div>
     </section>
   </main>
@@ -499,7 +517,7 @@
     </a>
   </div>
 
-  <script src="./app.js?v=20260603e"></script>
+  <script src="./app.js?v=20260603f"></script>
 </body>
 
 </html>

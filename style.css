@@ -262,6 +262,31 @@ section {
 .hero-title { color: var(--white); margin-bottom: 1.5rem; }
 .hero-subtitle { color: rgba(255,255,255,0.8); margin: 0 auto 2rem auto; }
 
+/* Hero brand-forward (GOSHEN HILLS) */
+.hero-brand {
+  color: var(--white);
+  font-size: clamp(56px, 9vw, 132px);
+  line-height: 1;
+  letter-spacing: 0.015em;
+  margin-bottom: 1.1rem;
+  text-shadow: 0 2px 40px rgba(0,0,0,0.25);
+}
+.hero-tagline-it {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(20px, 2.6vw, 34px);
+  color: rgba(255,255,255,0.92);
+  max-width: none;
+  margin: 0 auto 1.5rem;
+}
+.hero-loc {
+  color: var(--moonlight);
+  opacity: 0.85;
+  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+  margin-bottom: 2.25rem;
+}
+
 .hero-top-eyebrow {
   position: absolute;
   top: 5.5rem;
@@ -1545,4 +1570,118 @@ section {
 @media (max-width: 600px) {
   .lugar-head { flex-direction: column; align-items: flex-start; }
   .lugar-request { width: 100%; }
+}
+
+/* ==========================================================================
+   MANIFIESTO EDITORIAL (2 columnas) + AMENITIES CON ÍCONOS  (V4)
+   ========================================================================== */
+
+/* Manifiesto editorial */
+.vision-editorial {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5vw;
+  align-items: start;
+  text-align: left;
+}
+.vision-headline {
+  font-size: clamp(32px, 4vw, 58px);
+  font-style: italic;
+  line-height: 1.14;
+  color: var(--text-dark);
+  max-width: 100%;
+}
+.vision-headline .text-cedar { font-style: italic; }
+.vision-right p { margin-bottom: 1.5rem; max-width: 100%; }
+.vision-right p:last-of-type { margin-bottom: 0; }
+.vision-divider { width: 100%; height: 1px; background: rgba(0,0,0,0.12); margin: 2.5rem 0 1.5rem; }
+.vision-quote-r { font-size: clamp(22px, 2.4vw, 32px); line-height: 1.3; }
+@media (max-width: 900px) {
+  .vision-editorial { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+
+/* Amenities con íconos (estilo real estate premium) */
+.amenities-icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem 2rem;
+  margin-top: 3.5rem;
+  list-style: none;
+  padding: 0;
+}
+.amenities-icons li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.85rem;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+.amenities-icons.visible li { opacity: 1; transform: none; }
+.amenities-icons.visible li:nth-child(2) { transition-delay: 0.06s; }
+.amenities-icons.visible li:nth-child(3) { transition-delay: 0.12s; }
+.amenities-icons.visible li:nth-child(4) { transition-delay: 0.18s; }
+.amenities-icons.visible li:nth-child(5) { transition-delay: 0.24s; }
+.amenities-icons.visible li:nth-child(6) { transition-delay: 0.30s; }
+.amenities-icons.visible li:nth-child(7) { transition-delay: 0.36s; }
+.amenities-icons.visible li:nth-child(8) { transition-delay: 0.42s; }
+.amenity-ico {
+  width: 38px; height: 38px;
+  color: var(--cedar-bronze);
+  stroke-width: 1.3;
+}
+.amenity-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  max-width: 100%;
+}
+@media (max-width: 900px) { .amenities-icons { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .amenities-icons { grid-template-columns: repeat(2, 1fr); gap: 2rem 1rem; } }
+@media (prefers-reduced-motion: reduce) {
+  .amenities-icons li { opacity: 1; transform: none; transition: none; }
+}
+
+/* ==========================================================================
+   ANIMACIONES DE CONVERSIÓN (V4)
+   ========================================================================== */
+
+/* Pulso de atención en el WhatsApp flotante (canal de conversión #1) */
+.floating-whatsapp { position: fixed; isolation: isolate; }
+.floating-whatsapp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #25D366;
+  z-index: -1;
+  animation: waPulse 2.6s var(--ease-out) infinite;
+}
+@keyframes waPulse {
+  0%   { transform: scale(1);   opacity: 0.55; }
+  70%  { transform: scale(1.9); opacity: 0; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+/* Brillo sutil al hover en los CTA primarios (micro-interacción premium) */
+.btn-primary { position: relative; overflow: hidden; }
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -120%;
+  width: 60%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.28), transparent);
+  transform: skewX(-18deg);
+  transition: left 0.7s var(--ease-out);
+  pointer-events: none;
+}
+.btn-primary:hover::after { left: 140%; }
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-whatsapp::before { animation: none; }
+  .btn-primary::after { display: none; }
 }
