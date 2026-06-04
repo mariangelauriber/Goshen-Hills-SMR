@@ -46,7 +46,7 @@
     rel="stylesheet">
 
   <link rel="preload" as="image" href="./assets/images/pool-night.webp" fetchpriority="high">
-  <link rel="stylesheet" href="./style.css?v=20260603g">
+  <link rel="stylesheet" href="./style.css?v=20260604a">
 
   <!-- Google Analytics 4 — reemplazar G-XXXXXXXXXX con el Measurement ID real -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -63,14 +63,41 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
-        "name": "Goshen Hills — Colección Privada de Villas",
-        "description": "Colección privada de once villas de lujo en la Reserva de la Montaña, Vía al Rodadero, Santa Marta.",
-        "url": "https://goshenhills.com.co",
-        "telephone": "+573004000707",
+        "@type": "WebSite",
+        "@id": "https://goshenhills.com.co/#website",
+        "url": "https://goshenhills.com.co/",
+        "name": "Goshen Hills",
+        "inLanguage": "es-CO",
+        "publisher": {
+          "@id": "https://goshenhills.com.co/#org"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://goshenhills.com.co/#org",
+        "name": "AQUALINDA S.A.S.",
+        "alternateName": "Goshen Hills",
+        "url": "https://goshenhills.com.co/",
         "email": "hola@goshenhills.com.co",
-        "priceRange": "$$$$$",
+        "telephone": "+573004000707",
+        "logo": "https://goshenhills.com.co/assets/images/logo/logo-full.svg",
         "image": "https://goshenhills.com.co/assets/images/og-image.jpg",
+        "areaServed": {
+          "@type": "Place",
+          "name": "Santa Marta, Magdalena, Colombia"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://goshenhills.com.co/#architect",
+        "name": "Raúl Caballería",
+        "jobTitle": "Arquitecto",
+        "identifier": "A144552015-414917"
+      },
+      {
+        "@type": "Place",
+        "@id": "https://goshenhills.com.co/#place",
+        "name": "Reserva de la Montaña — Goshen Hills",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Vía al Rodadero, Reserva de la Montaña",
@@ -83,34 +110,57 @@
           "latitude": "11.2049594",
           "longitude": "-74.2225819"
         },
-        "sameAs": [
-          "https://www.instagram.com/goshenhills",
-          "https://www.linkedin.com/company/goshenhills"
+        "amenityFeature": [
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Piscina privada",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Terraza o patio privado",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Jardín privado",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Cocina abierta",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Tres alcobas en suite",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Vista al mar Caribe",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Ventilación cruzada natural",
+            "value": true
+          }
         ]
       },
       {
-        "@type": "Residence",
-        "name": "Goshen Hills",
-        "description": "Colección privada de once villas de lujo en la Reserva de la Montaña, Santa Marta.",
-        "url": "https://goshenhills.com.co",
+        "@type": "RealEstateListing",
+        "@id": "https://goshenhills.com.co/#listing",
+        "name": "Goshen Hills — Colección Privada de Villas",
+        "description": "Colección privada de once villas de lujo en la Reserva de la Montaña, Vía al Rodadero, Santa Marta. Tres alcobas en suite, piscina, terraza o patio privado y vista al mar Caribe.",
+        "url": "https://goshenhills.com.co/",
         "image": "https://goshenhills.com.co/assets/images/og-image.jpg",
-        "telephone": "+573004000707",
-        "email": "hola@goshenhills.com.co",
-        "numberOfRooms": "3",
-        "amenityFeature": [
-          { "@type": "LocationFeatureSpecification", "name": "Private pool", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Private terrace/patio", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Private garden", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Open kitchen", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "3 en-suite bedrooms", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Caribbean sea view", "value": true },
-          { "@type": "LocationFeatureSpecification", "name": "Natural cross-ventilation", "value": true }
-        ],
-        "floorSize": {
-          "@type": "QuantitativeValue",
-          "minValue": 211,
-          "maxValue": 290,
-          "unitCode": "MTK"
+        "inLanguage": "es-CO",
+        "provider": {
+          "@id": "https://goshenhills.com.co/#org"
+        },
+        "architect": {
+          "@id": "https://goshenhills.com.co/#architect"
         },
         "address": {
           "@type": "PostalAddress",
@@ -123,18 +173,224 @@
           "@type": "GeoCoordinates",
           "latitude": "11.2049594",
           "longitude": "-74.2225819"
-        }
+        },
+        "numberOfItems": 11,
+        "containsPlace": [
+          {
+            "@type": "House",
+            "name": "Villa Luna",
+            "identifier": "Casa 01",
+            "numberOfRooms": 3,
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 235.52,
+              "unitCode": "MTK"
+            },
+            "address": {
+              "@id": "https://goshenhills.com.co/#place"
+            }
+          },
+          {
+            "@type": "House",
+            "name": "Villa Brisa",
+            "identifier": "Casa 02",
+            "numberOfRooms": 3,
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 220.28,
+              "unitCode": "MTK"
+            },
+            "address": {
+              "@id": "https://goshenhills.com.co/#place"
+            }
+          },
+          {
+            "@type": "House",
+            "name": "Villa Aurora",
+            "identifier": "Casa 03",
+            "numberOfRooms": 3,
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 219.79,
+              "unitCode": "MTK"
+            },
+            "address": {
+              "@id": "https://goshenhills.com.co/#place"
+            }
+          },
+          {
+            "@type": "House",
+            "name": "Villa Celeste",
+            "identifier": "Casa 04",
+            "numberOfRooms": 3,
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 223.43,
+              "unitCode": "MTK"
+            },
+            "address": {
+              "@id": "https://goshenhills.com.co/#place"
+            }
+          },
+          {
+            "@type": "House",
+            "name": "Villa Horizonte",
+            "identifier": "Casa 05",
+            "numberOfRooms": 3,
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 232.93,
+              "unitCode": "MTK"
+            },
+            "address": {
+              "@id": "https://goshenhills.com.co/#place"
+            }
+          },
+          {
+            "@type": "House",
+            "name": "Villa Serena",
+            "identifier": "Casa 06",
+            "numberOfRooms": 3,
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 211.71,
+              "unitCode": "MTK"
+            },
+            "address": {
+              "@id": "https://goshenhills.com.co/#place"
+            }
+          },
+          {
+            "@type": "House",
+            "name": "Villa Coral",
+            "identifier": "Casa 07",
+            "numberOfRooms": 3,
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 259.03,
+              "unitCode": "MTK"
+            },
+            "address": {
+              "@id": "https://goshenhills.com.co/#place"
+            }
+          },
+          {
+            "@type": "House",
+            "name": "Villa Palma",
+            "identifier": "Casa 08",
+            "numberOfRooms": 3,
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 243.6,
+              "unitCode": "MTK"
+            },
+            "address": {
+              "@id": "https://goshenhills.com.co/#place"
+            }
+          },
+          {
+            "@type": "House",
+            "name": "Villa Ámbar",
+            "identifier": "Casa 09",
+            "numberOfRooms": 3,
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 236.21,
+              "unitCode": "MTK"
+            },
+            "address": {
+              "@id": "https://goshenhills.com.co/#place"
+            }
+          },
+          {
+            "@type": "House",
+            "name": "Villa Marina",
+            "identifier": "Casa 10",
+            "numberOfRooms": 3,
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 240.18,
+              "unitCode": "MTK"
+            },
+            "address": {
+              "@id": "https://goshenhills.com.co/#place"
+            }
+          },
+          {
+            "@type": "House",
+            "name": "Villa Sierra",
+            "identifier": "Casa 11",
+            "numberOfRooms": 3,
+            "floorSize": {
+              "@type": "QuantitativeValue",
+              "value": 289.87,
+              "unitCode": "MTK"
+            },
+            "address": {
+              "@id": "https://goshenhills.com.co/#place"
+            }
+          }
+        ]
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
-          { "@type": "Question", "name": "¿Por qué Santa Marta es el nuevo destino de lujo del Caribe colombiano?", "acceptedAnswer": { "@type": "Answer", "text": "Santa Marta es la ciudad más antigua de Colombia y hoy el destino de mayor crecimiento del Caribe: Forbes reportó un alza del 22,7% en visitantes internacionales. Combina mar Caribe, la Sierra Nevada y el Parque Tayrona en un mismo entorno, lo que la convierte en el destino de mayor proyección del Caribe colombiano." } },
-          { "@type": "Question", "name": "¿Conviene adquirir una propiedad en Santa Marta hoy?", "acceptedAnswer": { "@type": "Answer", "text": "Quienes reconocen una ciudad antes de su consolidación toman una posición privilegiada. Santa Marta vive un momento de descubrimiento global, con creciente demanda nacional e internacional y una oferta de villas privadas todavía limitada." } },
-          { "@type": "Question", "name": "¿Dónde comprar una villa de lujo en Santa Marta?", "acceptedAnswer": { "@type": "Answer", "text": "Vía al Rodadero, en la Reserva de la Montaña, es una de las zonas más valoradas: ladera elevada con vista al Caribe, a diez minutos del Rodadero y veinte del aeropuerto. Goshen Hills es una colección privada de once villas en este sector." } },
-          { "@type": "Question", "name": "¿Qué hace especial a la zona de Vía al Rodadero?", "acceptedAnswer": { "@type": "Answer", "text": "Es una ladera sobre el mar en el flanco de la Sierra Nevada: brisa de montaña y horizonte caribeño a la vez, fuera del ruido urbano pero a minutos de los servicios del Rodadero y del Aeropuerto Internacional Simón Bolívar." } },
-          { "@type": "Question", "name": "¿Qué tan cerca está Goshen Hills del aeropuerto y del Parque Tayrona?", "acceptedAnswer": { "@type": "Answer", "text": "A 10 minutos del Rodadero, 20 del Aeropuerto Internacional Simón Bolívar y 40 del Parque Nacional Natural Tayrona." } },
-          { "@type": "Question", "name": "¿Cómo son las villas de Goshen Hills?", "acceptedAnswer": { "@type": "Answer", "text": "Once villas privadas de tres alcobas en suite, entre 211 y 290 m², con piscina, terraza o patio privado, cocina abierta y vista al mar Caribe. Seis villas posteriores ascienden por la ladera y cinco frontales descienden hacia los patios más amplios de la colección." } },
-          { "@type": "Question", "name": "¿Cómo solicitar información o conocer la disponibilidad de Goshen Hills?", "acceptedAnswer": { "@type": "Answer", "text": "La información se gestiona en una conversación privada por WhatsApp (+57 300 400 0707) o por correo a hola@goshenhills.com.co. Se entrega la disponibilidad real del momento y la villa que mejor corresponde a cada perfil familiar." } }
+          {
+            "@type": "Question",
+            "name": "¿Por qué Santa Marta es el nuevo destino de lujo del Caribe colombiano?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Santa Marta es la ciudad más antigua de Colombia y hoy el destino de mayor crecimiento del Caribe: Forbes reportó un alza del 22,7% en visitantes internacionales. Combina mar Caribe, la Sierra Nevada y el Parque Tayrona en un mismo entorno, lo que la convierte en el destino de mayor proyección del Caribe colombiano."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Conviene adquirir una propiedad en Santa Marta hoy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Quienes reconocen una ciudad antes de su consolidación toman una posición privilegiada. Santa Marta vive un momento de descubrimiento global, con creciente demanda nacional e internacional y una oferta de villas privadas todavía limitada."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Dónde comprar una villa de lujo en Santa Marta?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Vía al Rodadero, en la Reserva de la Montaña, es una de las zonas más valoradas: ladera elevada con vista al Caribe, a diez minutos del Rodadero y veinte del aeropuerto. Goshen Hills es una colección privada de once villas en este sector."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué hace especial a la zona de Vía al Rodadero?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Es una ladera sobre el mar en el flanco de la Sierra Nevada: brisa de montaña y horizonte caribeño a la vez, fuera del ruido urbano pero a minutos de los servicios del Rodadero y del Aeropuerto Internacional Simón Bolívar."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué tan cerca está Goshen Hills del aeropuerto y del Parque Tayrona?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A 10 minutos del Rodadero, 20 del Aeropuerto Internacional Simón Bolívar y 40 del Parque Nacional Natural Tayrona."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo son las villas de Goshen Hills?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Once villas privadas de tres alcobas en suite, entre 211 y 290 m², con piscina, terraza o patio privado, cocina abierta y vista al mar Caribe. Seis villas posteriores ascienden por la ladera y cinco frontales descienden hacia los patios más amplios de la colección."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo solicitar información o conocer la disponibilidad de Goshen Hills?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La información se gestiona en una conversación privada por WhatsApp (+57 300 400 0707) o por correo a hola@goshenhills.com.co. Se entrega la disponibilidad real del momento y la villa que mejor corresponde a cada perfil familiar."
+            }
+          }
         ]
       }
     ]
@@ -208,7 +464,7 @@
           <div class="villa-group-head">
             <img class="villa-group-img" src="./assets/images/typology-rear.webp" alt="Tipología posterior — Casas 01 a 06, Goshen Hills" loading="lazy">
             <div class="villa-group-text">
-              <span class="eyebrow text-cedar">H01 — H06</span>
+              <span class="eyebrow text-cedar">Casa 01 — Casa 06</span>
               <h3 data-i18n="group_posterior_title">Tipología Posterior</h3>
               <p data-i18n="group_posterior_sub">Ascienden por la ladera hacia la luz y el cielo. Terrazas orientadas al horizonte.</p>
             </div>
@@ -221,7 +477,7 @@
           <div class="villa-group-head">
             <img class="villa-group-img" src="./assets/images/typology-front.webp" alt="Tipología frontal — Casas 07 a 11, Goshen Hills" loading="lazy">
             <div class="villa-group-text">
-              <span class="eyebrow text-cedar">H07 — H11</span>
+              <span class="eyebrow text-cedar">Casa 07 — Casa 11</span>
               <h3 data-i18n="group_frontal_title">Tipología Frontal</h3>
               <p data-i18n="group_frontal_sub">Descienden hacia el mar y los patios privados más amplios de la colección.</p>
             </div>
@@ -476,7 +732,7 @@
             <div class="form-checks">
               <label class="form-check">
                 <input type="checkbox" id="check-privacidad" required>
-                <span data-i18n="form_check1">Acepto la política de privacidad. Mis datos solo se usan para esta conversación.</span>
+                <span data-i18n-html="form_check1">Acepto la <a href="./privacidad.html" target="_blank" rel="noopener">política de privacidad</a>. Mis datos solo se usan para esta conversación.</span>
               </label>
             </div>
             <button type="submit" class="btn-primary form-btn w-full" style="background-color: var(--cedar-bronze); border-color: var(--cedar-bronze); margin-top: 1.25rem; padding: 1.1rem;" data-i18n="form_submit">Conversar ahora por WhatsApp</button>
@@ -499,7 +755,7 @@
         <div class="footer-col brand-col">
           <a href="#" class="logo footer-logo">GOSHEN HILLS</a>
           <p class="footer-tagline" data-i18n="vision_quote">"El lujo que no se exhibe, se respira."</p>
-          <div class="social-icons" style="margin-top: 2rem;">
+          <div class="social-icons" style="display:none;">
             <a href="#" aria-label="Instagram Goshen Hills" class="social-icon" title="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -560,8 +816,8 @@
       <div class="container footer-bottom-flex">
         <p data-i18n="foot_rights">© 2026 Goshen Hills · AQUALINDA S.A.S. · Todos los derechos reservados.</p>
         <div class="legal-links">
-          <a href="#" data-i18n="legal_terms">Términos y Condiciones</a>
-          <a href="#" data-i18n="legal_privacy">Política de Privacidad</a>
+          <a href="./terminos.html" data-i18n="legal_terms">Términos y Condiciones</a>
+          <a href="./privacidad.html" data-i18n="legal_privacy">Política de Privacidad</a>
         </div>
       </div>
     </div>
@@ -646,7 +902,7 @@
     <a class="lb-cta cta-whatsapp" id="lb-cta" data-cta="lightbox" href="https://wa.me/573004000707?text=Hola%2C%20estuve%20viendo%20las%20im%C3%A1genes%20de%20Goshen%20Hills%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" data-i18n="lb_cta">Conversar sobre Goshen Hills →</a>
   </div>
 
-  <script src="./app.js?v=20260603g"></script>
+  <script src="./app.js?v=20260604a"></script>
 </body>
 
 </html>

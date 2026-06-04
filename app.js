@@ -225,7 +225,7 @@ const I18N = {
     form_villa: 'VILLA DE INTERÉS',
     form_villa_default: 'Seleccione una opción',
     form_villa_undecided: 'Aún no lo he decidido',
-    form_check1: 'Acepto la política de privacidad. Mis datos solo se usan para esta conversación.',
+    form_check1: 'Acepto la <a href="./privacidad.html" target="_blank" rel="noopener">política de privacidad</a>. Mis datos solo se usan para esta conversación.',
     form_check2: 'MIS DATOS SOLO SE USARÁN PARA DEVOLVER LA CONVERSACIÓN.',
     form_submit: 'Conversar ahora por WhatsApp',
     trust_1: 'Fiducia regulada',
@@ -373,7 +373,7 @@ const I18N = {
     form_villa: 'VILLA OF INTEREST',
     form_villa_default: 'Select an option',
     form_villa_undecided: "I haven't decided yet",
-    form_check1: 'I accept the privacy policy. My data is used only for this conversation.',
+    form_check1: 'I accept the <a href="./privacidad.html" target="_blank" rel="noopener">privacy policy</a>. My data is used only for this conversation.',
     form_check2: 'MY DATA WILL ONLY BE USED TO RETURN THE CONVERSATION.',
     form_submit: 'Talk now on WhatsApp',
     trust_1: 'Regulated trust',
@@ -578,6 +578,23 @@ function initModalNav() {
 }
 
 /* -------------------------------------------------------------------------- */
+/* HOVER MAGNÉTICO — CTAs Cedar Bronze (solo desktop, respeta reduced-motion)  */
+/* -------------------------------------------------------------------------- */
+function initMagnetic() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!window.matchMedia('(hover: hover)').matches) return;
+  document.querySelectorAll('.hero-actions .btn-primary, .form-btn').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) * 0.18;
+      const y = (e.clientY - r.top - r.height / 2) * 0.32;
+      btn.style.transform = 'translate(' + x.toFixed(1) + 'px,' + y.toFixed(1) + 'px)';
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  });
+}
+
+/* -------------------------------------------------------------------------- */
 /* PIEZAS SINGULARES — abrir overlay de villa                                 */
 /* -------------------------------------------------------------------------- */
 function initPiezas() {
@@ -761,6 +778,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPiezas();
   initEmailToggle();
   initLightbox();
+  initMagnetic();
   trackEvent('page_view', { page_title: document.title });
 });
 
@@ -850,9 +868,9 @@ function renderGrid() {
   const flat = document.getElementById('villas-grid');
 
   if (post && front) {
-    // Agrupado por tipología: Posterior (Casas 01–06) y Frontal (Casas 07–11)
-    post.innerHTML = VILLAS.filter(v => casaNum(v) <= 6).map(villaCardHtml).join('');
-    front.innerHTML = VILLAS.filter(v => casaNum(v) >= 7).map(villaCardHtml).join('');
+    // Orden visual del conjunto: Posterior 06→01, Frontal 11→07
+    post.innerHTML = VILLAS.filter(v => casaNum(v) <= 6).sort((a, b) => casaNum(b) - casaNum(a)).map(villaCardHtml).join('');
+    front.innerHTML = VILLAS.filter(v => casaNum(v) >= 7).sort((a, b) => casaNum(b) - casaNum(a)).map(villaCardHtml).join('');
   } else if (flat) {
     flat.innerHTML = VILLAS.map(villaCardHtml).join('');
   } else {

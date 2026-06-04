@@ -1810,3 +1810,18 @@ html { scroll-padding-top: 6rem; }
 .form-msg.success { color: var(--sierra-sage); font-style: normal; }
 .form-msg a { color: inherit; text-decoration: underline; }
 .trust-badges span:not(:last-child)::after { content: '·'; margin-left: 1.5rem; opacity: 0.45; }
+
+
+/* P3.4 — reveal con blur por seccion (hero excluido por su animacion propia) */
+.reveal {
+  filter: blur(7px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out), filter 0.9s var(--ease-out);
+}
+.reveal.visible { filter: blur(0); }
+.hero-content .reveal, .hero-top-eyebrow.reveal { filter: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { filter: none !important; transition: none; } }
+
+/* Hover magnetico — transicion rapida del transform en CTAs cedar */
+.hero-actions .btn-primary, .form-btn {
+  transition: transform 0.25s var(--ease-out), background-color 0.6s var(--ease-out), color 0.6s var(--ease-out), border-color 0.6s var(--ease-out);
+}
