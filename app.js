@@ -149,13 +149,13 @@ const I18N = {
     vision_p4: 'Aquí no se vende un metro cuadrado más. Se conserva un horizonte que no se repite.',
     vision_quote: '"El lujo que no se exhibe, se respira."',
     lugar_eyebrow: 'EL LUGAR',
-    lugar_title: 'Explora la zona.',
+    lugar_title: 'Aquí el Caribe se respira con aire de montaña.',
     lugar_sub: 'Aquí el Caribe se respira con aire de montaña.',
     lugar_p1: 'Goshen Hills se ubica en la Reserva de la Montaña, sobre Vía al Rodadero, Santa Marta. Una ladera elevada en el flanco occidental de la Sierra Nevada — la única cordillera del mundo que nace en la playa y alcanza los 5.700 metros sobre el nivel del mar, declarada Reserva de la Biósfera por la UNESCO.',
     lugar_p2: 'Por la ventana, el horizonte abierto del mar Caribe, en su versión más cálida y silenciosa. A la espalda, una de las geografías más densas del planeta. A diez minutos, las playas del Rodadero. A veinte, el Aeropuerto Internacional Simón Bolívar. A cuarenta, el Parque Nacional Natural Tayrona, uno de los ecosistemas costeros mejor preservados del continente.',
     stat_reserva: 'Reserva de la Montaña',
     stat_sea: 'sobre el nivel del mar',
-    stat_min: 'min al Rodadero, aeropuerto y Tayrona',
+    stat_min: 'min al Rodadero, al Aeropuerto Internacional Simón Bolívar y al Parque Nacional Natural Tayrona',
     lugar_map_label: 'Ubicación exacta · Vía al Rodadero, Santa Marta',
     exp_eyebrow: 'LA EXPERIENCIA',
     exp_title: 'Interiorismo al servicio del horizonte.',
@@ -193,46 +193,58 @@ const I18N = {
     gar4_title: 'Ubicación irrepetible',
     gar4_body: 'Reserva de la Biósfera UNESCO.<br>Sierra Nevada de Santa Marta.<br>62.900 m² de ladera privada en el Caribe colombiano.',
     faq_eyebrow: 'PREGUNTAS FRECUENTES',
-    faq_title: 'Lo que los compradores de Goshen Hills preguntan primero.',
-    faq_q1: '1. ¿Cuándo estará disponible para habitar?',
-    faq_a1: 'El cronograma de entrega varía por villa según el avance de obra y la fase de compra. La conversación privada entrega la proyección actualizada de cada unidad. Las villas en Precio Founders están en proceso activo de desarrollo con entrega escalonada.',
-    faq_q2: '2. ¿Los recursos del proyecto están protegidos?',
-    faq_a2: 'Sí. Los recursos de la colección se gestionan bajo mecanismo de fiducia regulada, garantizando protección al comprador durante todo el proceso de desarrollo. Los detalles del fideicomiso y la documentación legal del proyecto se entregan en la conversación privada.',
-    faq_q3: '3. ¿Puedo acceder a crédito hipotecario?',
-    faq_a3: 'Sí. Las villas de Goshen Hills califican para crédito hipotecario a través de las principales entidades bancarias colombianas. Para compradores en el exterior existe la opción de adquisición en moneda extranjera con escrituración directa. El equipo orienta sobre ambas rutas en la conversación privada.',
-    faq_q4: '4. ¿Puedo arrendar la villa cuando no la habito?',
-    faq_a4: 'Goshen Hills es una colección residencial privada, no un esquema de renta vacacional. El propietario tiene plena libertad de arrendar su villa de manera privada y selectiva. El proyecto no gestiona arriendos ni ofrece retornos de inversión prometidos — la valorización es la del Caribe colombiano.',
-    faq_q5: '5. ¿Cuál es la diferencia entre las villas posteriores y las frontales?',
-    faq_a5: 'Las posteriores aprovechan la pendiente ascendente del lote con plantas P00, P+01 y P+02 (suben hacia la luz). Las frontales aprovechan la pendiente descendente con plantas P00, P-01 y P-02 (descienden hacia patios privados más amplios, entre 23 y 74 m²).',
-    faq_q6: '6. ¿Quién diseñó el proyecto?',
-    faq_a6: 'Raúl Caballería, arquitecto colombiano con matrícula profesional A144552015-414917. Especializado en arquitectura mediterránea contemporánea adaptada al trópico y en implantación en ladera. Su enfoque: la arquitectura como marco, no como protagonista.',
-    faq_q7: '7. ¿Hay villas con identidad sensorial particular?',
-    faq_a7: 'Tres villas tienen una huella única: Villa Luna (Casa 01) dio origen al logo de la colección por su vista nocturna; Villa Aurora (Casa 03) recibe el amanecer caribeño directamente en el espacio social; Villa Ámbar (Casa 09) ofrece la mejor Golden Hour vespertina — su nombre nació del color que el sol deja sobre su terraza cada tarde a las 17:42.',
-    faq_q8: '8. ¿Cómo se inicia la conversación?',
-    faq_a8: 'Por WhatsApp al +57 300 400 0707 o correo hola@goshenhills.com.co. La conversación entrega disponibilidad real del momento, cronograma de obra y orientación sobre la villa que mejor refleja su perfil. Sin compromiso, sin urgencia fabricada.',
+    faq_title: 'Santa Marta, la zona y Goshen Hills.',
+    faq_q1: '¿Por qué Santa Marta es el nuevo destino de lujo del Caribe colombiano?',
+    faq_a1: 'Santa Marta es la ciudad más antigua de Colombia y hoy el destino de mayor crecimiento del Caribe: Forbes reportó un alza del 22,7% en visitantes internacionales. Combina mar Caribe, la Sierra Nevada y el Parque Tayrona en un mismo entorno, lo que la convierte en el destino de mayor proyección del Caribe colombiano.',
+    faq_q2: '¿Conviene adquirir una propiedad en Santa Marta hoy?',
+    faq_a2: 'Quienes reconocen una ciudad antes de su consolidación toman una posición privilegiada. Santa Marta vive un momento de descubrimiento global, con creciente demanda nacional e internacional y una oferta de villas privadas todavía limitada.',
+    faq_q3: '¿Dónde comprar una villa de lujo en Santa Marta?',
+    faq_a3: 'Vía al Rodadero, en la Reserva de la Montaña, es una de las zonas más valoradas: ladera elevada con vista al Caribe, a diez minutos del Rodadero y veinte del aeropuerto. Goshen Hills es una colección privada de once villas en este sector.',
+    faq_q4: '¿Qué hace especial a la zona de Vía al Rodadero?',
+    faq_a4: 'Es una ladera sobre el mar en el flanco de la Sierra Nevada: brisa de montaña y horizonte caribeño a la vez, fuera del ruido urbano pero a minutos de los servicios del Rodadero y del Aeropuerto Internacional Simón Bolívar.',
+    faq_q5: '¿Qué tan cerca está Goshen Hills del aeropuerto y del Parque Tayrona?',
+    faq_a5: 'A 10 minutos del Rodadero, 20 del Aeropuerto Internacional Simón Bolívar y 40 del Parque Nacional Natural Tayrona.',
+    faq_q6: '¿Cómo son las villas de Goshen Hills?',
+    faq_a6: 'Once villas privadas de tres alcobas en suite, entre 211 y 290 m², con piscina, terraza o patio privado, cocina abierta y vista al mar Caribe. Seis villas posteriores ascienden por la ladera y cinco frontales descienden hacia los patios más amplios de la colección.',
+    faq_q7: '¿Cómo solicitar información o conocer la disponibilidad de Goshen Hills?',
+    faq_a7: 'La información se gestiona en una conversación privada por WhatsApp (+57 300 400 0707) o por correo a hola@goshenhills.com.co. Se entrega la disponibilidad real del momento y la villa que mejor corresponde a cada perfil familiar.',
     cierre_eyebrow: '9 DE 11 VILLAS DISPONIBLES',
     cierre_title: 'La conversación comienza antes que la visita.',
     cierre_text: 'Goshen Hills no se descubre con prisa. Se reconoce con discernimiento. La colección no se ofrece a todo el mercado — se ofrece a quienes saben que el Caribe colombiano puede vivirse con otra cadencia.',
     cierre_quote: '"Once villas. Una ladera. Un horizonte irrepetible."',
     cierre_cta: 'Iniciar la conversación →',
-    foot_eyebrow: 'CONVERSACIÓN',
-    foot_title: 'La conversación privada.',
-    foot_sub: 'El paso natural hacia la elección de una villa.',
-    foot_p1: 'Goshen Hills no se vende abiertamente. Se gestiona en conversación. La elección de una villa no comienza con una venta — comienza con una lectura: quién habitará la villa, cómo desea vivir el Caribe, qué atmósfera corresponde mejor a su modo de ser.',
+    foot_eyebrow: 'CONVERSACIÓN PRIVADA',
+    foot_title: 'Conozca su villa frente al mar.',
+    foot_sub: 'Una conversación. La disponibilidad real del momento. Sin compromiso.',
+    foot_p1: 'Goshen Hills no se vende abiertamente. Se gestiona en conversación: quién habitará la villa, cómo desea vivir el Caribe y qué atmósfera corresponde a su modo de ser.',
     foot_p2: 'Si la colección le resuena, escríbanos por WhatsApp o complete sus detalles en el formulario. Le devolveremos la conversación con la disponibilidad real del momento y la villa que mejor refleja su perfil familiar.',
     form_name: 'NOMBRE COMPLETO',
-    form_name_ph: 'Nombre y apellido',
+    form_name_ph: '¿Cómo prefiere que lo llamemos?',
     form_wa: 'WHATSAPP (CON CÓDIGO DE PAÍS)',
-    form_email: 'CORREO ELECTRÓNICO (opcional)',
+    form_email: 'CORREO ELECTRÓNICO',
     form_villa: 'VILLA DE INTERÉS',
     form_villa_default: 'Seleccione una opción',
     form_villa_undecided: 'Aún no lo he decidido',
-    form_check1: 'HE LEÍDO Y ACEPTO LA POLÍTICA DE PRIVACIDAD.',
+    form_check1: 'Acepto la política de privacidad. Mis datos solo se usan para esta conversación.',
     form_check2: 'MIS DATOS SOLO SE USARÁN PARA DEVOLVER LA CONVERSACIÓN.',
-    form_submit: 'SOLICITAR CONVERSACIÓN PRIVADA',
-    trust_1: '♥ Fiducia regulada',
-    trust_2: '🔒 Datos cifrados',
-    trust_3: '✓ Sin marketing',
+    form_submit: 'Conversar ahora por WhatsApp',
+    trust_1: 'Fiducia regulada',
+    trust_2: 'Datos cifrados',
+    trust_3: 'Sin marketing masivo',
+    foot_dev_loc: 'Reserva de la Montaña · Vía al Rodadero',
+    foot_dev_direct: 'Compra directa sin intermediarios',
+    form_email_toggle: '+ Añadir correo',
+    form_email_ph: 'Para enviarle el dossier privado',
+    form_microcopy: 'Respuesta en menos de 6 horas. Sin lista de correo, sin spam.',
+    pieza_eyebrow: 'PIEZAS SINGULARES',
+    pieza_title: 'Tres villas con huella sensorial irrepetible.',
+    pieza_luna: 'Contemplación. La villa que dio origen al logo de Goshen Hills.',
+    pieza_aurora: 'Renacimiento. La única villa donde el amanecer se vive desde el sofá.',
+    pieza_ambar: 'Plenitud. La mejor Golden Hour vespertina de la colección.',
+    pieza_cta_luna: 'Conocer Villa Luna →',
+    pieza_cta_aurora: 'Conocer Villa Aurora →',
+    pieza_cta_ambar: 'Conocer Villa Ámbar →',
+    lb_cta: 'Conversar sobre Goshen Hills →',
     foot_discover: 'Descubrir',
     foot_l_vision: 'Manifiesto', foot_l_lugar: 'El Lugar', foot_l_coleccion: 'Colección de Villas', foot_l_garantias: 'Garantías', foot_l_faq: 'Preguntas Frecuentes',
     foot_contact: 'Contacto', foot_project: 'Proyecto', foot_arch: 'Arquitecto: Raúl Caballería',
@@ -283,13 +295,13 @@ const I18N = {
     vision_p4: 'Not one more square meter is sold here. A horizon that never repeats is preserved.',
     vision_quote: '"Luxury that is not displayed is breathed."',
     lugar_eyebrow: 'THE PLACE',
-    lugar_title: 'Explore the area.',
+    lugar_title: 'Here the Caribbean is breathed with mountain air.',
     lugar_sub: 'Here the Caribbean is breathed with mountain air.',
     lugar_p1: 'Goshen Hills sits in the Reserva de la Montaña, on Vía al Rodadero, Santa Marta — an elevated hillside on the western flank of the Sierra Nevada, the only mountain range in the world that rises from the beach to 5,700 meters above sea level, declared a UNESCO Biosphere Reserve.',
     lugar_p2: 'Through the window, the open horizon of the Caribbean Sea in its warmest, quietest form. Behind, one of the densest geographies on the planet. Ten minutes to the beaches of El Rodadero. Twenty to Simón Bolívar International Airport. Forty to Tayrona National Natural Park, one of the best-preserved coastal ecosystems on the continent.',
     stat_reserva: 'Mountain Reserve',
     stat_sea: 'above sea level',
-    stat_min: 'min to Rodadero, airport and Tayrona',
+    stat_min: 'min to Rodadero, Simón Bolívar International Airport and Tayrona National Park',
     lugar_map_label: 'Exact location · Vía al Rodadero, Santa Marta',
     exp_eyebrow: 'THE EXPERIENCE',
     exp_title: 'Interiors in service of the horizon.',
@@ -327,46 +339,60 @@ const I18N = {
     gar4_title: 'Unrepeatable location',
     gar4_body: 'UNESCO Biosphere Reserve.<br>Sierra Nevada de Santa Marta.<br>62,900 m² of private hillside on the Colombian Caribbean.',
     faq_eyebrow: 'FREQUENTLY ASKED QUESTIONS',
-    faq_title: 'What Goshen Hills buyers ask first.',
-    faq_q1: '1. When will it be ready to live in?',
-    faq_a1: 'The delivery timeline varies by villa according to construction progress and purchase phase. The private conversation provides the updated projection for each unit. The Founders Pricing villas are in active development with staggered delivery.',
-    faq_q2: '2. Are the project funds protected?',
-    faq_a2: 'Yes. The collection funds are managed under a regulated trust mechanism, guaranteeing buyer protection throughout the development process. The details of the trust and the project legal documentation are shared in the private conversation.',
-    faq_q3: '3. Can I access a mortgage?',
-    faq_a3: 'Yes. Goshen Hills villas qualify for a mortgage through the main Colombian banks. For buyers abroad there is the option to purchase in foreign currency with direct title transfer. The team guides you on both routes in the private conversation.',
-    faq_q4: '4. Can I rent out the villa when I am not living in it?',
-    faq_a4: 'Goshen Hills is a private residential collection, not a vacation-rental scheme. The owner is entirely free to rent their villa privately and selectively. The project does not manage rentals nor promise investment returns — appreciation is that of the Colombian Caribbean.',
-    faq_q5: '5. What is the difference between the rear and front villas?',
-    faq_a5: 'The rear villas use the lot\'s upward slope with floors P00, P+01 and P+02 (rising toward the light). The front villas use the downward slope with floors P00, P-01 and P-02 (descending toward larger private patios, between 23 and 74 m²).',
-    faq_q6: '6. Who designed the project?',
-    faq_a6: 'Raúl Caballería, a Colombian architect with professional license A144552015-414917. Specialized in contemporary Mediterranean architecture adapted to the tropics and in hillside implantation. His approach: architecture as a frame, not as the protagonist.',
-    faq_q7: '7. Are there villas with a particular sensory identity?',
-    faq_a7: 'Three villas have a unique signature: Villa Luna (House 01) gave rise to the collection\'s logo through its night view; Villa Aurora (House 03) receives the Caribbean sunrise directly in the social space; Villa Ámbar (House 09) offers the finest evening Golden Hour — its name was born from the color the sun leaves over its terrace each evening at 17:42.',
-    faq_q8: '8. How does the conversation begin?',
+    faq_title: 'Santa Marta, the area and Goshen Hills.',
+    faq_q1: 'Why is Santa Marta the Colombian Caribbean\'s new luxury destination?',
+    faq_a1: 'Santa Marta is Colombia\'s oldest city and today the fastest-growing destination in the Caribbean: Forbes reported a 22.7% rise in international visitors. It combines the Caribbean Sea, the Sierra Nevada and Tayrona Park in a single setting, making it the destination with the greatest projection on the Colombian Caribbean.',
+    faq_q2: 'Is it worth acquiring a property in Santa Marta today?',
+    faq_a2: 'Those who recognize a city before it consolidates take a privileged position. Santa Marta is living a moment of global discovery, with growing national and international demand and a still-limited supply of private villas.',
+    faq_q3: 'Where to buy a luxury villa in Santa Marta?',
+    faq_a3: 'Vía al Rodadero, in the Reserva de la Montaña, is one of the most valued areas: an elevated hillside with a Caribbean view, ten minutes from El Rodadero and twenty from the airport. Goshen Hills is a private collection of eleven villas in this sector.',
+    faq_q4: 'What makes the Vía al Rodadero area special?',
+    faq_a4: 'It is a hillside over the sea on the flank of the Sierra Nevada: mountain breeze and Caribbean horizon at once, away from the urban noise yet minutes from the services of El Rodadero and Simón Bolívar International Airport.',
+    faq_q5: 'How close is Goshen Hills to the airport and Tayrona Park?',
+    faq_a5: '10 minutes from El Rodadero, 20 from Simón Bolívar International Airport and 40 from Tayrona National Natural Park.',
+    faq_q6: 'What are the Goshen Hills villas like?',
+    faq_a6: 'Eleven private villas with three en-suite bedrooms, between 211 and 290 m², with a pool, private terrace or patio, open kitchen and Caribbean sea view. Six rear villas climb the hillside and five front villas descend toward the collection\'s largest patios.',
+    faq_q7: 'How do I request information or check availability at Goshen Hills?',
+    faq_a7: 'Information is handled in a private conversation by WhatsApp (+57 300 400 0707) or by email at hola@goshenhills.com.co. We share real-time availability and the villa that best matches each family profile.',
+    faq_q8old: '8. How does the conversation begin?',
     faq_a8: 'By WhatsApp at +57 300 400 0707 or email hola@goshenhills.com.co. The conversation provides real-time availability, the construction timeline and guidance on the villa that best reflects your profile. No obligation, no manufactured urgency.',
     cierre_eyebrow: '9 OF 11 VILLAS AVAILABLE',
     cierre_title: 'The conversation begins before the visit.',
     cierre_text: 'Goshen Hills is not discovered in haste. It is recognized through discernment. The collection is not offered to the whole market — it is offered to those who know the Colombian Caribbean can be lived at a different cadence.',
     cierre_quote: '"Eleven villas. One hillside. An unrepeatable horizon."',
     cierre_cta: 'Begin the conversation →',
-    foot_eyebrow: 'CONVERSATION',
-    foot_title: 'The private conversation.',
-    foot_sub: 'The natural step toward choosing a villa.',
-    foot_p1: 'Goshen Hills is not sold openly. It is handled in conversation. Choosing a villa does not begin with a sale — it begins with a reading: who will inhabit the villa, how they wish to live the Caribbean, which atmosphere best matches their way of being.',
+    foot_eyebrow: 'PRIVATE CONVERSATION',
+    foot_title: 'Discover your villa by the sea.',
+    foot_sub: 'One conversation. Real-time availability. No obligation.',
+    foot_p1: 'Goshen Hills is not sold openly. It is handled in conversation: who will inhabit the villa, how they wish to live the Caribbean and which atmosphere matches their way of being.',
     foot_p2: 'If the collection resonates with you, write to us on WhatsApp or complete your details in the form. We will return the conversation with real-time availability and the villa that best reflects your family profile.',
     form_name: 'FULL NAME',
-    form_name_ph: 'First and last name',
+    form_name_ph: 'How would you like us to address you?',
     form_wa: 'WHATSAPP (WITH COUNTRY CODE)',
-    form_email: 'EMAIL (optional)',
+    form_email: 'EMAIL',
     form_villa: 'VILLA OF INTEREST',
     form_villa_default: 'Select an option',
     form_villa_undecided: "I haven't decided yet",
-    form_check1: 'I HAVE READ AND ACCEPT THE PRIVACY POLICY.',
+    form_check1: 'I accept the privacy policy. My data is used only for this conversation.',
     form_check2: 'MY DATA WILL ONLY BE USED TO RETURN THE CONVERSATION.',
-    form_submit: 'REQUEST PRIVATE CONVERSATION',
-    trust_1: '♥ Regulated trust',
-    trust_2: '🔒 Encrypted data',
-    trust_3: '✓ No marketing',
+    form_submit: 'Talk now on WhatsApp',
+    trust_1: 'Regulated trust',
+    trust_2: 'Encrypted data',
+    trust_3: 'No mass marketing',
+    foot_dev_loc: 'Reserva de la Montaña · Vía al Rodadero',
+    foot_dev_direct: 'Direct purchase, no intermediaries',
+    form_email_toggle: '+ Add email',
+    form_email_ph: 'To send you the private dossier',
+    form_microcopy: 'Reply within 6 hours. No mailing list, no spam.',
+    pieza_eyebrow: 'SINGULAR PIECES',
+    pieza_title: 'Three villas with an unrepeatable sensory signature.',
+    pieza_luna: 'Contemplation. The villa that gave rise to the Goshen Hills logo.',
+    pieza_aurora: 'Rebirth. The only villa where sunrise is lived from the sofa.',
+    pieza_ambar: 'Plenitude. The finest evening Golden Hour of the collection.',
+    pieza_cta_luna: 'Discover Villa Luna →',
+    pieza_cta_aurora: 'Discover Villa Aurora →',
+    pieza_cta_ambar: 'Discover Villa Ámbar →',
+    lb_cta: 'Talk about Goshen Hills →',
     foot_discover: 'Discover',
     foot_l_vision: 'Manifesto', foot_l_lugar: 'The Place', foot_l_coleccion: 'Villa Collection', foot_l_garantias: 'Assurances', foot_l_faq: 'FAQ',
     foot_contact: 'Contact', foot_project: 'Project', foot_arch: 'Architect: Raúl Caballería',
@@ -387,12 +413,24 @@ function ghLang() { return document.documentElement.lang === 'en' ? 'en' : 'es';
 function t(key) { const l = ghLang(); return (I18N[l] && I18N[l][key] != null) ? I18N[l][key] : (I18N.es[key] != null ? I18N.es[key] : key); }
 function vfield(v, f) { const l = ghLang(); if (l === 'en' && VILLA_EN[v.id] && VILLA_EN[v.id][f] != null) return VILLA_EN[v.id][f]; return v[f]; }
 
-// Escasez en vivo: cuenta disponibles desde los datos (loss-aversion / urgencia)
+/* Escasez legítima — EDITAR AQUÍ el número de villas disponibles (loss-aversion) */
+const SCARCITY_AVAILABLE = 8;
+const SCARCITY_TOTAL = 11;
+
+// Barra fija superior
+function renderScarcity() {
+  const el = document.getElementById('scarcity-text');
+  if (!el) return;
+  el.textContent = ghLang() === 'en'
+    ? SCARCITY_AVAILABLE + ' of ' + SCARCITY_TOTAL + ' villas available · Founders Phase II'
+    : SCARCITY_AVAILABLE + ' de ' + SCARCITY_TOTAL + ' villas disponibles · Fase Founders II';
+}
+
+// Contador de disponibilidad en la Colección (lee la misma constante para consistencia)
 function renderAvailability() {
   const el = document.getElementById('availability-bar');
   if (!el) return;
-  const total = VILLAS.length;
-  const avail = VILLAS.filter(v => v.disponible !== false).length;
+  const avail = SCARCITY_AVAILABLE, total = SCARCITY_TOTAL;
   const pct = Math.round((avail / total) * 100);
   el.innerHTML =
     '<div class="avail-num"><strong>' + avail + '</strong> <span>/ ' + total + '</span></div>' +
@@ -426,6 +464,7 @@ function applyLang(lang, isInitial) {
     }
   }
   renderAvailability();
+  renderScarcity();
 }
 
 function initLang() {
@@ -539,6 +578,130 @@ function initModalNav() {
 }
 
 /* -------------------------------------------------------------------------- */
+/* PIEZAS SINGULARES — abrir overlay de villa                                 */
+/* -------------------------------------------------------------------------- */
+function initPiezas() {
+  document.querySelectorAll('.pieza-card[data-villa]').forEach(card => {
+    const open = () => { if (typeof openModalWithTransition === 'function') openModalWithTransition(card.dataset.villa); };
+    card.addEventListener('click', open);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/* FORM — toggle "Añadir correo"                                              */
+/* -------------------------------------------------------------------------- */
+function initEmailToggle() {
+  const btn = document.getElementById('email-toggle');
+  const group = document.getElementById('email-group');
+  if (!btn || !group) return;
+  btn.addEventListener('click', () => {
+    group.removeAttribute('hidden');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.style.display = 'none';
+    const inp = document.getElementById('email');
+    if (inp) inp.focus();
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/* LIGHTBOX — galería de La Experiencia                                       */
+/* -------------------------------------------------------------------------- */
+function initLightbox() {
+  const gallery = document.getElementById('experience-gallery');
+  const lb = document.getElementById('lightbox');
+  if (!gallery || !lb) return;
+  const triggers = Array.prototype.slice.call(gallery.querySelectorAll('[data-lb]'));
+  if (!triggers.length) return;
+
+  const items = triggers.map(btn => {
+    const img = btn.querySelector('img');
+    return { src: img.getAttribute('src'), alt: img.getAttribute('alt') || '',
+             capEs: btn.getAttribute('data-cap') || '', capEn: btn.getAttribute('data-cap-en') || '' };
+  });
+
+  const imgEl = document.getElementById('lb-img');
+  const capEl = document.getElementById('lb-caption');
+  const countEl = document.getElementById('lb-counter');
+  const thumbsEl = document.getElementById('lb-thumbs');
+  const closeBtn = document.getElementById('lb-close');
+  const prevBtn = document.getElementById('lb-prev');
+  const nextBtn = document.getElementById('lb-next');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let idx = 0, lastFocus = null, touchX = null;
+
+  thumbsEl.innerHTML = items.map((it, i) =>
+    '<button class="lb-thumb" type="button" data-i="' + i + '" aria-label="Imagen ' + (i + 1) + '"><img src="' + it.src + '" alt="" loading="lazy"></button>'
+  ).join('');
+  const thumbBtns = Array.prototype.slice.call(thumbsEl.querySelectorAll('.lb-thumb'));
+
+  function preload(i) { const im = new Image(); im.src = items[(i + items.length) % items.length].src; }
+
+  function show(i, instant) {
+    idx = (i + items.length) % items.length;
+    const it = items[idx];
+    const apply = () => {
+      imgEl.src = it.src; imgEl.alt = it.alt;
+      capEl.textContent = (ghLang() === 'en' ? it.capEn : it.capEs);
+      countEl.textContent = (idx + 1) + ' / ' + items.length;
+      thumbBtns.forEach((b, j) => b.classList.toggle('active', j === idx));
+      const active = thumbBtns[idx];
+      if (active && active.scrollIntoView) active.scrollIntoView({ block: 'nearest', inline: 'center' });
+    };
+    if (instant || reduce) { apply(); imgEl.style.opacity = '1'; }
+    else { imgEl.style.opacity = '0'; setTimeout(() => { apply(); imgEl.style.opacity = '1'; }, 120); }
+    preload(idx + 1); preload(idx - 1);
+  }
+
+  function onKey(e) {
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowRight') show(idx + 1);
+    else if (e.key === 'ArrowLeft') show(idx - 1);
+    else if (e.key === 'Home') show(0);
+    else if (e.key === 'End') show(items.length - 1);
+    else if (e.key === 'Tab') {
+      const f = lb.querySelectorAll('button, a[href]');
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  }
+  function open(i, origin) {
+    lastFocus = origin || document.activeElement;
+    lb.hidden = false;
+    document.body.classList.add('overflow-hidden');
+    requestAnimationFrame(() => lb.classList.add('open'));
+    show(i, true);
+    closeBtn.focus();
+    document.addEventListener('keydown', onKey);
+  }
+  function close() {
+    lb.classList.remove('open');
+    document.body.classList.remove('overflow-hidden');
+    document.removeEventListener('keydown', onKey);
+    setTimeout(() => { lb.hidden = true; }, 260);
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+
+  triggers.forEach((btn, i) => btn.addEventListener('click', () => open(i, btn)));
+  thumbBtns.forEach((b) => b.addEventListener('click', () => show(parseInt(b.dataset.i, 10))));
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', () => show(idx - 1));
+  nextBtn.addEventListener('click', () => show(idx + 1));
+  lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+  lb.addEventListener('touchstart', (e) => { touchX = e.changedTouches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', (e) => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 45) show(dx < 0 ? idx + 1 : idx - 1);
+    touchX = null;
+  }, { passive: true });
+}
+
+/* -------------------------------------------------------------------------- */
 /* ANALYTICS — wrapper seguro para GA4                                        */
 /* Reemplazar G-XXXXXXXXXX en index.html con el Measurement ID real de GA4    */
 /* -------------------------------------------------------------------------- */
@@ -595,6 +758,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollProgress();
   initCounters();
   initModalNav();
+  initPiezas();
+  initEmailToggle();
+  initLightbox();
   trackEvent('page_view', { page_title: document.title });
 });
 
@@ -842,53 +1008,59 @@ function initForm() {
 
     const nombre = document.getElementById('nombre').value.trim();
     const wa = document.getElementById('whatsapp').value.trim();
-    const email = document.getElementById('email') ? document.getElementById('email').value.trim() : '';
+    const emailEl = document.getElementById('email');
+    const email = emailEl ? emailEl.value.trim() : '';
     const villa = document.getElementById('villa-interes').value;
     const privacidad = document.getElementById('check-privacidad').checked;
-    const datos = document.getElementById('check-datos').checked;
     const btn = form.querySelector('.form-btn');
     const msg = document.getElementById('form-msg');
-
     const en = ghLang() === 'en';
 
     if (!nombre || !wa || !villa) {
-      msg.textContent = en ? 'Please complete all fields before continuing.' : 'Por favor complete todos los campos antes de continuar.';
+      msg.className = 'form-msg error';
+      msg.textContent = en ? 'Please enter your name, WhatsApp and villa.' : 'Por favor indique nombre, WhatsApp y villa.';
       return;
     }
-    if (!privacidad || !datos) {
-      msg.textContent = en ? 'Please accept both conditions to continue.' : 'Por favor acepte ambas condiciones para continuar.';
+    if (!privacidad) {
+      msg.className = 'form-msg error';
+      msg.textContent = en ? 'Please accept the privacy policy to continue.' : 'Por favor acepte la política de privacidad para continuar.';
       return;
     }
 
-    btn.textContent = en ? 'Processing...' : 'Procesando...';
+    msg.className = 'form-msg';
+    btn.textContent = en ? 'Opening WhatsApp…' : 'Abriendo WhatsApp…';
     btn.disabled = true;
-    msg.textContent = '';
 
     trackEvent('form_submit', { villa_interest: villa });
     sessionStorage.setItem('gh_converted', '1');
 
-    let texto;
+    // Mensaje de WhatsApp pre-llenado (omitiendo campos vacíos)
+    const villaTxt = (villa === 'Sin decidir aún')
+      ? (en ? 'the Goshen Hills collection' : 'conocer la colección Goshen Hills')
+      : villa;
+    let lines;
     if (en) {
-      const villaTxt = villa === 'Sin decidir aún' ? 'the Goshen Hills collection' : villa;
-      const emailTxt = email ? ` My email: ${email}.` : '';
-      texto = `Hello, I'm ${nombre} (WA: ${wa}).${emailTxt} I've just requested information about ${villaTxt} from the website. I look forward to your reply.`;
+      lines = ['Hello, I am ' + nombre + '.', 'I am interested in ' + villaTxt + ' at Goshen Hills.'];
+      if (email) lines.push('My email: ' + email);
     } else {
-      const villaTxt = villa === 'Sin decidir aún' ? 'conocer la colección Goshen Hills' : `la ${villa}`;
-      const emailTxt = email ? ` Mi correo: ${email}.` : '';
-      texto = `Hola, soy ${nombre} (WA: ${wa}).${emailTxt} Acabo de solicitar información sobre ${villaTxt} desde la web. Quedo atento a su respuesta.`;
+      lines = ['Hola, soy ' + nombre + '.', 'Me interesa ' + villaTxt + ' en Goshen Hills.'];
+      if (email) lines.push('Mi correo: ' + email);
     }
-    const waUrl = `https://wa.me/573004000707?text=${encodeURIComponent(texto)}`;
+    const waUrl = 'https://wa.me/573004000707?text=' + encodeURIComponent(lines.join('\n'));
 
     setTimeout(() => {
-      msg.textContent = en ? `Thank you, ${nombre}. We'll open WhatsApp to continue the conversation.` : `Gracias, ${nombre}. Le abriremos WhatsApp para continuar la conversación.`;
-      setTimeout(() => {
-        window.open(waUrl, '_blank', 'noopener,noreferrer');
-        form.reset();
-        btn.disabled = false;
-        btn.textContent = t('form_submit');
-        msg.textContent = '';
-      }, 1400);
-    }, 700);
+      const opened = window.open(waUrl, '_blank', 'noopener,noreferrer');
+      if (!opened) window.location.href = waUrl;
+      msg.className = 'form-msg success';
+      msg.innerHTML = en
+        ? 'Your conversation has opened in WhatsApp. If it did not open, write to <a href="mailto:hola@goshenhills.com.co">hola@goshenhills.com.co</a>.'
+        : 'Su conversación se ha abierto en WhatsApp. Si no se abrió, escríbanos a <a href="mailto:hola@goshenhills.com.co">hola@goshenhills.com.co</a>.';
+      form.reset();
+      const eg = document.getElementById('email-group'); if (eg) eg.setAttribute('hidden', '');
+      const et = document.getElementById('email-toggle'); if (et) { et.style.display = ''; et.setAttribute('aria-expanded', 'false'); }
+      btn.disabled = false;
+      btn.textContent = t('form_submit');
+    }, 400);
   });
 }
 
