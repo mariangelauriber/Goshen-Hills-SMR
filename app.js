@@ -258,7 +258,7 @@ const I18N = {
     // dinámicos (cards / modal)
     badge_available: 'Disponible', badge_reserved: 'Reservada',
     spec_area: 'Área Total', spec_levels: 'Niveles', spec_beds: 'Alcobas', spec_outdoor: 'Espacio Exterior',
-    word_beds: 'Alcobas', resident_profile: 'Perfil de habitante', modal_cta: 'Solicitar Dossier Privado'
+    word_beds: 'Alcobas', resident_profile: 'Perfil de habitante', modal_cta: 'Solicitar Dossier Privado', modal_dossier: 'Descargar dossier (PDF)'
   },
   en: {
     nav_cta: 'Private Conversation',
@@ -405,7 +405,7 @@ const I18N = {
     mobile_cta: 'Private conversation →',
     badge_available: 'Available', badge_reserved: 'Reserved',
     spec_area: 'Total Area', spec_levels: 'Levels', spec_beds: 'Bedrooms', spec_outdoor: 'Outdoor Space',
-    word_beds: 'Bedrooms', resident_profile: 'Resident Profile', modal_cta: 'Request Private Dossier'
+    word_beds: 'Bedrooms', resident_profile: 'Resident Profile', modal_cta: 'Request Private Dossier', modal_dossier: 'Download dossier (PDF)'
   }
 };
 
@@ -775,7 +775,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollProgress();
   initCounters();
   initModalNav();
-  initPiezas();
   initEmailToggle();
   initLightbox();
   initMagnetic();
@@ -948,6 +947,14 @@ function openModalWithTransition(id) {
   ctaBtn.setAttribute('rel', 'noopener noreferrer');
   ctaBtn.setAttribute('target', '_blank');
   ctaBtn.onclick = () => trackEvent('whatsapp_click', { cta_location: 'modal', villa_name: villa.nombre });
+
+  // Descarga directa del dossier en PDF de la villa
+  const dossierBtn = document.getElementById('modal-dossier-btn');
+  if (dossierBtn) {
+    dossierBtn.href = `./assets/docs/villa-${id}.pdf`;
+    dossierBtn.setAttribute('download', `Goshen-Hills-${villa.nombre.replace(/\s+/g, '-')}.pdf`);
+    dossierBtn.onclick = () => trackEvent('dossier_download', { villa_name: villa.nombre, villa_id: id });
+  }
 
   // Navegación entre villas con el modal ya abierto: el contenido ya se actualizó
   // arriba. No reabrir el dialog (showModal lanzaría InvalidStateError) ni animar.

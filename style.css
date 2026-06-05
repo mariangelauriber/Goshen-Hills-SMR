@@ -1054,7 +1054,33 @@ section {
   border-top: 1px solid rgba(0,0,0,0.05);
   box-shadow: 0 -10px 20px rgba(0,0,0,0.02);
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
+
+/* Botón secundario: descarga directa del dossier PDF de la villa */
+.btn-dossier {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.5rem;
+  background: transparent;
+  color: var(--cedar-bronze);
+  border: 1px solid var(--cedar-bronze);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: var(--transition);
+}
+.btn-dossier:hover {
+  background: var(--cedar-bronze);
+  color: var(--moonlight);
+}
+
+/* Hint de la colección (reubicado al inicio, bajo el subtítulo) */
+.col-hint { font-size: 0.92rem; }
 
 /* Animations */
 .reveal {

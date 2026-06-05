@@ -46,7 +46,7 @@
     rel="stylesheet">
 
   <link rel="preload" as="image" href="./assets/images/pool-night.webp" fetchpriority="high">
-  <link rel="stylesheet" href="./style.css?v=20260604d">
+  <link rel="stylesheet" href="./style.css?v=20260604e">
 
   <!-- Google Analytics 4 — reemplazar G-XXXXXXXXXX con el Measurement ID real -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -450,6 +450,7 @@
           <span class="eyebrow text-cedar" data-i18n="col_eyebrow">LA COLECCIÓN</span>
           <h2 class="coleccion-title" data-i18n="col_title">Once villas. Once formas de habitar el Caribe.</h2>
           <p class="mt-2 text-midnight" style="font-size: 1.1rem;" data-i18n="col_sub">En cada villa, la luz, la brisa y el horizonte convergen para crear una identidad arquitectónica única y excepcional.</p>
+          <p class="col-hint text-midnight-60 font-italic mt-2" data-i18n="col_hint">Toque cada villa para abrir su mundo.</p>
           <div class="availability-bar reveal" id="availability-bar" aria-live="polite"><!-- poblado por app.js --></div>
         </div>
 
@@ -483,38 +484,6 @@
             </div>
           </div>
           <div class="villas-grid" id="grid-frontal"><!-- app.js --></div>
-        </div>
-
-        <p class="text-center text-midnight-60 font-italic mt-4" style="font-size:0.9rem;" data-i18n="col_hint">Toque cada villa para abrir su mundo.</p>
-      </div>
-    </section>
-
-    <!-- PIEZAS SINGULARES -->
-    <section class="piezas" id="piezas">
-      <div class="container">
-        <div class="piezas-header text-center reveal">
-          <span class="eyebrow text-cedar" data-i18n="pieza_eyebrow">PIEZAS SINGULARES</span>
-          <h2 data-i18n="pieza_title">Tres villas con huella sensorial irrepetible.</h2>
-        </div>
-        <div class="piezas-grid reveal">
-          <article class="pieza-card" data-villa="luna" role="button" tabindex="0" aria-label="Conocer Villa Luna">
-            <div class="pieza-img-wrap"><img src="./assets/images/pool-night.webp" alt="Villa Luna — Contemplación, la villa que dio origen al logo de Goshen Hills, Santa Marta" loading="lazy"></div>
-            <h3 class="pieza-name">Villa Luna</h3>
-            <p class="pieza-desc" data-i18n="pieza_luna">Contemplación. La villa que dio origen al logo de Goshen Hills.</p>
-            <span class="pieza-cta" data-i18n="pieza_cta_luna">Conocer Villa Luna →</span>
-          </article>
-          <article class="pieza-card" data-villa="aurora" role="button" tabindex="0" aria-label="Conocer Villa Aurora">
-            <div class="pieza-img-wrap"><img src="./assets/images/salaInteriorVista.jpg" alt="Villa Aurora — Renacimiento, donde el amanecer caribeño se vive desde el sofá, Goshen Hills" loading="lazy"></div>
-            <h3 class="pieza-name">Villa Aurora</h3>
-            <p class="pieza-desc" data-i18n="pieza_aurora">Renacimiento. La única villa donde el amanecer se vive desde el sofá.</p>
-            <span class="pieza-cta" data-i18n="pieza_cta_aurora">Conocer Villa Aurora →</span>
-          </article>
-          <article class="pieza-card" data-villa="ambar" role="button" tabindex="0" aria-label="Conocer Villa Ámbar">
-            <div class="pieza-img-wrap"><img src="./assets/images/pool-day.webp" alt="Villa Ámbar — Plenitud, la mejor Golden Hour vespertina de la colección, Goshen Hills" loading="lazy"></div>
-            <h3 class="pieza-name">Villa Ámbar</h3>
-            <p class="pieza-desc" data-i18n="pieza_ambar">Plenitud. La mejor Golden Hour vespertina de la colección.</p>
-            <span class="pieza-cta" data-i18n="pieza_cta_ambar">Conocer Villa Ámbar →</span>
-          </article>
         </div>
       </div>
     </section>
@@ -735,13 +704,7 @@
               </label>
             </div>
             <button type="submit" class="btn-primary form-btn w-full" style="background-color: var(--cedar-bronze); border-color: var(--cedar-bronze); margin-top: 1.25rem; padding: 1.1rem;" data-i18n="form_submit">Solicitar información por correo</button>
-            <p class="form-microcopy" data-i18n="form_microcopy">Respuesta en menos de 6 horas. Sin lista de correo, sin spam.</p>
             <p id="form-msg" class="form-msg"></p>
-            <div class="trust-badges">
-              <span data-i18n="trust_1">Fiducia regulada</span>
-              <span data-i18n="trust_2">Datos cifrados</span>
-              <span data-i18n="trust_3">Sin marketing masivo</span>
-            </div>
           </form>
         </div>
       </div>
@@ -754,7 +717,7 @@
         <div class="footer-col brand-col">
           <a href="#" class="logo footer-logo">GOSHEN HILLS</a>
           <p class="footer-tagline" data-i18n="vision_quote">"El lujo que no se exhibe, se respira."</p>
-          <div class="social-icons" style="display:none;">
+          <div class="social-icons">
             <a href="#" aria-label="Instagram Goshen Hills" class="social-icon" title="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -858,6 +821,7 @@
           
           <div class="overlay-sticky-cta">
             <a href="#" id="modal-cta-btn" class="btn-primary w-full" data-i18n="modal_cta">Solicitar Dossier Privado</a>
+            <a href="#" id="modal-dossier-btn" class="btn-dossier w-full" download data-i18n="modal_dossier">Descargar dossier (PDF)</a>
           </div>
         </div>
       </div>
@@ -901,7 +865,7 @@
     <a class="lb-cta cta-whatsapp" id="lb-cta" data-cta="lightbox" href="https://wa.me/573004000707?text=Hola%2C%20estuve%20viendo%20las%20im%C3%A1genes%20de%20Goshen%20Hills%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" data-i18n="lb_cta">Conversar sobre Goshen Hills →</a>
   </div>
 
-  <script src="./app.js?v=20260604d"></script>
+  <script src="./app.js?v=20260604e"></script>
 </body>
 
 </html>
