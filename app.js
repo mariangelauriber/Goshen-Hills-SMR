@@ -977,8 +977,9 @@ function openModalWithTransition(id) {
     try { dialog.showModal(); } catch (e) {}
     document.body.classList.add('overflow-hidden');
   });
-  // Evita rechazos no capturados si la transición se aborta (clic rápido).
-  if (vt && vt.finished) vt.finished.catch(() => {});
+  // Silencia rechazos no capturados (InvalidStateError) si la transición se
+  // aborta por un clic rápido: ready/updateCallbackDone/finished pueden rechazar.
+  ['ready', 'updateCallbackDone', 'finished'].forEach(k => { if (vt && vt[k]) vt[k].catch(() => {}); });
 }
 
 // Close logic
@@ -1023,6 +1024,8 @@ function closeModal() {
     }
     currentVillaId = null;
   };
+  if (transition.ready) transition.ready.catch(() => {});
+  if (transition.updateCallbackDone) transition.updateCallbackDone.catch(() => {});
   transition.finished.then(cleanup, cleanup);
 }
 
