@@ -972,11 +972,13 @@ function openModalWithTransition(id) {
 
   if (sourceImg) sourceImg.style.viewTransitionName = 'active-villa-image';
 
-  document.startViewTransition(() => {
+  const vt = document.startViewTransition(() => {
     if (sourceImg) sourceImg.style.viewTransitionName = '';
-    dialog.showModal();
+    try { dialog.showModal(); } catch (e) {}
     document.body.classList.add('overflow-hidden');
   });
+  // Evita rechazos no capturados si la transición se aborta (clic rápido).
+  if (vt && vt.finished) vt.finished.catch(() => {});
 }
 
 // Close logic
@@ -1003,7 +1005,7 @@ function closeModal() {
   }
 
   const transition = document.startViewTransition(() => {
-    dialog.close();
+    try { dialog.close(); } catch (e) {}
     document.body.classList.remove('overflow-hidden');
 
     if (villaIdOnClose) {
@@ -1012,13 +1014,16 @@ function closeModal() {
     }
   });
 
-  transition.finished.finally(() => {
+  // Limpieza tras la transición; .then(cb, cb) evita rechazos no capturados
+  // (InvalidStateError) si la transición se aborta por un clic rápido.
+  const cleanup = () => {
     if (villaIdOnClose) {
       const sourceImg = document.getElementById(`img-${villaIdOnClose}`);
       if (sourceImg) sourceImg.style.viewTransitionName = '';
     }
     currentVillaId = null;
-  });
+  };
+  transition.finished.then(cleanup, cleanup);
 }
 
 /* -------------------------------------------------------------------------- */
