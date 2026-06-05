@@ -46,7 +46,7 @@
     rel="stylesheet">
 
   <link rel="preload" as="image" href="./assets/images/pool-night.webp" fetchpriority="high">
-  <link rel="stylesheet" href="./style.css?v=20260604c">
+  <link rel="stylesheet" href="./style.css?v=20260604d">
 
   <!-- Google Analytics 4 — reemplazar G-XXXXXXXXXX con el Measurement ID real -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -724,10 +724,9 @@
                 <option value="Sin decidir aún" data-i18n="form_villa_undecided">Aún no lo he decidido — recomiéndenme</option>
               </select>
             </div>
-            <button type="button" class="form-email-toggle" id="email-toggle" aria-expanded="false" aria-controls="email-group" data-i18n="form_email_toggle">+ Añadir correo</button>
-            <div class="form-group" id="email-group" hidden>
+            <div class="form-group" id="email-group">
               <label class="form-label" for="email" data-i18n="form_email">CORREO ELECTRÓNICO</label>
-              <input type="email" id="email" name="email" class="form-input" placeholder="Para enviarle el dossier privado" data-i18n-ph="form_email_ph">
+              <input type="email" id="email" name="email" class="form-input" placeholder="Para enviarle el dossier privado" data-i18n-ph="form_email_ph" required>
             </div>
             <div class="form-checks">
               <label class="form-check">
@@ -735,7 +734,7 @@
                 <span data-i18n-html="form_check1">Acepto la <a href="./privacidad.html" target="_blank" rel="noopener">política de privacidad</a>. Mis datos solo se usan para esta conversación.</span>
               </label>
             </div>
-            <button type="submit" class="btn-primary form-btn w-full" style="background-color: var(--cedar-bronze); border-color: var(--cedar-bronze); margin-top: 1.25rem; padding: 1.1rem;" data-i18n="form_submit">Conversar ahora por WhatsApp</button>
+            <button type="submit" class="btn-primary form-btn w-full" style="background-color: var(--cedar-bronze); border-color: var(--cedar-bronze); margin-top: 1.25rem; padding: 1.1rem;" data-i18n="form_submit">Solicitar información por correo</button>
             <p class="form-microcopy" data-i18n="form_microcopy">Respuesta en menos de 6 horas. Sin lista de correo, sin spam.</p>
             <p id="form-msg" class="form-msg"></p>
             <div class="trust-badges">
@@ -902,7 +901,7 @@
     <a class="lb-cta cta-whatsapp" id="lb-cta" data-cta="lightbox" href="https://wa.me/573004000707?text=Hola%2C%20estuve%20viendo%20las%20im%C3%A1genes%20de%20Goshen%20Hills%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer" data-i18n="lb_cta">Conversar sobre Goshen Hills →</a>
   </div>
 
-  <script src="./app.js?v=20260604c"></script>
+  <script src="./app.js?v=20260604d"></script>
 </body>
 
 </html>

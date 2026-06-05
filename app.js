@@ -227,7 +227,7 @@ const I18N = {
     form_villa_undecided: 'Aún no lo he decidido',
     form_check1: 'Acepto la <a href="./privacidad.html" target="_blank" rel="noopener">política de privacidad</a>. Mis datos solo se usan para esta conversación.',
     form_check2: 'MIS DATOS SOLO SE USARÁN PARA DEVOLVER LA CONVERSACIÓN.',
-    form_submit: 'Conversar ahora por WhatsApp',
+    form_submit: 'Solicitar información por correo',
     trust_1: 'Fiducia regulada',
     trust_2: 'Datos cifrados',
     trust_3: 'Sin marketing masivo',
@@ -375,7 +375,7 @@ const I18N = {
     form_villa_undecided: "I haven't decided yet",
     form_check1: 'I accept the <a href="./privacidad.html" target="_blank" rel="noopener">privacy policy</a>. My data is used only for this conversation.',
     form_check2: 'MY DATA WILL ONLY BE USED TO RETURN THE CONVERSATION.',
-    form_submit: 'Talk now on WhatsApp',
+    form_submit: 'Request information by email',
     trust_1: 'Regulated trust',
     trust_2: 'Encrypted data',
     trust_3: 'No mass marketing',
@@ -1034,9 +1034,14 @@ function initForm() {
     const msg = document.getElementById('form-msg');
     const en = ghLang() === 'en';
 
-    if (!nombre || !wa || !villa) {
+    if (!nombre || !wa || !villa || !email) {
       msg.className = 'form-msg error';
-      msg.textContent = en ? 'Please enter your name, WhatsApp and villa.' : 'Por favor indique nombre, WhatsApp y villa.';
+      msg.textContent = en ? 'Please enter your name, WhatsApp, villa and email.' : 'Por favor indique nombre, WhatsApp, villa y correo.';
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      msg.className = 'form-msg error';
+      msg.textContent = en ? 'Please enter a valid email address.' : 'Por favor indique un correo electrónico válido.';
       return;
     }
     if (!privacidad) {
@@ -1046,36 +1051,48 @@ function initForm() {
     }
 
     msg.className = 'form-msg';
-    btn.textContent = en ? 'Opening WhatsApp…' : 'Abriendo WhatsApp…';
+    btn.textContent = en ? 'Opening your email…' : 'Abriendo su correo…';
     btn.disabled = true;
 
     trackEvent('form_submit', { villa_interest: villa });
     sessionStorage.setItem('gh_converted', '1');
 
-    // Mensaje de WhatsApp pre-llenado (omitiendo campos vacíos)
+    // Correo pre-llenado al buzón de Goshen Hills (mailto, sin backend)
     const villaTxt = (villa === 'Sin decidir aún')
-      ? (en ? 'the Goshen Hills collection' : 'conocer la colección Goshen Hills')
+      ? (en ? 'the collection' : 'conocer la colección')
       : villa;
-    let lines;
+    const subject = en
+      ? 'Information request — Goshen Hills'
+      : 'Solicitud de información — Goshen Hills';
+    let bodyLines;
     if (en) {
-      lines = ['Hello, I am ' + nombre + '.', 'I am interested in ' + villaTxt + ' at Goshen Hills.'];
-      if (email) lines.push('My email: ' + email);
+      bodyLines = [
+        'Hello, I am ' + nombre + '.',
+        'I am interested in ' + villaTxt + ' at Goshen Hills.',
+        '',
+        'WhatsApp: ' + wa,
+        'Email: ' + email
+      ];
     } else {
-      lines = ['Hola, soy ' + nombre + '.', 'Me interesa ' + villaTxt + ' en Goshen Hills.'];
-      if (email) lines.push('Mi correo: ' + email);
+      bodyLines = [
+        'Hola, soy ' + nombre + '.',
+        'Me interesa ' + villaTxt + ' en Goshen Hills.',
+        '',
+        'WhatsApp: ' + wa,
+        'Correo: ' + email
+      ];
     }
-    const waUrl = 'https://wa.me/573004000707?text=' + encodeURIComponent(lines.join('\n'));
+    const mailUrl = 'mailto:hola@goshenhills.com.co'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(bodyLines.join('\n'));
 
     setTimeout(() => {
-      const opened = window.open(waUrl, '_blank', 'noopener,noreferrer');
-      if (!opened) window.location.href = waUrl;
+      window.location.href = mailUrl;
       msg.className = 'form-msg success';
       msg.innerHTML = en
-        ? 'Your conversation has opened in WhatsApp. If it did not open, write to <a href="mailto:hola@goshenhills.com.co">hola@goshenhills.com.co</a>.'
-        : 'Su conversación se ha abierto en WhatsApp. Si no se abrió, escríbanos a <a href="mailto:hola@goshenhills.com.co">hola@goshenhills.com.co</a>.';
+        ? 'Your email app has opened with your request ready to send. If it did not open, write to <a href="mailto:hola@goshenhills.com.co">hola@goshenhills.com.co</a>.'
+        : 'Su aplicación de correo se ha abierto con la solicitud lista para enviar. Si no se abrió, escríbanos a <a href="mailto:hola@goshenhills.com.co">hola@goshenhills.com.co</a>.';
       form.reset();
-      const eg = document.getElementById('email-group'); if (eg) eg.setAttribute('hidden', '');
-      const et = document.getElementById('email-toggle'); if (et) { et.style.display = ''; et.setAttribute('aria-expanded', 'false'); }
       btn.disabled = false;
       btn.textContent = t('form_submit');
     }, 400);
